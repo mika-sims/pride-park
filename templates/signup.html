@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="col-md-2"></div>
+    <div class="col-md-12">
+        <h1 class="text-center my-3">Register for <span class="text-success pe-2">Pride</span> <span class="text-warning">Park</span></h1>
+        <div class="bg-pride">
+            <hr class="hr-pride">
+        </div>
+    </div>
+    <div class="row pt-lg-2">
+        <div class="col-12 col-lg-8 mx-auto py-3 card mb-5 bg-signup">
+            <form action="{{ url_for('signup') }}" method="POST" id="signup-form" class="bg-success px-3">
+                <div class="my-3 form-group">
+                    <label for="username" class="d-inline-block hidden">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Username" class="form-control d-inline-block">
+                </div>
+                <div class="my-3 form-group">
+                    <label for="email" class="form-label hidden">Email Address</label>
+                    <input type="text" name="email" id="email" placeholder="Email" class="form-control">
+                </div>
+                <div class="my-3 form-group">
+                    <label for="password" class="form-label hidden">Password</label>
+                    <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+                </div>
+                <div class="my-3 form-group">
+                    <label for="password_conf" class="form-label hidden">Confirm Password</label>
+                    <input type="password" name="password_conf" id="password_conf" placeholder="Confirm Password" class="form-control">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary btn-lg" type="submit">Sign Up</button>
+                </div>
+                <p class="text-center mt-3">
+                    Already have an account? <a href="{{ url_for('login') }}">Sign in.</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

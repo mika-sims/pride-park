@@ -14,6 +14,19 @@ def about():
    return render_template("about.html")
 
 
+
+# Signup page
+@app.route("/signup", methods=['GET', 'POST'])
+def signup():
+   return render_template("signup.html")
+
+
+# Signin page
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+   return render_template("login.html")
+
+
 # Contact page
 @app.route("/contact", methods=['GET', 'POST'])
 def contact():

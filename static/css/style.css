@@ -8,6 +8,7 @@
 
 .hr-pride {
     height: 20px;
+    width: 100%;
 }
 
 .hero-pride {
@@ -15,4 +16,37 @@
     background-size: cover;
     height: 600px;
     width: 100%;
+}
+
+.bg-signup {
+    background-image: url('/static/images/meet-pride.jpg');
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+}
+
+form {
+    height: 600px;
+    width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 0px;
+    padding: 0px;
+}
+
+label {
+    height: 20px;
+    width: 200px;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+    margin-right: 15px;
+    float: left;
+}
+
+input {
+    height: 45px;
+    width: 300px;
+    border: 1px solid #000;
+    margin-top: 10px;
 }
