@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="col-md-2"></div>
+    <div class="col-md-12">
+        <h1 class="text-center my-3">Login to your <span class="text-success pe-2">Pride</span> <span class="text-warning">Park</span></h1>
+        <div class="bg-pride">
+            <hr class="hr-pride">
+        </div>
+    </div>
+    <div class="row pt-lg-2">
+        <div class="col-12 col-lg-8 mx-auto py-3 card mb-5 bg-signup">
+            <div class="col-12 text-center py-2">
+                <p>
+                    If you have not created an account yet, please
+                    <a class="btn" href="{{ url_for('signup') }}">Sign Up</a>
+                    first
+                </p>
+            </div>
+            <form action="{{ url_for('login') }}" method="POST" class="bg-success px-3">
+                <div class="my-3 text-center">
+                    <label class="form-label">Username <i class="bi bi-person-plus-fill"></i></label>
+                    <input class="form-control" type="text" name="username" placeholder="Username" />
+                </div>
+                <div class="mb-3 text-center">
+                    <label class="form-label">Password <i class="bi bi-key-fill"></i></label>
+                    <input class="form-control" type="password" name="password" placeholder="Password" />
+                </div>
+                <div class="mb-3 text-center">
+                    <label class="form-check-label" for="rememberMe"> Remember me</label>
+                    <input class="form-check-input" type="checkbox" name="rememberMe" id="rememberMe" />
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary btn-lg" type="submit">
+                        Sign In <i class="bi bi-box-arrow-in-right"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
