@@ -31,6 +31,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('contact') }}">Contact us</a>
                     </li>
+                    {% if session.user == 'guest' %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('signup') }}">Sign up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('chat') }}"> {{session.user|title}} </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

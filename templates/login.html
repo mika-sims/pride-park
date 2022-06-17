@@ -17,13 +17,22 @@
                     first
                 </p>
             </div>
+            <!-- Displays flash messages to the user -->
+            <div class="messages text-center">
+                {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                <div class="fs-4 text-success">{{ message }}</div>
+                {% endfor %}
+                {% endwith %}
+            </div>
+            <!-- End flash messages -->
             <form action="{{ url_for('login') }}" method="POST" class="bg-success px-3">
                 <div class="my-3 text-center">
-                    <label class="form-label">Username <i class="bi bi-person-plus-fill"></i></label>
+                    <label class="form-label">Username</label>
                     <input class="form-control" type="text" name="username" placeholder="Username" />
                 </div>
                 <div class="mb-3 text-center">
-                    <label class="form-label">Password <i class="bi bi-key-fill"></i></label>
+                    <label class="form-label">Password</label>
                     <input class="form-control" type="password" name="password" placeholder="Password" />
                 </div>
                 <div class="mb-3 text-center">

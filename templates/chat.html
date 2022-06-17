@@ -7,20 +7,15 @@
         <div class="col-md-2 bg-pride"></div>
         <div class="col-md-8 bg-pride">
             <h1 class="text-danger text-center"><span class="text-success pe-2">Pride</span> <span class="text-warning">Park</span></h1>
+            <a href="{{ url_for('signup') }}">Signup</a>
+            <a href="{{ url_for('login') }}">Login</a>
         </div>
         <div class="col-md-2 bg-pride"></div>
         <div class="col-md-12">
 
         </div>
+
     </div>
-    <!-- Displays flash messages to the user -->
-    <div class="messages text-center">
-        {% with messages = get_flashed_messages() %}
-        {% for message in messages %}
-        <div class="fs-4 text-success">{{ message }}</div>
-        {% endfor %}
-        {% endwith %}
-    </div>
-    <!-- End flash messages -->
+
 </div>
 {% endblock content %}
