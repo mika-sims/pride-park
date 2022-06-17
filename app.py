@@ -8,9 +8,11 @@ from flask import Flask, render_template, redirect, request, url_for, session, f
 from flask_mongoengine import MongoEngine
 from flask_pymongo import PyMongo
 import os
+from liveserver import LiveServer
 
 
 app = Flask(__name__)
+ls = LiveServer(app)
 
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.secret_key = 'secretlyproud'
@@ -26,16 +28,21 @@ user_collection = mongo.db.users
 def index():
    if(session.get('user')):
       user = user_collection.find_one({"username": session["user"]})
-      return render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
+      return ls.render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
    else:
       session["user"] = "guest"
-      return render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
+      return ls.render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
 
 
 # About page
 @app.route("/about", methods=['GET'])
 def about():
    return render_template("about.html")
+
+# Blog page
+@app.route("/blog", methods=['GET'])
+def blog():
+   return render_template("blog.html")
 
 
 # Signup page

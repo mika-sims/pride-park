@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- banner image still to be included at the top -->
+<div class="blog-container">
+    <div class="filter-panel">
+        <input type="checkbox" id="gay" name="gay" value="Gay" />
+        <label for="gay" class="blog-label">Gay</label><br />
+
+        <input type="checkbox" id="lesbian" name="lesbian" value="Lesbian" />
+        <label for="lesbian" class="blog-label">Lesbian</label><br />
+
+        <input type="checkbox" id="trans" name="trans" value="Trans" />
+        <label for="trans" class="blog-label">Trans-gender</label><br />
+
+        <input type="checkbox" id="bi" name="bi" value="Bi" />
+        <label for="bi" class="blog-label">Bi</label><br />
+
+        <input type="checkbox" id="safe" name="safe" value="safe" />
+        <label for="safe" class="blog-label">Safe Country</label><br />
+
+        <input type="checkbox" id="unsafe" name="unsafe" value="Unsafe" />
+        <label for="unsafe" class="blog-label">Unsafe Country</label><br />
+
+        <input type="checkbox" id="other" name="other" value="Other" />
+        <label for="other" class="blog-label">Other</label><br />
+    </div>
+
+    <div class="entries">
+        <ul class="entry-list">
+            <li class="blog-entry">
+                <a href="#" class="entry-link">
+                    <p class="author" id="author">Example Person</p>
+                    <p class="title" id="title">My example anecdote</p>
+                    <p class="summary" id="summary">This is a summary of the blog entry ... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Quod suscipit architecto.</p>
+                </a>
+            </li>
+            <li class="blog-entry">
+                <a href="#" class="entry-link">
+                    <p class="author" id="author">Example Person</p>
+                    <p class="title" id="title">My example anecdote</p>
+                    <p class="summary" id="summary">This is a summary of the blog entry ... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Quod suscipit architecto.</p>
+                </a>
+            </li>
+            <li class="blog-entry">
+                <a href="#" class="entry-link">
+                    <p class="author" id="author">Example Person</p>
+                    <p class="title" id="title">My example anecdote</p>
+                    <p class="summary" id="summary">This is a summary of the blog entry ... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Quod suscipit architecto.</p>
+                </a>
+            </li>
+            <li class="blog-entry">
+                <a href="#" class="entry-link">
+                    <p class="author" id="author">Example Person</p>
+                    <p class="title" id="title">My example anecdote</p>
+                    <p class="summary" id="summary">This is a summary of the blog entry ... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Quod suscipit architecto.</p>
+                </a>
+            </li>
+            <li class="blog-entry">
+                <a href="#" class="entry-link">
+                    <p class="author" id="author">Example Person</p>
+                    <p class="title" id="title">My example anecdote</p>
+                    <p class="summary" id="summary">This is a summary of the blog entry ... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Quod suscipit architecto.</p>
+                </a>
+            </li>
+            <li class="blog-entry">
+                <a href="#" class="entry-link">
+                    <p class="author" id="author">Example Person</p>
+                    <p class="title" id="title">My example anecdote</p>
+                    <p class="summary" id="summary">This is a summary of the blog entry ... Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Quod suscipit architecto.</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock content %}
