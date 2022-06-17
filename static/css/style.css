@@ -1,13 +1,30 @@
 /*===== Navbar Start=====*/
 
-.nav-link, .navbar-brand {
+.nav-link {
     text-transform: uppercase;
     margin: 0 1.5em;
     font-weight: 600;
   }
 
-.navbar {
-    background-color: cadetblue;
+.navbar-brand {
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff0000, #caca00d3, #ff00f3, #0033ff, #ff00c4);
+    background-size: 400%;
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0%{
+        background-position: 0%;
+    }
+    100%{
+        background-position: 400%;
+    }
 }
 
 /*===== Navbar End=====*/
