@@ -93,6 +93,15 @@ def login():
    return render_template("login.html")
 
 
+@app.route('/profile/<username>')
+def profile(username):
+   profile = user_collection.find_one({"username": session['user']})
+   if profile == 'guest':
+      return redirect(url_for('login'))
+   else:
+      return render_template('profile.html', username=username)
+
+
 # Contact page
 @app.route("/chat", methods=['GET', 'POST'])
 def chat():

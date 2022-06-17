@@ -17,14 +17,6 @@
                     first
                 </p>
             </div>
-            <!-- Displays flash messages to the user -->
-            <div class="messages text-center">
-                {% with messages = get_flashed_messages() %}
-                {% for message in messages %}
-                <div class="fs-4 text-success">{{ message }}</div>
-                {% endfor %}
-                {% endwith %}
-            </div>
             <!-- End flash messages -->
             <form action="{{ url_for('login') }}" method="POST" class="bg-success px-3">
                 <div class="my-3 text-center">
