@@ -17,7 +17,7 @@
     -webkit-background-clip: text;
     animation: animate 20s linear infinite;
 }
-
+/*===== Animate logo =====*/
 @keyframes animate {
     0%{
         background-position: 0%;
