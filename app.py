@@ -24,7 +24,12 @@ user_collection = mongo.db.users
 # Landing page
 @app.route("/", methods=['GET', 'POST'])
 def index():
-   return render_template("index.html")
+   if(session.get('user')):
+      user = user_collection.find_one({"username": session["user"]})
+      return render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
+   else:
+      session["user"] = "guest"
+      return render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
 
 
 # About page
@@ -66,7 +71,39 @@ def signup():
 # Signin page
 @app.route("/login", methods=['GET', 'POST'])
 def login():
+   """
+   Login function to let a user login if their username and email are in the database
+   """
+   if request.method == "POST":
+      user_input = user_collection.find_one({"username": request.form.get("username")})
+      if(user_input != None):
+         user_name = request.form.get("username")
+         if(user_input["password"] == request.form.get("password")):
+            session["user"] = user_name
+            flash(f'Welcome back {user_name}!')
+            return redirect(url_for("index"))
+         else:
+            flash("Incorrect password")
+            session["user"] = "guest"
+            return render_template("login.html", user=user_collection.find_one({"username": session["user"]}))
+      else:
+         flash("No user account with this name exists")
+         session["user"] = "guest"
+         return render_template("login.html", user=user_collection.find_one({"username": session["user"]}))
    return render_template("login.html")
+
+
+# Contact page
+@app.route("/chat", methods=['GET', 'POST'])
+def chat():
+   return render_template("chat.html")
+
+
+@app.route("/logout")
+def logout():
+    session.pop("user")
+    session['user'] = "guest"
+    return redirect(url_for("index"))
 
 
 # Contact page
