@@ -12,6 +12,15 @@
     </div>
     <div class="row pt-lg-2">
         <div class="col-12 col-lg-8 mx-auto py-3 card mb-5 bg-signup">
+            <!-- Displays flash messages to the user -->
+            <div class="messages text-center">
+                {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                <div class="fs-4 text-danger">{{ message }}</div>
+                {% endfor %}
+                {% endwith %}
+            </div>
+            <!-- End flash messages -->
             <form action="{{ url_for('signup') }}" method="POST" id="signup-form" class="bg-success px-3">
                 <div class="my-3 form-group">
                     <label for="username" class="d-inline-block hidden">Username</label>
