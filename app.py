@@ -5,6 +5,7 @@ from pymongo.errors import DuplicateKeyError, OperationFailure
 from bson.objectid import ObjectId
 from bson.errors import InvalidId
 from flask import Flask, render_template, redirect, request, url_for, session, flash
+from liveserver import LiveServer
 from flask_mongoengine import MongoEngine
 from flask_pymongo import PyMongo
 import os
@@ -12,6 +13,8 @@ from liveserver import LiveServer
 
 
 app = Flask(__name__)
+ls = LiveServer(app)
+
 ls = LiveServer(app)
 
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
@@ -110,9 +113,15 @@ def profile(username):
 
 
 # Contact page
-@app.route("/chat", methods=['GET', 'POST'])
-def chat():
-   return render_template("chat.html")
+@app.route("/podcasts", methods=['GET', 'POST'])
+def podcast_list():
+   return render_template("podcast_list.html")
+
+
+# Contact page
+@app.route("/podcast<podcastId>", methods=['GET', 'POST'])
+def podcast_detail():
+   return render_template("poscast_detail.html")
 
 
 @app.route("/logout")
