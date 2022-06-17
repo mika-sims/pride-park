@@ -40,7 +40,10 @@
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('chat') }}"> {{session.user|title}} </a>
+                        <a class="nav-link" href="{{ url_for('profile', username='{{session.user}}') }}"> {{session.user|title}} </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('chat') }}">Chat</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
