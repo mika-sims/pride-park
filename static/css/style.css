@@ -50,3 +50,70 @@ input {
     border: 1px solid #000;
     margin-top: 10px;
 }
+
+/* blog styling */
+
+.blog-heading,
+.blog-intro {
+    text-align: center;
+    margin: 1em auto;
+}
+
+.blog-intro {
+    max-width: 800px;
+    padding: 0 2em;
+}
+
+.blog-container {
+    display: flex;
+    width: 80vw;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 3rem;
+    gap: 1rem;
+}
+
+.filter-panel {
+    width: 30%;
+}
+
+.entries {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+.blog-label {
+    float: none;
+    text-align: left;
+    height: auto;
+    width: fit-content;
+    margin: 0 0 10px 5px;
+}
+
+.entry-list {
+    list-style: none;
+}
+
+.blog-entry {
+    margin-bottom: 2em;
+}
+
+.entry-link {
+    text-decoration: none;
+}
+
+.author,
+.title {
+    color: #000;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.summary {
+    color: #000;
+}
