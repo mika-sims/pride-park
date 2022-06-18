@@ -252,3 +252,43 @@ h2 {
     right: 100px;
     position: relative;
 }
+
+/* blog pages */
+/* blog page */
+.blog-buttons .btn {
+    margin: 5px;
+    position: relative;
+    float: left;
+}
+
+.post-title:hover {
+    font-size: 110%;
+}
+
+.search-blog-container {
+    float: right;
+    margin: 15px;
+}
+
+#search-blog-btn {
+    width: 32px;
+    height: 30px;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.search-blog-container form {
+    position: relative;
+}
+
+.search-blog-container i {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    font-size: 1.1rem;
+}
+
+/* datepicker */
+/* label{margin-left: 20px;} */
+#datepicker{width:180px; margin: 0 20px 20px 20px;}
+#datepicker > span:hover{cursor: pointer;}

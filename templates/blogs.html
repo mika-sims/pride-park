@@ -3,31 +3,11 @@
 
 {% block content %}
 
-<div class="container search">
-<div class="row">
-  <form action="{{ url_for('search')}}" method="POST" class="col-sm-12">
-    <div class="row center-align">
-      <div class="input-field col-sm-12 col-md-8">
-        <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
-        <input type="text" name="query" id="query" minlength="3" class="validate">
-        <label for="query">Search For Blogs</label>
-      </div>
-      <div class="col-sm-12 col-md-4">
-        <a href="{{ url_for('posts')}}" class="red btn text-shadow">Reset</a>
-        <button type="submit" class="btn btn-success">Search
-          <i class="fas fa-search left"></i>
-        </button>
-      </div>
-    </div>
-  </form>
-</div>
-</div>
-<!-- 
-banner image still to be included at the top -->
-<h2 class="blog-heading">Blogposts</h2>
-<p class="blog-intro">Read about other LGBTQ+ community members' experiences. Short snippets out of lives that could
-    make you laugh, offer advice or make you feel less alone. </p>
-<section class="blogs">
+<!-- banner image still to be included at the top -->
+<h2 class="blog-heading">Spoken Word</h2>
+<p class="blog-intro">Hear the voices of fellow LGBTQ+ members as they share small parts of their lives in these short
+    recordings. Sometimes it's
+    good to hear you are not the only one. </p>
 <div class="blog-container">
     <!-- Search side panel with filter options -->
     <form class="filter-panel">
@@ -63,74 +43,29 @@ banner image still to be included at the top -->
 
         <input type="submit" value="Filter results" class="filter-btn">
     </form>
-    
-
-{% if posts|length >0 %}
-<ul class="collapsible popout">
-  {% for post in posts %}
-  <li>
-    <div class="collapsible-header white-text blue-grey darken-2">
-      <div class="col s3">
-        <i class="fas fa-caret-down"></i>
-        {% if session.user|lower == post.created_by|lower %}
-        <a class="waves-effect red btn-small modal-trigger" href="#modal1">Delete</a>
-        <!-- delete by creater verification modal-->
-        <!-- Modal Trigger -->
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-          <div class="modal-content grey lighten-4">
-            <h4 class="cyan-text">Delete blog</h4>
-            <p> Are you sure you want to delete this blog?</p>
-          </div>
-          <div class="modal-footer">
-            <a href="{{ url_for('posts')}}" class="modal-close waves-effect waves-green btn-small">Cancel</a>
-            <a href="{{ url_for('delete_post', post_id=post._id)}}"
-              class="modal-close waves-effect red btn-small">Delete</a>
-          </div>
-        </div>
-        <a class="waves-effect teal accent-4 btn-small" href="{{ url_for('edit_post', post_id=post._id)}}">Edit</a>
-        {% endif %}
-        {% if session.user|lower == "admin"|lower %}
-        <!-- delete  by admin verification modal-->
-        <!-- Modal Trigger -->
-        <a class="waves-effect orange btn-small modal-trigger" href="#modal1">Delete</a>
-        <!-- Modal Structure -->
-        <div id="modal1" class="modal">
-          <div class="modal-content grey lighten-4">
-            <h4 class="cyan-text">Delete blog</h4>
-            <p> Are you sure you want to delete this blog?</p>
-          </div>
-          <div class="modal-footer">
-            <a href="{{ url_for('posts')}}" class="modal-close waves-effect waves-green btn-small">Cancel</a>
-            <a href="{{ url_for('delete_post', post_id=post._id)}}"
-              class="modal-close waves-effect red btn-small">Delete</a>
-          </div>
-        </div>
-        {% endif %}
-      </div>
-      <div class="col s9">
-        <strong> {{ post.category_name }}</strong>
-      </div>
-    </div>
-    <div class="collapsible-body">
-      <h4><strong>{{ post.title }}</strong></h4>
-      <hr>
-      <p> {{ post.content }}</p>
-      <p><i class="fas fa-clock"></i>{{post.read_time}} read</p>
-      <p><small> <i>On</i>: {{post.published_date }}</small></p>
-      <p><em> by: <i class="fas fa-user-circle"></i> {{ post.created_by }} </em></p>
-      <p>{{post.tags}}</p>
-    </div>
-  <li>
-    {% endfor %}
-</ul>
-{% else %}
-<h4 class="red-text text-darken-4 center-align"> Sorry ,No results were found <i class="fas fa-sad-cry"></i></h4>
-{% endif%}
-
-
+    <!-- list of blog entries with links -->
+    <!-- {% if posts|length > 0 %} -->
+    <section class="entries">
+      {% for post in posts %}
+        <ul class="entry-list">
+            <li class="blog-entry text-dark">
+                <a href="#" class="entry-link">
+                  <h6><i class="fas fa-tag"></i> {{ post.category_name }}</h6>
+                  <h4><strong>{{ post.title }}</strong></h4>
+                    <p class="card p-3" id="summary"> {{ post.content }}</p>
+                    <p class="summary" id="summary"> {{ post.comment }}</p>
+                     <p id="author"><small>posted by: {{ post.created_by }}</small></p>  
+                    <p><i class="fas fa-clock"></i>{{post.read_time}} read</p>
+                    <p><small> <i>published date</i>: {{ post.published_date }}</small></p>
+                     <p class="author small" id="hashtag"> <i class="fas fa-hashtag"></i>{{ post.tags }}</p>
+                </a>
+            </li>
+        </ul>
+        {% endfor %}
+    </section>
+    <!-- {% endif %} -->
+</div>
 {% endblock content %}
-
 
 
 
