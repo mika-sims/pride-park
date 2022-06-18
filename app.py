@@ -244,7 +244,7 @@ def edit_post(post_id):
             "read_time": request.form.get("read_time"),
             "created_by": session['user']
         }
-        mongo.db.blogs.update({"_id": ObjectId(post_id)}, submit)
+        mongo.db.posts.update({"_id": ObjectId(post_id)}, submit)
         flash('Post Successfully Updated')
 
     post = mongo.db.posts.find_one({"_id": ObjectId(post_id)})
