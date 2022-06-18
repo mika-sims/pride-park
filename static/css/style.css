@@ -1,6 +1,5 @@
 /*===== Fonts =====*/
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,900&family=Quattrocento:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;1,300&display=swap');
-/**/
 /*===== Navbar Start=====*/
 
 .nav-link {
@@ -250,4 +249,10 @@ h2 {
     left: 100px;
     right: 100px;
     position: relative;
+}
+
+@media screen and (min-width: 300px){
+    .about-images {
+        margin-bottom: 4em;
+    }
 }
