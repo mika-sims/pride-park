@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}
+| Blog, Add New Post
+{% endblock %}
+
+{% block content %}Grab a proverbial pen and start writing. Your story is worth sharing.
+Exceeding our wordcount of 2500? Nothing is stopping you from submitting more than one story. Keep writing and simply upload your file below.
+Make sure you tag your story with the appropriate labels to make it easy for others to find the story that's right for them.
+Please refer to our list of to our list of trigger warnings below and make sure you tag your entry in case it contains any of the following:
+
+Abusive language
+Depression
+Suicide
+Dysphoria
+Mental illness
+Mention of violence
+Mention of verbal or physical abuse
+No file chosen
+
+	{% for post in posts %}
+		<div class="post block">
+			<h2 class="subtitle">{{ post.title }}</h2>
+			<h2 class="subtitle">{{ post.title }}</h2>
+
+			<small>Posted at {{ post.date_added }}</small>
+
+			<p>{{ post.intro }}</p>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+
+
+
+

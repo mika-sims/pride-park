@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="light-blue-text text-darken-4 center-align header">Add a new category</h3>
+<div class="row card-panel grey lighten-4">
+    <form class="col s12" method="POST" action="{{url_for('add_category')}}">
+        <!-- category_name-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-archive prefix light-blue-text text-darken-4"></i>
+                <input id="category_name" type="text" name="category_name" minlength="3" maxlength="30" class="validate" required>
+                <label for="category_name">Category Name</label>
+            </div>
+        </div>
+        
+        <!-- submit button-->
+        <div class="row">
+            <div class="col s12 center-align">
+                <button class="btn-large waves-effect waves-light text-shadow" type="submit" name="">Add Category
+                    <i class="fas fa-plus-circle right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

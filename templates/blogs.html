@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<div class="container search">
+<div class="row">
+  <form action="{{ url_for('search')}}" method="POST" class="col-sm-12">
+    <div class="row center-align">
+      <div class="input-field col-sm-12 col-md-8">
+        <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
+        <input type="text" name="query" id="query" minlength="3" class="validate">
+        <label for="query">Search For Blogs</label>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <a href="{{ url_for('posts')}}" class="red btn text-shadow">Reset</a>
+        <button type="submit" class="btn btn-success">Search
+          <i class="fas fa-search left"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+<!-- 
+banner image still to be included at the top -->
+<h2 class="blog-heading">Blogposts</h2>
+<p class="blog-intro">Read about other LGBTQ+ community members' experiences. Short snippets out of lives that could
+    make you laugh, offer advice or make you feel less alone. </p>
+<section class="blogs">
+<div class="blog-container">
+    <!-- Search side panel with filter options -->
+    <form class="filter-panel">
+        <input type="checkbox" id="gay" name="gay" value="Gay" />
+        <label for="gay" class="blog-label">Gay</label><br />
+
+        <input type="checkbox" id="lesbian" name="lesbian" value="Lesbian" />
+        <label for="lesbian" class="blog-label">Lesbian</label><br />
+
+        <input type="checkbox" id="trans" name="trans" value="Trans" />
+        <label for="trans" class="blog-label">Trans-gender</label><br />
+
+        <input type="checkbox" id="bi" name="bi" value="Bi" />
+        <label for="bi" class="blog-label">Bi</label><br />
+
+        <input type="checkbox" id="asex" name="asex" value="asex" />
+        <label for="asex" class="blog-label">Asexual</label><br />
+
+        <input type="checkbox" id="nb" name="nb" value="NB" />
+        <label for="nb" class="blog-label">Non-binary</label><br />
+
+        <input type="checkbox" id="safe" name="safe" value="safe" />
+        <label for="safe" class="blog-label">Safe Country</label><br />
+
+        <input type="checkbox" id="unsafe" name="unsafe" value="Unsafe" />
+        <label for="unsafe" class="blog-label">Unsafe Country</label><br />
+
+        <input type="checkbox" id="other" name="other" value="Other" />
+        <label for="other" class="blog-label">Other</label><br />
+
+        <input type="checkbox" id="trigger" name="trigger" value="Trigger" />
+        <label for="trigger" class="blog-label">Trigger Warning</label><br />
+
+        <input type="submit" value="Filter results" class="filter-btn">
+    </form>
+    
+
+{% if posts|length >0 %}
+<ul class="collapsible popout">
+  {% for post in posts %}
+  <li>
+    <div class="collapsible-header white-text blue-grey darken-2">
+      <div class="col s3">
+        <i class="fas fa-caret-down"></i>
+        {% if session.user|lower == post.created_by|lower %}
+        <a class="waves-effect red btn-small modal-trigger" href="#modal1">Delete</a>
+        <!-- delete by creater verification modal-->
+        <!-- Modal Trigger -->
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content grey lighten-4">
+            <h4 class="cyan-text">Delete blog</h4>
+            <p> Are you sure you want to delete this blog?</p>
+          </div>
+          <div class="modal-footer">
+            <a href="{{ url_for('posts')}}" class="modal-close waves-effect waves-green btn-small">Cancel</a>
+            <a href="{{ url_for('delete_post', post_id=post._id)}}"
+              class="modal-close waves-effect red btn-small">Delete</a>
+          </div>
+        </div>
+        <a class="waves-effect teal accent-4 btn-small" href="{{ url_for('edit_post', post_id=post._id)}}">Edit</a>
+        {% endif %}
+        {% if session.user|lower == "admin"|lower %}
+        <!-- delete  by admin verification modal-->
+        <!-- Modal Trigger -->
+        <a class="waves-effect orange btn-small modal-trigger" href="#modal1">Delete</a>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content grey lighten-4">
+            <h4 class="cyan-text">Delete blog</h4>
+            <p> Are you sure you want to delete this blog?</p>
+          </div>
+          <div class="modal-footer">
+            <a href="{{ url_for('posts')}}" class="modal-close waves-effect waves-green btn-small">Cancel</a>
+            <a href="{{ url_for('delete_post', post_id=post._id)}}"
+              class="modal-close waves-effect red btn-small">Delete</a>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="col s9">
+        <strong> {{ post.category_name }}</strong>
+      </div>
+    </div>
+    <div class="collapsible-body">
+      <h4><strong>{{ post.title }}</strong></h4>
+      <hr>
+      <p> {{ post.content }}</p>
+      <p><i class="fas fa-clock"></i>{{post.read_time}} read</p>
+      <p><small> <i>On</i>: {{post.published_date }}</small></p>
+      <p><em> by: <i class="fas fa-user-circle"></i> {{ post.created_by }} </em></p>
+      <p>{{post.tags}}</p>
+    </div>
+  <li>
+    {% endfor %}
+</ul>
+{% else %}
+<h4 class="red-text text-darken-4 center-align"> Sorry ,No results were found <i class="fas fa-sad-cry"></i></h4>
+{% endif%}
+
+
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

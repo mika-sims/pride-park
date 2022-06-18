@@ -36,7 +36,7 @@
                         <a class="nav-link" href="{{ url_for('contact') }}">Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('blog') }}">Blog</a>
+                        <a class="nav-link" href="{{ url_for('posts') }}">Blogs</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('podcast') }}">Podcast</a>
@@ -51,8 +51,14 @@
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('profile', username='{{session.user}}') }}">
-                            {{session.user|title}} </a>
+                           Profile</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('add_post') }}">Write a post</a>
+                    </li>
+                    {% if session.user|lower == "admin" %}
+                    <li><a href="{{ url_for('get_categories') }}"> Post Categories</a></li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('podcast_list') }}">Podcast</a>
                     </li>
