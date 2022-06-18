@@ -17,8 +17,8 @@ from werkzeug.utils import secure_filename
 app = Flask(__name__)
 ls = LiveServer(app)
 
-UPLOAD_FOLDER = '/uploads'
-#ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
+UPLOAD_FOLDER = 'static/uploads'
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
 
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.secret_key = 'secretlyproud'
@@ -109,45 +109,53 @@ def login():
 @app.route('/profile/<username>')
 def profile(username):
    profile = user_collection.find_one({"username": session['user']})
+   print(profile)
    if profile == 'guest':
       return redirect(url_for('login'))
    else:
-      return render_template('profile.html', username=username)
+      return render_template('profile.html')
+
+
+# Record audio
+@app.route('/record', methods=['GET', 'POST'])
+def record():
+   if request.method == "POST":
+      user = session['user']
+      user = user_collection.find_one({'username': user})
+      f = request.files['audio_data']
+      mongo.save_file(f'{user}_pod', f)
+      with open(f'static/uploads/{user}'+ 'audio.wav', 'wb') as audio:
+         f.save(audio)
+      print('file uploaded successfully')
+
+      return render_template('record.html', request="POST")
+   else:
+      return render_template("record.html")
+
+
+@app.route('/episode/<episodename>')
+def episode(episodename):
+   return mongo.send_file(episodename)
 
 
 # Contact page
 @app.route("/podcasts", methods=['GET', 'POST'])
 def podcast_list():
-   return render_template("podcast_list.html")
+   if request.method == "POST":
+      f = request.files['audio_data']
+      with open('audio.wav', 'wb') as audio:
+         f.save(audio)
+      print('file uploaded successfully')
+
+      return render_template('podcast_list.html', request="POST")
+   else:
+      return render_template("podcast_list.html")
 
 
 # Contact page
 @app.route("/podcast<podcastId>", methods=['GET', 'POST'])
 def podcast_detail():
    return render_template("poscast_detail.html")
-
-
-@app.route('/upload', methods=['GET', 'POST'])
-def upload():
-   print('Here')
-   if 'audio_file' in request.files:
-      file = request.files['audio_file']
-      # Get the file suffix based on the mime type.
-      extname = guess_extension(file.mimetype)
-      if not extname:
-         abort(400)
-      # Test here for allowed file extensions.
-      # Generate a unique file name with the help of consecutive numbering.
-      i = 1
-      while True:
-         dst = UPLOAD_FOLDER
-         if not os.path.exists(dst): break
-         i += 1
-      # Save the file to disk.
-      file.save(dst)
-      return make_response('', 200)
-   return render_template("add_poscast.html")
-
 
 
 @app.route("/logout")

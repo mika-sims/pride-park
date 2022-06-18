@@ -641,7 +641,7 @@ This project is hosted on [Heroku](heroku.com). It's been deployed using the fol
 #### The content of the site was written by the team and inspired by the idea of creating a  social blogging site that has room for improvement as i improve on our skills and make it fully functional with time
 
 ### Code
-
+- We borrowed code for audio recording from [codepen](https://codepen.io/jeremyagottfried/pen/bMqyNZ)
 
 ### Media
    
