@@ -2,6 +2,10 @@
     background-color: cadetblue;
 }
 
+body {
+    font-family: 'Merriweather', serif;
+}
+
 .bg-pride {
     background: linear-gradient(90deg, #f00000, #f00000 16.67%, #ff8000 16.67%, #ff8000 33.33%, #ffff00 33.33%, #ffff00 50%, #007940 50%, #007940 66.67%, #4040ff 66.67%, #4040ff 83.33%, #a000c0 83.33%, #a000c0) fixed;
 }
@@ -50,3 +54,219 @@ input {
     border: 1px solid #000;
     margin-top: 10px;
 }
+
+
+/* Custom CSS */
+.card-img-top {
+    width: 70px !important;
+}
+
+.footer {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: bisque;
+    text-align: center;
+}
+
+.home-sec-1 {
+    height: 70vh;
+    /* padding: 100px; */
+    background-image: src("./static/images/prime-colors.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    animation: fadeIn 5s;
+    margin-bottom: 50px;
+}
+
+.banner-text {
+    position: relative;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 4px;
+    overflow: hidden;
+    background: linear-gradient(90deg, #000, #fff, #FFF);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 10s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+
+@keyframes animate {
+    0% {
+        background-position: -500%;
+    }
+
+    100% {
+        background-position: 500%;
+    }
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.25;
+
+    }
+
+    50% {
+        opacity: 0.50;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* .home-sec-1 {
+    height: 60vh;
+    background: linear-gradient(#f70000, #f89200, #f8f501, #038f00, #0168f8, #a200f7);
+} */
+
+
+
+
+
+
+
+
+
+
+
+.zoomIn {
+    animation-name: zoomIn;
+    animation-duration: 7s;
+    animation-fill-mode: both;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+/* 
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale3d(.3, .3, .3);
+    }
+
+    50% {
+        opacity: 1;
+    }
+} */
+
+
+.footer-sec {
+    height: 40vh;
+    text-align: center;
+}
+
+/* Custom CSS */
+
+
+/* Styling for contact.html */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.formContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(white, #d2fcc7), url("image goes here");
+    background-position: center;
+    background-size: cover;
+    /* background-color: rgb(175, 33, 33); */
+}
+
+.formHeading {
+    /* background-color: #000; */
+    color: black;
+    margin-bottom: 80px;
+    margin-top: 50px;
+    border-bottom: 3px solid black;
+}
+
+.form-text-content {
+    color: black;
+    font-size: 18px;
+    padding: 0 150px;
+    margin-bottom: 20px;
+}
+
+.Customform {
+    width: 90%;
+    max-width: 600px;
+
+}
+
+.input-groupCustom {
+    margin-bottom: 30px;
+    position: relative;
+
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid black;
+    color: #000;
+    background: transparent;
+    font-size: 15px;
+}
+
+label {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: black;
+    cursor: text;
+    transition: 0.2s;
+}
+
+button {
+    padding: 10px 0;
+    color: black;
+    outline: none;
+    background: transparent;
+    border: 1px solid black;
+    width: 100%;
+    cursor: pointer;
+}
+
+input:focus~label,
+input:valid~label,
+textarea:focus~label,
+textarea:valid~label {
+    top: -35px;
+    font-size: 14px;
+}
+
+.customRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.customRow .input-groupCustom {
+    flex-basis: 48%;
+}
+
+/* Styling for contact.html */

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-12">
@@ -28,5 +28,46 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+</div> -->
+
+<div class="formContainer">
+    <div class="formHeading">
+        <h1>Contact Us</h1>
+
+    </div>
+    <p class="form-text-content">
+        You want to reach out to us with ideas? You have feedback on our project? You would like to contribute making
+        Pride Park happen?
+
+        <br>
+        <br>
+        Let us <span style="font-weight: bold">hear it!</span>
+    </p>
+    <form class="customForm" action="">
+        <div class="customRow">
+            <div class="input-groupCustom">
+                <input type="text" id="name" required>
+                <label for="name"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Name</label>
+            </div>
+            <div class="input-groupCustom">
+                <input type="text" id="number" required>
+                <label for="number"><i class="fa-solid fa-phone-square-alt"></i>&nbsp;&nbsp;Phone No</label>
+            </div>
+        </div>
+
+        <div class="input-groupCustom">
+            <input type="email" id="email" required>
+            <label for="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Email ID</label>
+        </div>
+        <div class="input-groupCustom">
+            <textarea id="message" rows="8" required></textarea>
+            <label for="message"><i class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Message</label>
+        </div>
+
+        <button type="submit">SUBMIT&nbsp;&nbsp;<i class="fa-solid fa-paper-plane"></i></button>
+
+    </form>
 </div>
+
+
 {% endblock content %}

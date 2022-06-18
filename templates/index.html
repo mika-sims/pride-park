@@ -6,21 +6,81 @@
     <div class="row">
         <div class="col-md-2 bg-pride"></div>
         <div class="col-md-8 bg-pride">
-            <h1 class="text-danger text-center"><span class="text-success pe-2">Pride</span> <span class="text-warning">Park</span></h1>
+            <h1 class="text-danger text-center"><span class="text-success pe-2">Pride</span> <span
+                    class="text-warning">Park</span></h1>
         </div>
         <div class="col-md-2 bg-pride"></div>
         <div class="col-md-12">
 
         </div>
+
     </div>
+
+    <div class="row">
+        <div class="col-md-12 bg-light justify-content-center align-items-center home-sec-1 d-flex">
+            <!-- <h1 class="main-sec-1-text"
+                data-text="century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with">
+                century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a
+                type specimen book. It usually begins with
+            </h1> -->
+            <div class="banner-text">
+                SAFE SPACE FOR ALL!!
+            </div>
+            <div class="banner-text">
+                SAFE SPACE FOR ALL!!
+            </div>
+            <div class="banner-text">
+                SAFE SPACE FOR ALL!!
+            </div>
+            <div class="banner-text">
+                SAFE SPACE FOR ALL!!
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-6 text-center d-flex justify-content-center align-items-center">
+            <div class="card d-flex justify-content-center align-items-center"
+                style="width: 18rem; border: none !important">
+                <!-- <img src="../static/images/blogger.png" width="50px" height="50px" class="card-img-top" alt="..."> -->
+                <a href="/blog" style="text-decoration: none; color:inherit"> <i class="fa fa-rss fa-5x"
+                        aria-hidden="true"></i> </a>
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight:bold">Blog</h5>
+                    <p class="card-text">Checkout our blogs here..✨</p>
+                    <!-- <a href="#" class="btn btn-primary">Go to Blog</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 text-center d-flex justify-content-center align-items-center">
+            <div class="card d-flex justify-content-center align-items-center"
+                style="width: 18rem; border: none !important;">
+                <div class="d-flex justify-content-center align-items center">
+                    <!-- <img src="../static/images/podcast.png" width="50px" height="50px" class="card-img-top" alt="..."> -->
+                    <a href="/podcast" style="text-decoration: none; color:inherit"> <i class="fa fa-podcast fa-5x"
+                            aria-hidden="true"></i> </a>
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title" style="font-weight:bold ;">Podcast</h5>
+                    <p class="card-text">Checkout our podcast here..🎉</p>
+                    <!-- <a href="#" class="btn btn-primary">Go to Podcast</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- custom code -->
+    <!-- custom code -->
+
     <!-- Displays flash messages to the user -->
     <div class="messages text-center">
         {% with messages = get_flashed_messages() %}
         {% for message in messages %}
+
         <div class="fs-4 text-success">{{ message }}</div>
         {% endfor %}
         {% endwith %}
     </div>
-    <!-- End flash messages -->
 </div>
 {% endblock content %}
