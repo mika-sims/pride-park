@@ -10,6 +10,11 @@
         </div>
         <div class="col-md-2 bg-pride"></div>
         <h1>{{session.user|title}}'s Profile </h1>
+        <audio controls autoplay>
+            <source src="{url_for('episode', episodename='pod1')}" type="audio/wav">
+        </audio>
+        <audio controls="audiocontrols" autoplay="autoplay" src="{{pod}}"></audio>
+
         <div class="col-md-12">
 
         </div>

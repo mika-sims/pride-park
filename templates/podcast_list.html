@@ -1,76 +1,15 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-2 bg-pride"></div>
         <div class="col-md-8 bg-pride">
             <h1 class="text-danger text-center">Podcast List</h1>
+            <div class="col-md-2 bg-pride"></div>
         </div>
-        <div class="col-md-2 bg-pride"></div>
-        <a href="{{ url_for('upload') }}">Record a podcast</a>
-        <div class="col-md-12">
-
+        <div class="col-md-12 text-center">
+            <a href="{{ url_for('record') }}">Record a podcast</a>
         </div>
-
     </div>
-    <div>
-        <h2>Record</h2>
-        <p>
-            <button id=record></button>
-            <button id=stopRecord disabled>Stop</button>
-        </p>
-        <p>
-            <audio id=recordedAudio></audio>
-
-        </p>
-    </div>
-</div>
-
-<script>
-    navigator.mediaDevices.getUserMedia({
-            audio: true
-        })
-        .then(stream => {
-            handlerFunction(stream)
-        })
-
-
-    function handlerFunction(stream) {
-        rec = new MediaRecorder(stream);
-        rec.ondataavailable = e => {
-            audioChunks.push(e.data);
-            if (rec.state == "inactive") {
-                let blob = new Blob(audioChunks, {
-                    type: 'audio/mpeg-3'
-                });
-                recordedAudio.src = URL.createObjectURL(blob);
-                recordedAudio.controls = true;
-                recordedAudio.autoplay = true;
-                sendData(blob)
-            }
-        }
-    }
-
-    function sendData(data) {}
-
-    record.onclick = e => {
-        console.log('I was clicked')
-        record.disabled = true;
-        record.style.backgroundColor = "blue"
-        stopRecord.disabled = false;
-        audioChunks = [];
-        rec.start();
-    }
-    stopRecord.onclick = e => {
-        console.log("I was clicked")
-        record.disabled = false;
-        stop.disabled = true;
-        record.style.backgroundColor = "red"
-        rec.stop();
-    }
-</script>
-
-
-{% endblock content %}
+    {% endblock content %}
