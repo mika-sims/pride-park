@@ -1,13 +1,11 @@
 /*===== Fonts =====*/
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,900&family=Quattrocento:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;1,300&display=swap');
-/**/
 /*===== Navbar Start=====*/
 
 .nav-link {
     text-transform: uppercase;
     margin: 0 1.5em;
     font-weight: 600;
-    color: #4040ff;
 }
 
 .navbar-brand {
@@ -253,6 +251,7 @@ h2 {
     position: relative;
 }
 
+
 /* blog pages */
 /* blog page */
 .blog-buttons .btn {
@@ -292,3 +291,10 @@ h2 {
 /* label{margin-left: 20px;} */
 #datepicker{width:180px; margin: 0 20px 20px 20px;}
 #datepicker > span:hover{cursor: pointer;}
+
+@media screen and (min-width: 300px){
+    .about-images {
+        margin-bottom: 4em;
+    }
+}
+
