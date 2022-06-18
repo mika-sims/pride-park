@@ -4,7 +4,7 @@
     text-transform: uppercase;
     margin: 0 1.5em;
     font-weight: 600;
-  }
+}
 
 .navbar-brand {
     text-transform: uppercase;
@@ -17,12 +17,14 @@
     -webkit-background-clip: text;
     animation: animate 20s linear infinite;
 }
+
 /*===== Animate logo =====*/
 @keyframes animate {
-    0%{
+    0% {
         background-position: 0%;
     }
-    100%{
+
+    100% {
         background-position: 400%;
     }
 }
@@ -78,15 +80,24 @@ input {
     margin-top: 10px;
 }
 
-/* blog styling */
+/* blog & podcast styling */
 
 .blog-heading,
-.blog-intro {
+.blog-intro,
+.blog-submission-heading,
+.blog-submission-intro {
     text-align: center;
     margin: 1em auto;
 }
 
-.blog-intro {
+.blog-heading,
+.blog-submission-heading {
+    position: static;
+}
+
+.blog-intro,
+.blog-submission-intro,
+.trigger-warnings {
     max-width: 800px;
     padding: 0 2em;
 }
@@ -95,8 +106,7 @@ input {
     display: flex;
     width: 80vw;
     max-width: 1100px;
-    margin: 0 auto;
-    margin-top: 3rem;
+    margin: 3rem auto;
     gap: 1rem;
 }
 
@@ -104,14 +114,38 @@ input {
     width: 30%;
 }
 
+.filter-btn,
+.upload-btn {
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.filter-btn:hover,
+.upload-btn:hover {
+    font-size: 1.3rem;
+}
+
+.filter-btn:active,
+.upload-btn:active {
+    box-shadow: 0px 0px 10px 3px #DAABFF;
+}
+
 .entries {
     width: 100%;
+    border-left: solid 2px #DAABFF;
 }
 
 input[type="checkbox"] {
     width: 20px;
     height: 20px;
     margin-bottom: 10px;
+}
+
+input[type="checkbox"]:hover {
+    box-shadow: 0px 0px 10px 3px #DAABFF;
+
 }
 
 .blog-label {
@@ -130,9 +164,15 @@ input[type="checkbox"] {
     margin-bottom: 2em;
 }
 
+.blog-entry:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}
+
 .entry-link {
     text-decoration: none;
 }
+
 
 .author,
 .title {
@@ -143,6 +183,11 @@ input[type="checkbox"] {
 
 .summary {
     color: #000;
+}
+
+.trigger-warnings {
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* Podcast */

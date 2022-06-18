@@ -50,6 +50,11 @@ def about():
 def blog():
    return render_template("blog.html")
 
+# Podcast page
+@app.route("/podcast", methods=['GET'])
+def podcast():
+   return render_template("podcast.html")
+
 
 # Signup page
 @app.route("/signup", methods=['GET', 'POST'])
