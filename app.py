@@ -1,5 +1,5 @@
 import bson
-from flask import current_app, g
+from flask import current_app, g, abort, make_response
 from werkzeug.local import LocalProxy
 from pymongo.errors import DuplicateKeyError, OperationFailure
 from bson.objectid import ObjectId
@@ -10,16 +10,19 @@ from flask_mongoengine import MongoEngine
 from flask_pymongo import PyMongo
 import os
 from liveserver import LiveServer
+from mimetypes import guess_extension
+from werkzeug.utils import secure_filename
 
 
 app = Flask(__name__)
 ls = LiveServer(app)
 
-ls = LiveServer(app)
+UPLOAD_FOLDER = '/uploads'
+#ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.secret_key = 'secretlyproud'
-
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.debug = True
 mongo = PyMongo(app)
 
@@ -46,6 +49,11 @@ def about():
 @app.route("/blog", methods=['GET'])
 def blog():
    return render_template("blog.html")
+
+# Podcast page
+@app.route("/podcast", methods=['GET'])
+def podcast():
+   return render_template("podcast.html")
 
 
 # Signup page
@@ -122,6 +130,29 @@ def podcast_list():
 @app.route("/podcast<podcastId>", methods=['GET', 'POST'])
 def podcast_detail():
    return render_template("poscast_detail.html")
+
+
+@app.route('/upload', methods=['GET', 'POST'])
+def upload():
+   print('Here')
+   if 'audio_file' in request.files:
+      file = request.files['audio_file']
+      # Get the file suffix based on the mime type.
+      extname = guess_extension(file.mimetype)
+      if not extname:
+         abort(400)
+      # Test here for allowed file extensions.
+      # Generate a unique file name with the help of consecutive numbering.
+      i = 1
+      while True:
+         dst = UPLOAD_FOLDER
+         if not os.path.exists(dst): break
+         i += 1
+      # Save the file to disk.
+      file.save(dst)
+      return make_response('', 200)
+   return render_template("add_poscast.html")
+
 
 
 @app.route("/logout")
