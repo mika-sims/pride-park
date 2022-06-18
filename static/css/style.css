@@ -80,19 +80,24 @@ input {
     margin-top: 10px;
 }
 
-/* blog styling */
+/* blog & podcast styling */
 
 .blog-heading,
-.blog-intro {
+.blog-intro,
+.blog-submission-heading,
+.blog-submission-intro {
     text-align: center;
     margin: 1em auto;
 }
 
-.blog-heading {
+.blog-heading,
+.blog-submission-heading {
     position: static;
 }
 
-.blog-intro {
+.blog-intro,
+.blog-submission-intro,
+.trigger-warnings {
     max-width: 800px;
     padding: 0 2em;
 }
@@ -101,13 +106,30 @@ input {
     display: flex;
     width: 80vw;
     max-width: 1100px;
-    margin: 0 auto;
-    margin-top: 3rem;
+    margin: 3rem auto;
     gap: 1rem;
 }
 
 .filter-panel {
     width: 30%;
+}
+
+.filter-btn,
+.upload-btn {
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.filter-btn:hover,
+.upload-btn:hover {
+    font-size: 1.3rem;
+}
+
+.filter-btn:active,
+.upload-btn:active {
+    box-shadow: 0px 0px 10px 3px #DAABFF;
 }
 
 .entries {
@@ -161,6 +183,11 @@ input[type="checkbox"]:hover {
 
 .summary {
     color: #000;
+}
+
+.trigger-warnings {
+    width: 100%;
+    margin: 0 auto;
 }
 
 /* Podcast */

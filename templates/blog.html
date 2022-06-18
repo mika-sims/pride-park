@@ -9,7 +9,7 @@
     make you laugh, offer advice or make you feel less alone. </p>
 <div class="blog-container">
     <!-- Search side panel with filter options -->
-    <div class="filter-panel">
+    <form class="filter-panel">
         <input type="checkbox" id="gay" name="gay" value="Gay" />
         <label for="gay" class="blog-label">Gay</label><br />
 
@@ -39,9 +39,11 @@
 
         <input type="checkbox" id="trigger" name="trigger" value="Trigger" />
         <label for="trigger" class="blog-label">Trigger Warning</label><br />
-    </div>
+
+        <input type="submit" value="Filter results" class="filter-btn">
+    </form>
     <!-- list of blog entries with links -->
-    <div class="entries">
+    <section class="entries">
         <ul class="entry-list">
             <li class="blog-entry">
                 <a href="#" class="entry-link">
@@ -92,6 +94,35 @@
                 </a>
             </li>
         </ul>
-    </div>
+    </section>
 </div>
+<section class="blog-submission">
+    <h3 class="blog-submission-heading">Share your Story!</h3>
+    <p class="blog-submission-intro">Grab a proverbial pen and start writing. Your story is worth sharing. <br>
+        Exceeding our wordcount of 2500? Nothing is stopping you from submitting more than one story. Keep writing and
+        simply upload your file below. <br>
+        Make sure you tag your story with the appropriate labels to make it easy for others to find the story that's
+        right for them. <br>
+    </p>
+    <div class="trigger-warnings">
+        <p class="tw-intro">
+            Please refer to our list of to our list of trigger warnings below and make sure you tag your entry in case
+            it
+            contains any of the following:
+        </p>
+        <ul class="tw-list">
+            <li class="tw-list-item">Abusive language</li>
+            <li class="tw-list-item">Depression</li>
+            <li class="tw-list-item">Suicide</li>
+            <li class="tw-list-item">Dysphoria</li>
+            <li class="tw-list-item">Mental illness</li>
+            <li class="tw-list-item">Mention of violence</li>
+            <li class="tw-list-item">Mention of verbal or physical abuse</li>
+        </ul>
+    </div>
+    <form action="#">
+        <input type="file" id="myFile" name="filename">
+        <input type="submit" class="upload-btn">
+    </form>
+</section>
 {% endblock content %}
