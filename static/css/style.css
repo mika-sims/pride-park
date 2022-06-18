@@ -88,6 +88,10 @@ input {
     margin: 1em auto;
 }
 
+.blog-heading {
+    position: static;
+}
+
 .blog-intro {
     max-width: 800px;
     padding: 0 2em;
