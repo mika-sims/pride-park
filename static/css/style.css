@@ -1,6 +1,35 @@
-.navbar {
-    background-color: cadetblue;
+/*===== Navbar Start=====*/
+
+.nav-link {
+    text-transform: uppercase;
+    margin: 0 1.5em;
+    font-weight: 600;
 }
+
+.navbar-brand {
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff0000, #caca00d3, #ff00f3, #0033ff, #ff00c4);
+    background-size: 400%;
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 20s linear infinite;
+}
+
+/*===== Animate logo =====*/
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+/*===== Navbar End=====*/
 
 .bg-pride {
     background: linear-gradient(90deg, #f00000, #f00000 16.67%, #ff8000 16.67%, #ff8000 33.33%, #ffff00 33.33%, #ffff00 50%, #007940 50%, #007940 66.67%, #4040ff 66.67%, #4040ff 83.33%, #a000c0 83.33%, #a000c0) fixed;
@@ -49,4 +78,169 @@ input {
     width: 300px;
     border: 1px solid #000;
     margin-top: 10px;
+}
+
+/* blog & podcast styling */
+
+.blog-heading,
+.blog-intro,
+.blog-submission-heading,
+.blog-submission-intro {
+    text-align: center;
+    margin: 1em auto;
+}
+
+.blog-heading,
+.blog-submission-heading {
+    position: static;
+}
+
+.blog-intro,
+.blog-submission-intro,
+.trigger-warnings {
+    max-width: 800px;
+    padding: 0 2em;
+}
+
+.blog-container {
+    display: flex;
+    width: 80vw;
+    max-width: 1100px;
+    margin: 3rem auto;
+    gap: 1rem;
+}
+
+.filter-panel {
+    width: 30%;
+}
+
+.filter-btn,
+.upload-btn {
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.filter-btn:hover,
+.upload-btn:hover {
+    font-size: 1.3rem;
+}
+
+.filter-btn:active,
+.upload-btn:active {
+    box-shadow: 0px 0px 10px 3px #DAABFF;
+}
+
+.entries {
+    width: 100%;
+    border-left: solid 2px #DAABFF;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"]:hover {
+    box-shadow: 0px 0px 10px 3px #DAABFF;
+
+}
+
+.blog-label {
+    float: none;
+    text-align: left;
+    height: auto;
+    width: fit-content;
+    margin: 0 0 10px 5px;
+}
+
+.entry-list {
+    list-style: none;
+}
+
+.blog-entry {
+    margin-bottom: 2em;
+}
+
+.blog-entry:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}
+
+.entry-link {
+    text-decoration: none;
+}
+
+
+.author,
+.title {
+    color: #000;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.summary {
+    color: #000;
+}
+
+.trigger-warnings {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Podcast */
+
+#record {
+    background-color: red;
+    /* Green */
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+    border-radius: 50%;
+    left: 100px;
+    right: 100px;
+    position: relative;
+}
+
+#stopRecord {
+    background-color: green;
+    /* Green */
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+    border-radius: 50%;
+    left: 100px;
+    right: 100px;
+    position: relative;
+}
+
+h2 {
+    left: 100px;
+    position: relative;
+}
+
+#recordedAudio {
+    left: 100px;
+    right: 100px;
+    position: relative;
 }
