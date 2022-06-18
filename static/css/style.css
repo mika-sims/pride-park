@@ -123,6 +123,10 @@ input {
     padding: 0 2em;
 }
 
+.blog-intro {
+    margin-bottom: 5em;
+}
+
 .blog-container {
     display: flex;
     width: 80vw;
