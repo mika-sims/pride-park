@@ -10,6 +10,9 @@ from flask_mongoengine import MongoEngine
 from flask_pymongo import PyMongo
 import os
 from datetime import datetime
+import cloudinary
+import cloudinary.uploader
+
 from flask_moment import Moment
 from liveserver import LiveServer
 from mimetypes import guess_extension
@@ -17,21 +20,31 @@ from werkzeug.utils import secure_filename
 if os.path.exists("env.py"):
  import env
 
+
 app = Flask(__name__)
 ls = LiveServer(app)
-
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
+
+
+cloudinary.config(
+    cloud_name="mika-sims",
+    api_key="642186314378266",
+    api_secret="FQqhP-jY4l9pgw9fV_1p-G_jR7U"
+)
+
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 # app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
-
-# app.secret_key = 'secretlyproud'
+# app.secret_key = os.environ.get("SECRET_KEY")
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+app.secret_key = 'secretlyproud'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.debug = True
 mongo = PyMongo(app)
 user_collection = mongo.db.users
+
 
 
 # Landing page
@@ -44,11 +57,20 @@ def index():
       session["user"] = "guest"
       return ls.render_template("index.html", user=user_collection.find_one({"username": session["user"]}))
 
-
 # About page
 @app.route("/about", methods=['GET'])
 def about():
    return render_template("about.html")
+
+# Blog page
+@app.route("/blog", methods=['GET'])
+def blog():
+   return render_template("blog.html")
+
+# Podcast page
+@app.route("/podcast", methods=['GET', 'POST'])
+def podcast():
+   return render_template("podcast.html", podcast=mongo.db.podcasts.find())
 
 
 # Signup page
@@ -80,7 +102,6 @@ def signup():
           return redirect(url_for('index'))
     return render_template("signup.html")
 
-
 # Signin page
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -106,56 +127,22 @@ def login():
    return render_template("login.html")
 
 
-# @app.route('/profile/<username>')
-# def profile(username):
-#    profile = user_collection.find_one({"username": session['user']})
-#    print(profile)
-#    if profile == 'guest':
-#       return redirect(url_for('login'))
-#    else:
-#       return render_template('profile.html')
-
-
 # Record audio
 @app.route('/record', methods=['GET', 'POST'])
 def record():
    if request.method == "POST":
       user = session['user']
-      user = user_collection.find_one({'username': user})
-      f = request.files['audio_data']
-      mongo.save_file(f'{user}_pod', f)
-      with open(f'static/uploads/{user}'+ 'audio.wav', 'wb') as audio:
-         f.save(audio)
+      audio = request.files['audio_data']
+      upload = cloudinary.uploader.upload(audio, resource_type='video')
+      mongo.db.podcasts.insert_one({
+         "url": upload["secure_url"],
+         "created_by": user
+         })
       print('file uploaded successfully')
 
-      return render_template('record.html', request="POST")
+      return render_template('podcast.html', podcast=mongo.db.podcasts.find())
    else:
       return render_template("record.html")
-
-
-@app.route('/episode/<episodename>')
-def episode(episodename):
-   return mongo.send_file(episodename)
-
-
-# Contact page
-@app.route("/podcasts", methods=['GET', 'POST'])
-def podcast_list():
-   if request.method == "POST":
-      f = request.files['audio_data']
-      with open('audio.wav', 'wb') as audio:
-         f.save(audio)
-      print('file uploaded successfully')
-
-      return render_template('podcast_list.html', request="POST")
-   else:
-      return render_template("podcast_list.html")
-
-
-# Contact page
-@app.route("/podcast<podcastId>", methods=['GET', 'POST'])
-def podcast_detail():
-   return render_template("poscast_detail.html")
 
 
 @app.route("/logout")
@@ -169,7 +156,6 @@ def logout():
 @app.route("/contact", methods=['GET', 'POST'])
 def contact():
    return render_template("contact.html")
-
 
 
 # create profile route function
@@ -186,9 +172,11 @@ def profile(username):
             "profile.html", username=username,
             posts=posts,
             last_seen=last_seen,
-            current_time=datetime.utcnow())
+            current_time=datetime.utcnow(),
+            podcast=mongo.db.podcasts.find())
 
     return redirect(url_for("login"))
+
 # search route function
 @app.route("/search", methods=["GET", "POST"])
 def search():
@@ -207,10 +195,12 @@ def posts():
     posts = list(mongo.db.posts.find())
     return render_template("blogs.html", posts=posts)
 
+
 # Podcast page
 @app.route("/podcast", methods=['GET'])
 def podcast():
    return render_template("podcast.html")
+
 
 
 # add / create blogs
@@ -305,8 +295,9 @@ def delete_category(category_id):
     return redirect(url_for("get_categories"))
 
 
-if __name__ == '__main__':
-            app.run(host=os.environ.get('IP'),
-                    port=int(os.environ.get('PORT')),
-                    debug=False)
+if __name__ == "__main__":
+      app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=False)
+
 

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-12">
@@ -28,5 +28,48 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+</div> -->
+
+<div class="formContainer container">
+    <div class="formHeading col-md-12 col-xs-12">
+        <h1>Contact Us</h1>
+
+    </div>
+    <div class="col-md-12 col-xs-12">
+    <p class="form-text-content">
+        You want to reach out to us with ideas? Any feedback or you would like to contribute making
+        Pride Park happen?
+
+        <br>
+        <br>
+        Let us <span style="font-weight: bold">hear it!</span>
+    </p>
 </div>
+    <form class="customForm row" action="" style="width:100%">
+
+        <div class="input-groupCustom col-md-6 col-xs-12">
+            <input type="text" id="name" required>
+            <label for="name"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Name</label>
+        </div>
+        <div class="input-groupCustom col-md-6 col-xs-12">
+            <input type="number" id="number" required minlength="10" maxlength="12">
+            <label for="number"><i class="fa-solid fa-phone-square-alt"></i>&nbsp;&nbsp;Phone No</label>
+        </div>
+
+
+        <div class="input-groupCustom col-md-12 col-xs-12">
+            <input type="email" id="email" required>
+            <label for="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Email ID</label>
+        </div>
+        <div class="input-groupCustom col-md-12 col-xs-12">
+            <textarea id="message" rows="8" required></textarea>
+            <label for="message" style="padding:0px"><i class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Message</label>
+        </div>
+
+        <button type="submit">SUBMIT&nbsp;&nbsp;<i class="fa-solid fa-paper-plane"></i></button>
+
+    </form>
+</div>
+
+
 {% endblock content %}

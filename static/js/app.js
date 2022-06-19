@@ -1,4 +1,4 @@
-//Code opied from: 
+//Code copied from: https://stackoverflow.com/questions/60032983/record-voice-with-recorder-js-and-upload-it-to-python-flask-server-but-wav-file
 URL = window.URL || window.webkitURL;
 
 var gumStream; //stream from getUserMedia()
@@ -56,7 +56,7 @@ function startRecording() {
         audioContext = new AudioContext();
 
         //update the format 
-        document.getElementById("formats").innerHTML = "Format: 1 channel pcm @ " + audioContext.sampleRate / 1000 + "kHz"
+        // document.getElementById("formats").innerHTML = "Format: 1 channel pcm @ " + audioContext.sampleRate / 1000 + "kHz"
 
         /*  assign to gumStream for later use  */
         gumStream = stream;
@@ -90,11 +90,11 @@ function pauseRecording() {
     if (rec.recording) {
         //pause
         rec.stop();
-        pauseButton.innerHTML = "Resume";
+        //pauseButton.innerHTML = "Resume";
     } else {
         //resume
         rec.record()
-        pauseButton.innerHTML = "Pause";
+        //pauseButton.innerHTML = "Pause";
 
     }
 }
@@ -137,13 +137,14 @@ function createDownloadLink(blob) {
     //save to disk link
     link.href = url;
     link.download = filename + ".wav"; //download forces the browser to donwload the file using the  filename
-    link.innerHTML = "Save to disk";
+    link.innerHTML = "Download";
+    link.className = "btn btn-primary mb-3";
 
     //add the new audio element to li
     li.appendChild(au);
 
     //add the filename to the li
-    li.appendChild(document.createTextNode(filename + ".wav "))
+    //li.appendChild(document.createTextNode(filename + ".wav "))
 
     //add the save to disk link to li
     li.appendChild(link);
@@ -165,11 +166,14 @@ function createDownloadLink(blob) {
         xhr.send(fd);
     })
     li.appendChild(document.createTextNode(" ")) //add a space in between
+    upload.className = "btn btn-success mx-2 mb-3";
     li.appendChild(upload) //add the upload link to li
+
 
     //add the li element to the ol
     recordingsList.appendChild(li);
 }
+
 
   $(document).ready(function(){
     $('.modal').modal();
@@ -194,4 +198,5 @@ var myInput = document.getElementById('myInput')
 myModal.addEventListener('shown.bs.modal', function () {
   myInput.focus()
 })
+
 
