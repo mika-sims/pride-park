@@ -9,9 +9,11 @@
     list-style-type: none;
 }
 
+
 a, li {
     text-decoration: none;
 }
+
 /*===== Navbar Start=====*/
 
 .nav-link {
@@ -50,6 +52,7 @@ a, li {
     color: #4b14ca;
     font-weight: 600;
 }
+
 /*===== About Section End=====*/
 
 
@@ -96,7 +99,9 @@ body {
     font-family: 'Work Sans', sans-serif;
 }
 
-.bg-pride {
+/*===== About Section End=====*/
+
+. bg-pride {
     background: linear-gradient(90deg, #f00000, #f00000 16.67%, #ff8000 16.67%, #ff8000 33.33%, #ffff00 33.33%, #ffff00 50%, #007940 50%, #007940 66.67%, #4040ff 66.67%, #4040ff 83.33%, #a000c0 83.33%, #a000c0) fixed;
 }
 
@@ -375,6 +380,7 @@ textarea:valid~label {
     font-weight: bolder;
 }
 
+
 /* blog & podcast styling */
 
 .blog-heading,
@@ -385,6 +391,7 @@ textarea:valid~label {
     margin: 1em auto;
     margin-left: 10px;
     margin-bottom: -20px;
+
 }
 
 .social-icons {
@@ -400,6 +407,7 @@ textarea:valid~label {
 }
 
 .blog-container {
+
     display: flex;
     width: 80vw;
     max-width: 1100px;
@@ -417,7 +425,9 @@ textarea:valid~label {
     border-radius: 4px;
     font-weight: 600;
     font-size: 1.2rem;
+
     background-color: rgb(232, 232, 232);
+
 }
 
 .filter-btn:hover,
@@ -495,6 +505,16 @@ input[type="checkbox"]:hover {
 
 /* Podcast */
 
+
+#recordButton,
+#pauseButton,
+#stopButton {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+
 #record {
     background-color: red;
     /* Green */
@@ -516,26 +536,7 @@ input[type="checkbox"]:hover {
     position: relative;
 }
 
-#stopRecord {
-    background-color: green;
-    /* Green */
-    border-width: medium;
-    border-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    max-width: 50%;
-    max-height: 15%;
-    border-radius: 50%;
-    left: 100px;
-    right: 100px;
-    position: relative;
-}
+
 
 h2 {
     left: 100px;
