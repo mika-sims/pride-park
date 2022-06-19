@@ -1,3 +1,58 @@
+/*===== Fonts =====*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,900&family=Quattrocento:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;1,300&display=swap');
+
+/*===== CSS Reset =====*/
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a, li {
+    text-decoration: none;
+}
+/*===== Navbar Start=====*/
+
+.nav-link {
+    text-transform: uppercase;
+    margin: 0 1.5em;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff0000, #caca00d3, #ff00f3, #0033ff, #ff00c4);
+    background-size: 400%;
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 20s linear infinite;
+}
+
+/*===== Animate logo =====*/
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+/*===== Navbar End=====*/
+
+/*===== About Section Start=====*/
+.lead a {
+    color: #4b14ca;
+    font-weight: 600;
+}
+/*===== About Section End=====*/
+
+
 h1,
 h2,
 h3,
