@@ -186,6 +186,7 @@ def posts():
     return render_template("blogs.html", posts=posts)
 
 
+
 # Create a post
 # add / create blogs
 @app.route("/add_post", methods=["GET", "POST"])
