@@ -18,19 +18,13 @@ from liveserver import LiveServer
 from mimetypes import guess_extension
 from werkzeug.utils import secure_filename
 if os.path.exists("env.py"):
-   import env
+
+ import env
 
 app = Flask(__name__)
 ls = LiveServer(app)
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
-
-cloudinary.config(
-    cloud_name="cloudaman",
-    api_key="719962222545743",
-    api_secret="GWAtdobW-3CD0Dtnx2gdgMEnL4w"
-)
-
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 # app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
