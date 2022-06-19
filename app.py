@@ -10,6 +10,12 @@ from flask_mongoengine import MongoEngine
 from flask_pymongo import PyMongo
 import os
 from datetime import datetime
+from liveserver import LiveServer
+from mimetypes import guess_extension
+from werkzeug.utils import secure_filename
+import cloudinary
+import cloudinary.uploader
+
 from flask_moment import Moment
 from liveserver import LiveServer
 from mimetypes import guess_extension
@@ -45,6 +51,18 @@ def index():
 @app.route("/about", methods=['GET'])
 def about():
    return render_template("about.html")
+
+# Blog page
+@app.route("/blog", methods=['GET'])
+def blog():
+   return render_template("blog.html")
+
+# Podcast page
+@app.route("/podcast", methods=['GET', 'POST'])
+def podcast():
+   return render_template("podcast.html", podcast=mongo.db.podcasts.find())
+
+
 # Signup page
 @app.route("/signup", methods=['GET', 'POST'])
 def signup():
@@ -96,54 +114,32 @@ def login():
          session["user"] = "guest"
          return render_template("login.html", user=user_collection.find_one({"username": session["user"]}))
    return render_template("login.html")
-# @app.route('/profile/<username>')
-# def profile(username):
-#    profile = user_collection.find_one({"username": session['user']})
-#    print(profile)
-#    if profile == 'guest':
-#       return redirect(url_for('login'))
-#    else:
-#       return render_template('profile.html')
+
+
+@app.route('/profile/<username>', methods=['GET', 'POST'])
+def profile(username):
+   if profile == 'guest':
+      return redirect(url_for('login'))
+   else:
+      return render_template('profile.html', podcast=mongo.db.podcasts.find())
+
+
 # Record audio
 @app.route('/record', methods=['GET', 'POST'])
 def record():
    if request.method == "POST":
       user = session['user']
-      user = user_collection.find_one({'username': user})
-      f = request.files['audio_data']
-      mongo.save_file(f'{user}_pod', f)
-      with open(f'static/uploads/{user}'+ 'audio.wav', 'wb') as audio:
-         f.save(audio)
+      audio = request.files['audio_data']
+      upload_result = cloudinary.uploader.upload(audio, resource_type='video')
+      mongo.db.podcasts.insert_one({
+         "url": upload_result["secure_url"],
+         "created_by": user
+         })
       print('file uploaded successfully')
 
       return render_template('record.html', request="POST")
    else:
       return render_template("record.html")
-
-
-@app.route('/episode/<episodename>')
-def episode(episodename):
-   return mongo.send_file(episodename)
-
-
-# Contact page
-@app.route("/podcasts", methods=['GET', 'POST'])
-def podcast_list():
-   if request.method == "POST":
-      f = request.files['audio_data']
-      with open('audio.wav', 'wb') as audio:
-         f.save(audio)
-      print('file uploaded successfully')
-
-      return render_template('podcast_list.html', request="POST")
-   else:
-      return render_template("podcast_list.html")
-
-
-# Contact page
-@app.route("/podcast<podcastId>", methods=['GET', 'POST'])
-def podcast_detail():
-   return render_template("poscast_detail.html")
 
 
 @app.route("/logout")
@@ -297,3 +293,4 @@ if __name__ == "__main__":
       app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=False)
+
