@@ -15,15 +15,15 @@ from liveserver import LiveServer
 from mimetypes import guess_extension
 from werkzeug.utils import secure_filename
 if os.path.exists("env.py"):
-    import env
+ import env
 
 app = Flask(__name__)
 ls = LiveServer(app)
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
-# app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
+app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+# app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 os.environ.setdefault("IP", "0.0.0.0")
 os.environ.setdefault("PORT", "5000")
