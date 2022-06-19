@@ -1,3 +1,58 @@
+/*===== Fonts =====*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,900&family=Quattrocento:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;1,300&display=swap');
+
+/*===== CSS Reset =====*/
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a, li {
+    text-decoration: none;
+}
+/*===== Navbar Start=====*/
+
+.nav-link {
+    text-transform: uppercase;
+    margin: 0 1.5em;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff0000, #caca00d3, #ff00f3, #0033ff, #ff00c4);
+    background-size: 400%;
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 20s linear infinite;
+}
+
+/*===== Animate logo =====*/
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+/*===== Navbar End=====*/
+
+/*===== About Section Start=====*/
+.lead a {
+    color: #4b14ca;
+    font-weight: 600;
+}
+/*===== About Section End=====*/
+
+
 h1,
 h2,
 h3,
@@ -51,15 +106,13 @@ body {
 }
 
 .hero-pride {
-    background-image: url('/static/images/meet-pride.jpg');
-    background-size: cover;
+    background: linear-gradient(90deg, rgba(255,0,0,.8) 0%, rgba(255,59,0,.8) 3%, rgba(255,171,0,.8) 6%, rgba(0,217,32,.8) 9%, rgba(255,239,0,.8) 12%, rgba(17,29,236,.8) 15%, rgba(104,0,223,.8) 18%, rgba(255,255,255,.8) 21%);
     height: 600px;
     width: 100%;
 }
 
 .bg-signup {
-    background-image: url('/static/images/meet-pride.jpg');
-    background-size: cover;
+    background: linear-gradient(90deg, rgba(255,0,0,.8) 0%, rgba(255,59,0,.8) 3%, rgba(255,171,0,.8) 6%, rgba(0,217,32,.8) 9%, rgba(255,239,0,.8) 12%, rgba(17,29,236,.8) 15%, rgba(104,0,223,.8) 18%, rgba(255,255,255,.8) 21%);
     height: 600px;
     width: 100%;
 }
@@ -81,6 +134,7 @@ label {
     text-align: right;
     margin-right: 15px;
     float: left;
+
 }
 
 input {
@@ -261,17 +315,6 @@ textarea {
     color: #000;
     background: transparent;
     font-size: 15px;
-}
-
-label {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    color: black;
-    cursor: text;
-    transition: 0.2s;
 }
 
 button {

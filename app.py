@@ -28,6 +28,11 @@ app = Flask(__name__)
 ls = LiveServer(app)
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
+cloudinary.config(
+    cloud_name="mika-sims",
+    api_key="642186314378266",
+    api_secret="FQqhP-jY4l9pgw9fV_1p-G_jR7U"
+)
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 # app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
