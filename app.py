@@ -14,7 +14,8 @@ from flask_moment import Moment
 from liveserver import LiveServer
 from mimetypes import guess_extension
 from werkzeug.utils import secure_filename
-
+if os.path.exists("env.py"):
+    import env
 
 app = Flask(__name__)
 ls = LiveServer(app)
@@ -22,7 +23,7 @@ ls = LiveServer(app)
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
 
-app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
+# app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 
@@ -30,7 +31,7 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 
 app.secret_key = os.environ.get("SECRET_KEY")
 
-app.secret_key = 'secretlyproud'
+# app.secret_key = 'secretlyproud'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.debug = True
 mongo = PyMongo(app)
@@ -43,7 +44,7 @@ user_collection = mongo.db.users
 def index():
    if(session.get('user')):
       user = user_collection.find_one({"username": session["user"]})
-      return ls.render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
+      return ls.render_template("index.html", user=user_collection.find_one({"username": session["user"]}))
    else:
       session["user"] = "guest"
       return ls.render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
@@ -308,3 +309,8 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
+
+if __name__ == "__main__":
+    app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=
