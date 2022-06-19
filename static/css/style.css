@@ -377,6 +377,12 @@ textarea:valid~label {
 
 /* blog & podcast styling */
 
+.blog-banner {
+    width: 100vw;
+    height: 160px;
+    background: linear-gradient(180deg, rgba(255,0,0,0.8) 0%, rgba(255,59,0,0.8) 13%, rgba(255,171,0,0.8) 25%, rgba(0,217,32,0.8) 39%, rgba(255,239,0,0.8) 49%, rgba(17,29,236,0.8) 60%, rgba(104,0,223,0.8) 70%, rgba(255,255,255,1) 80%);
+}
+
 .blog-heading,
 .blog-intro,
 .blog-submission-heading,
