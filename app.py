@@ -163,7 +163,7 @@ def profile(username):
             "profile.html", username=username,
             posts=posts,
             last_seen=last_seen,
-            current_time=datetime.utcnow(), 
+            current_time=datetime.utcnow(),
             podcast=mongo.db.podcasts.find())
 
     return redirect(url_for("login"))
@@ -184,7 +184,6 @@ def search():
 def posts():
     posts = list(mongo.db.posts.find())
     return render_template("blogs.html", posts=posts)
-
 
 
 # Create a post
