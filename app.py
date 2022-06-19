@@ -14,27 +14,24 @@ from flask_moment import Moment
 from liveserver import LiveServer
 from mimetypes import guess_extension
 from werkzeug.utils import secure_filename
-
+if os.path.exists("env.py"):
+    import env
 
 app = Flask(__name__)
 ls = LiveServer(app)
-
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
-
 # app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
-
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
 os.environ.setdefault("IP", "0.0.0.0")
 os.environ.setdefault("PORT", "5000")
-
 # app.secret_key = 'secretlyproud'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.debug = True
 mongo = PyMongo(app)
-
 user_collection = mongo.db.users
-
-
 # Landing page
 @app.route("/", methods=['GET', 'POST'])
 def index():
@@ -44,14 +41,10 @@ def index():
    else:
       session["user"] = "guest"
       return ls.render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
-
-
 # About page
 @app.route("/about", methods=['GET'])
 def about():
    return render_template("about.html")
-
-
 # Signup page
 @app.route("/signup", methods=['GET', 'POST'])
 def signup():
@@ -80,8 +73,6 @@ def signup():
                 f'Account created {request.form.get("username")}. Welcome to Pride Park!')
           return redirect(url_for('index'))
     return render_template("signup.html")
-
-
 # Signin page
 @app.route("/login", methods=['GET', 'POST'])
 def login():
@@ -105,8 +96,6 @@ def login():
          session["user"] = "guest"
          return render_template("login.html", user=user_collection.find_one({"username": session["user"]}))
    return render_template("login.html")
-
-
 # @app.route('/profile/<username>')
 # def profile(username):
 #    profile = user_collection.find_one({"username": session['user']})
@@ -115,8 +104,6 @@ def login():
 #       return redirect(url_for('login'))
 #    else:
 #       return render_template('profile.html')
-
-
 # Record audio
 @app.route('/record', methods=['GET', 'POST'])
 def record():
@@ -305,3 +292,8 @@ def delete_category(category_id):
     mongo.db.categories.remove({"_id": ObjectId(category_id)})
     flash("Category Successfully Deleted")
     return redirect(url_for("get_categories"))
+
+if __name__ == "__main__":
+      app.run(host=os.environ.get("IP"),
+            port=int(os.environ.get("PORT")),
+            debug=False)
