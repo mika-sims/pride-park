@@ -16,17 +16,20 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Merriweather:wght@300&family=Roboto:ital,wght@1,300&display=swap"
-        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@700&family=Work+Sans:wght@100&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <title>Pride Park</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg bg-light myNav">
         <div class="container-fluid">
             <a class="navbar-brand text-danger" href="#">Pride Park</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -36,31 +39,31 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                        <a class="nav-link active myNavBtns" aria-current="page" href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about') }}">About us</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('about') }}">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('contact') }}">Contact us</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('contact') }}">Contact us</a>
                     </li>
                     {% if session.user == 'guest' %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('signup') }}">Sign up</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('signup') }}">Sign up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('login') }}">Login</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('profile', username='{{session.user}}') }}">
+                        <a class="nav-link myNavBtns" href="{{ url_for('profile', username='{{session.user}}') }}">
                             {{session.user|title}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('chat') }}">Chat</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('chat') }}">Chat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('logout') }}">Logout</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -76,13 +79,19 @@
     <!-- <footer class="footer mt-auto py-3 bg-light">
         Content for the footer goes here...
     </footer> -->
-    <div class="row footer-section">
-        <div class="col-md-12 d-flex justify-content-center align-items-center bg-light footer-sec">
-            <div class="col-md-4">
-                <a class="navbar-brand text-danger" href="#">Pride Park</a>
+    <div class="container-fluid">
+        <div class="row footer-section">
+            <div class="col-md-12 d-flex  align-items-end bg-light footer-sec">
+                <div class="col-md-4 footer_sec1 big-text">
+                    <a class="navbar-brand text-danger text-left " href="#">Pride Park</a>
+                </div>
+                <div class="col-md-4 text-center justify-content-center">©Pride Park</div>
+                <div class="col-md-4 text-right justify-content-end social-icons" style="text-align:right;">
+                    <i class="bi bi-instagram" style="font-size:30px; "></i>
+                    <i class="bi bi-facebook" style="font-size:30px; "></i>
+                    <i class="bi bi-twitter" style="font-size:30px; "></i>
+                </div>
             </div>
-            <div class="col-md-4 text-center">©Pride Park</div>
-            <div class="col-md-4 text-center">Social Media Icon goes here</div>
         </div>
     </div>
     <!--Footer starts here-->

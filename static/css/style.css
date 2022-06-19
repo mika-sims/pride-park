@@ -1,9 +1,44 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Quattrocento', sans-serif;
+}
+
 .navbar {
     background-color: cadetblue;
 }
 
+.myNav {
+    font-family: 'Quattrocento', sans-serif;
+}
+
+.myNavBtns:hover {
+    background-color: black;
+    color: white !important;
+    padding: 12px 32px;
+    transition-duration: 2s !important;
+    transition-delay: 0.2s !important;
+    border-radius: 12px;
+}
+
+.myNavBtns:active {
+    background-color: black !important;
+    color: white !important;
+    padding: 12px 32px !important;
+    transition-duration: 2s !important;
+    transition-delay: 0.2s !important;
+    border-radius: 12px !important;
+}
+
+a:active {
+    color: black !important;
+}
+
 body {
-    font-family: 'Merriweather', serif;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .bg-pride {
@@ -73,7 +108,7 @@ input {
 .home-sec-1 {
     height: 70vh;
     /* padding: 100px; */
-    background-image: src("./static/images/prime-colors.jpg");
+    background-image: url("/static/images/prime-colors.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
     animation: fadeIn 5s;
@@ -162,10 +197,7 @@ input {
 } */
 
 
-.footer-sec {
-    height: 40vh;
-    text-align: center;
-}
+
 
 /* Custom CSS */
 
@@ -270,3 +302,31 @@ textarea:valid~label {
 }
 
 /* Styling for contact.html */
+
+
+.footer-sec {
+    height: 10vh;
+    padding: 25px 100px;
+
+}
+
+.footer_sec1 {
+    text-align: left !important;
+}
+
+.footer {
+    /* position: fixed; */
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: bisque;
+    text-align: center;
+}
+
+.big-text {
+    font-size: 24px;
+}
+
+.social-icons i {
+    margin-left: 10px;
+}
