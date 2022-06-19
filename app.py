@@ -117,7 +117,6 @@ def login():
    return render_template("login.html")
 
 
-
 # Record audio
 @app.route('/record', methods=['GET', 'POST'])
 def record():
