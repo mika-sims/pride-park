@@ -28,19 +28,20 @@
     <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand text-danger" href="#">Pride Park</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                        <a class="nav-link active myNavBtns" aria-current="page" href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('about') }}">About us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('contact') }}">Contact us</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('contact') }}">Contact us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('posts') }}">Blogs</a>
@@ -50,27 +51,21 @@
                     </li>
                     {% if session.user == 'guest' %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('signup') }}">Sign up</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('signup') }}">Sign up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('login') }}">Login</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('profile', username='{{session.user}}') }}">
-                           Profile</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('profile', username='{{session.user}}') }}">
+                            {{session.user|title}} </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('add_post') }}">Write a post</a>
-                    </li>
-                    {% if session.user|lower == "admin" %}
-                    <li><a href="{{ url_for('get_categories') }}"> Post Categories</a></li>
-                    {% endif %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('podcast_list') }}">Podcast</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('chat') }}">Chat</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                        <a class="nav-link myNavBtns" href="{{ url_for('logout') }}">Logout</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -81,6 +76,36 @@
     {% block content %}
 
     {% endblock content %}
+    <!--Footer starts here-->
+
+    <!-- <footer class="footer mt-auto py-3 bg-light">
+        Content for the footer goes here...
+    </footer> -->
+    <div class="container-fluid" style="margin-top: 5%;justify-content: space-around;">
+        <!-- <div class="row footer-section">
+            <div class="col-md-12 d-flex  align-items-end bg-light footer-sec" style="justify-content: space-around;">
+                <div class="col-md-4 col-sm-12 col-xs-12 footer_sec1 big-text">
+                    <a class="navbar-brand text-danger text-left " href="#">Pride Park</a>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 text-center">©Pride Park</div>
+                <div class="col-md-4 col-sm-12 col-xs-12 social-icons">
+                    <i class="bi bi-instagram" style="font-size:30px; "></i>
+                    <i class="bi bi-facebook" style="font-size:30px; "></i>
+                    <i class="bi bi-twitter" style="font-size:30px; "></i>
+                </div>
+            </div>
+        </div> -->
+        <div class="row footer-sec">
+            <div class="col-md-4">Pride Park</div>
+            <div class="col-md-4">@ pride park</div>
+            <div class="col-md-4 col-xs-12" style="justify-content:space-between ;">
+                <i class="bi bi-instagram" style="font-size:30px; "></i>
+                <i class="bi bi-facebook" style="font-size:30px; "></i>
+                <i class="bi bi-twitter" style="font-size:30px; "></i>
+            </div>
+        </div>
+    </div>
+    <!--Footer starts here-->
 </body>
 
 </html>
