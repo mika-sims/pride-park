@@ -5,24 +5,23 @@ PRIDE PARK
 [Link to Live Website](https://pride-park.herokuapp.com/)
 
 [GitHub Repo](https://github.com/mika-sims/pride-park)
-Happy blogging!
+
 
 
 *** 
 
 ## About  
-Welcome to Pride park, a webapp to helps bloggers with similar interest interact with each other! 
-This is a Python Flask app using MongoDB to produce a social blogging  application.
+Welcome to Pride park, a webapp to helps LGBTQ+ community members interact with each other! 
+This is a Python Flask app using MongoDB to produce a social blogging/podcast  application.
 
-Pride Park brings bloggers together and allows them to interact and share their interests in similar subjects! 
-Anyone can write on Pride Park . Thought-leaders, journalists, experts, and individuals with unique perspectives can share their thinking here.
-The application lets users create a profile that allows them to add their  details, add photos, let other users know when they last posted,how many followers they have add comments both  and private message each other.
-The site offers the additional functionality; reset passwords, change passwords contact us, editing and deleting comments, backend validation. Please look at the [features](#features) section for a more detailed description. 
+Pride Park brings people together and allows them to interact and share their experiences in similar subjects! 
+Anyone can write on Pride Park. Thought-leaders, journalists, experts, and individuals with unique perspectives can share their thinking here. Or simply folks who want to share parts of their proud lives or learn about others'.
+
+Please look at the [features](#features) section for a more detailed description. 
 
  
 ## Index – Table of Contents
 
-- [User Experience (UX)](#user-experience--ux-)
 - [Strategy](#strategy)
   * [User Stories](#user-stories)
 - [Scope](#scope)
@@ -72,13 +71,20 @@ The site offers the additional functionality; reset passwords, change passwords 
 
 *** 
 
-## User Experience (UX)
 ## Strategy
 Everyone has got something interesting to say or even full depth of knowledge about a particular subject.
 Pride Park enables people to blog about anything and everything and also provides users with a way to communicate with others and attain information about a particular subject.
 
 
 ### User Stories 
+- As a user, I can sign up to Pride Park and create a profile
+- As a user, I can browse through the list of blogs and podcasts with or without an account
+- As a user, I can search for specific subjects in blogs and podcasts via the filter option
+- As a user, I can write and submit my own blog post
+- As a user, I can record and submit my own podcast
+- As a user, I can add relevant hashtags to my submits
+- As a user, I can see a list of trigger warnings I need to be aware of when tagging my entry
+
 
 ### A typical user of this site would:
  - Have an interest in writing blogs
