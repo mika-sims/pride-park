@@ -21,6 +21,7 @@ from liveserver import LiveServer
 from mimetypes import guess_extension
 from werkzeug.utils import secure_filename
 if os.path.exists("env.py"):
+
  import env
 
 app = Flask(__name__)
