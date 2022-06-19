@@ -6,7 +6,7 @@
 </h3>
 <div class="row">
     <div class="col s12 center-align">
-        <a href="{{ url_for('add_category')}}" class="btn-large light-blue darken-2 text-shadow">
+        <a href="{{ url_for('add_category')}}" class="btn btn-large btn-info text-shadow">
             Add Category <i class="fas fa-plus-circle right"></i>
         </a>
     </div>
@@ -19,21 +19,21 @@
                 <span class="card-title">{{ category.category_name}}</span>
             </div>
             <div class="card-action">
-                <a href="{{url_for('edit_category', category_id=category._id)}}" class="btn cyan darken-2">Edit</a>
+                <a href="{{url_for('edit_category', category_id=category._id)}}" class="btn btn-info">Edit</a>
                 <!-- delete  by admin verification modal-->
                 <!-- Modal Trigger -->
-                <a href="#modal1" class="btn deep-orange accent-4 modal-trigger">Delete</a>
+                <a href="#modal1" class="btn btn-danger modal-trigger">Delete</a>
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal">
                     <div class="modal-content">
-                        <h4 class="cyan-text">Delete Category</h4>
+                        <h4 class="text-dark">Delete Category</h4>
                         <p> Are you sure you want to delete this category?</p>
                     </div>
                     <div class="modal-footer">
                         <a href="{{ url_for('get_categories')}}"
-                            class="modal-close waves-effect waves-green btn-small">cancel</a>
+                            class="modal-close btn btn-info btn-small">cancel</a>
                         <a href="{{ url_for('delete_category', category_id=category._id) }}"
-                            class="modal-close waves-effect red btn-small">Delete</a>
+                            class="modal-close btn btn-danger btn-small">Delete</a>
                     </div>
                 </div>
             </div>
