@@ -31,10 +31,10 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 # app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
+# app.secret_key = os.environ.get("SECRET_KEY")
 os.environ.setdefault("IP", "0.0.0.0")
 os.environ.setdefault("PORT", "5000")
-# app.secret_key = 'secretlyproud'
+app.secret_key = 'secretlyproud'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.debug = True
 mongo = PyMongo(app)
@@ -117,14 +117,6 @@ def login():
    return render_template("login.html")
 
 
-@app.route('/profile/<username>', methods=['GET', 'POST'])
-def profile(username):
-   if profile == 'guest':
-      return redirect(url_for('login'))
-   else:
-      return render_template('profile.html', podcast=mongo.db.podcasts.find())
-
-
 # Record audio
 @app.route('/record', methods=['GET', 'POST'])
 def record():
@@ -171,7 +163,8 @@ def profile(username):
             "profile.html", username=username,
             posts=posts,
             last_seen=last_seen,
-            current_time=datetime.utcnow())
+            current_time=datetime.utcnow(), 
+            podcast=mongo.db.podcasts.find())
 
     return redirect(url_for("login"))
 # search route function
@@ -191,11 +184,6 @@ def search():
 def posts():
     posts = list(mongo.db.posts.find())
     return render_template("blogs.html", posts=posts)
-
-# Podcast page
-@app.route("/podcast", methods=['GET'])
-def podcast():
-   return render_template("podcast.html")
 
 
 # Create a post
