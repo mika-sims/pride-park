@@ -1,4 +1,4 @@
-//Code opied from: 
+//Code copied from: https://stackoverflow.com/questions/60032983/record-voice-with-recorder-js-and-upload-it-to-python-flask-server-but-wav-file
 URL = window.URL || window.webkitURL;
 
 var gumStream; //stream from getUserMedia()
@@ -170,19 +170,3 @@ function createDownloadLink(blob) {
     //add the li element to the ol
     recordingsList.appendChild(li);
 }
-
-  $(document).ready(function(){
-    $('.modal').modal();
-    $('#textarea1').val('');
-    $('input#input_text, textarea#content').characterCounter();
-  M.textareaAutoResize($('#content'));
-   $('select').formSelect();
-  $('.datepicker').datepicker({
-      format:"dd mmmm,yyyy",
-      yearRange:3,
-      showClearBtn:true,
-      i18n:{
-        done:"Select"
-      }
-  });
-

@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-h1,
 h2,
 h3,
 h4,
@@ -41,7 +39,7 @@ a:active {
 body {
     font-family: 'Work Sans', sans-serif;
 }
-=======
+
 /*===== Fonts =====*/
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,900&family=Quattrocento:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;1,300&display=swap');
 
@@ -53,9 +51,11 @@ body {
     list-style-type: none;
 }
 
-a, li {
+a,
+li {
     text-decoration: none;
 }
+
 /*===== Navbar Start=====*/
 
 .nav-link {
@@ -94,11 +94,9 @@ a, li {
     color: #4b14ca;
     font-weight: 600;
 }
-/*===== About Section End=====*/
->>>>>>> c5bcb3942802d962f08edbbe6233422606e8f82c
 
-.bg-pride {
-    background: linear-gradient(90deg, #f00000, #f00000 16.67%, #ff8000 16.67%, #ff8000 33.33%, #ffff00 33.33%, #ffff00 50%, #007940 50%, #007940 66.67%, #4040ff 66.67%, #4040ff 83.33%, #a000c0 83.33%, #a000c0) fixed;
+/*===== About Section End=====*/
+background: linear-gradient(90deg, #f00000, #f00000 16.67%, #ff8000 16.67%, #ff8000 33.33%, #ffff00 33.33%, #ffff00 50%, #007940 50%, #007940 66.67%, #4040ff 66.67%, #4040ff 83.33%, #a000c0 83.33%, #a000c0) fixed;
 }
 
 .hr-pride {
@@ -146,7 +144,6 @@ input {
     margin-top: 10px;
 }
 
-<<<<<<< HEAD
 
 /* Custom CSS */
 .card-img-top {
@@ -387,7 +384,7 @@ textarea:valid~label {
 .social-icons i {
     /* margin-left: 10px; */
 }
-=======
+
 /* blog & podcast styling */
 
 .blog-heading,
@@ -508,47 +505,14 @@ input[type="checkbox"]:hover {
 
 /* Podcast */
 
-#record {
-    background-color: red;
-    /* Green */
-    border-width: medium;
-    border-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    max-width: 50%;
-    max-height: 15%;
+#recordButton,
+#pauseButton,
+#stopButton {
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    left: 100px;
-    right: 100px;
-    position: relative;
 }
 
-#stopRecord {
-    background-color: green;
-    /* Green */
-    border-width: medium;
-    border-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    max-width: 50%;
-    max-height: 15%;
-    border-radius: 50%;
-    left: 100px;
-    right: 100px;
-    position: relative;
-}
 
 h2 {
     left: 100px;
@@ -599,13 +563,17 @@ h2 {
 
 /* datepicker */
 /* label{margin-left: 20px;} */
-#datepicker{width:180px; margin: 0 20px 20px 20px;}
-#datepicker > span:hover{cursor: pointer;}
+#datepicker {
+    width: 180px;
+    margin: 0 20px 20px 20px;
+}
 
-@media screen and (min-width: 300px){
+#datepicker>span:hover {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 300px) {
     .about-images {
         margin-bottom: 4em;
     }
 }
-
->>>>>>> c5bcb3942802d962f08edbbe6233422606e8f82c
