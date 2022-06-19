@@ -116,10 +116,7 @@ def login():
          return render_template("login.html", user=user_collection.find_one({"username": session["user"]}))
    return render_template("login.html")
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 1de59c104cf1749faaa6d5b69724826c9724c17d
 # Record audio
 @app.route('/record', methods=['GET', 'POST'])
 def record():
@@ -187,6 +184,7 @@ def search():
 def posts():
     posts = list(mongo.db.posts.find())
     return render_template("blogs.html", posts=posts)
+
 
 # Create a post
 # add / create blogs

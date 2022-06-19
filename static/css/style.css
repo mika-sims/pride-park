@@ -219,10 +219,12 @@ input {
     font-size: 20px;
     /* background-color: rgb(175, 33, 33); */
 }
-.footer-logo{
+
+.footer-logo {
     font-size: 24px;
     font-weight: bolder;
 }
+
 .formHeading {
     /* background-color: #000; */
     color: black;
@@ -330,7 +332,14 @@ textarea:valid~label {
     font-weight: bolder;
 }
 
-.social-icons i {
+/* blog & podcast styling */
+
+.blog-heading,
+.blog-intro,
+.blog-submission-heading,
+.blog-submission-intro {
+    text-align: center;
+    margin: 1em auto;
     margin-left: 10px;
     margin-bottom: -20px;
 }
@@ -347,6 +356,208 @@ textarea:valid~label {
     color: #1DA1F2;
 }
 
-.bi-facebook:hover {
-    color: #4267B2;
+.blog-container {
+    display: flex;
+    width: 80vw;
+    max-width: 1100px;
+    margin: 3rem auto;
+    gap: 1rem;
+}
+
+.filter-panel {
+    width: 30%;
+}
+
+.filter-btn,
+.upload-btn {
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    background-color: rgb(232, 232, 232);
+}
+
+.filter-btn:hover,
+.upload-btn:hover {
+    font-size: 1.3rem;
+}
+
+.filter-btn:active,
+.upload-btn:active {
+    box-shadow: 0px 0px 10px 3px #DAABFF;
+}
+
+.entries {
+    width: 100%;
+    border-left: solid 2px #DAABFF;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"]:hover {
+    box-shadow: 0px 0px 10px 3px #DAABFF;
+
+}
+
+.blog-label {
+    position: static;
+    float: none;
+    text-align: left;
+    height: auto;
+    width: fit-content;
+    margin: 0 0 10px 5px;
+}
+
+.entry-list {
+    list-style: none;
+}
+
+.blog-entry {
+    padding: 2em;
+    margin-bottom: 2em;
+    -webkit-box-shadow: 0 0 5px 2px rgb(179, 179, 179);
+    -moz-box-shadow: 0 0 5px 2px rgb(179, 179, 179);
+    box-shadow: 0 0 5px 2px rgb(179, 179, 179);
+}
+
+.blog-entry:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}
+
+.entry-link {
+    text-decoration: none;
+}
+
+
+.author,
+.title {
+    color: #000;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.summary {
+    color: #000;
+}
+
+.trigger-warnings {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Podcast */
+
+#record {
+    background-color: red;
+    /* Green */
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+    border-radius: 50%;
+    left: 100px;
+    right: 100px;
+    position: relative;
+}
+
+#stopRecord {
+    background-color: green;
+    /* Green */
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+    border-radius: 50%;
+    left: 100px;
+    right: 100px;
+    position: relative;
+}
+
+h2 {
+    left: 100px;
+    position: relative;
+}
+
+#recordedAudio {
+    left: 100px;
+    right: 100px;
+    position: relative;
+}
+
+
+/* blog pages */
+/* blog page */
+.blog-buttons .btn {
+    margin: 5px;
+    position: relative;
+    float: left;
+}
+
+.post-title:hover {
+    font-size: 110%;
+}
+
+.search-blog-container {
+    float: right;
+    margin: 15px;
+}
+
+#search-blog-btn {
+    width: 32px;
+    height: 30px;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.search-blog-container form {
+    position: relative;
+}
+
+.search-blog-container i {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    font-size: 1.1rem;
+}
+
+/* datepicker */
+/* label{margin-left: 20px;} */
+#datepicker {
+    width: 180px;
+    margin: 0 20px 20px 20px;
+}
+
+#datepicker>span:hover {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 300px) {
+    .about-images {
+        margin-bottom: 4em;
+    }
+
+    .bi-facebook:hover {
+        color: #4267B2;
+    }
 }

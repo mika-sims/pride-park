@@ -2,9 +2,9 @@ PRIDE PARK
 
 ![Main Mockup](static/images/mockupB.png)
 
-[Link to Live Website]()
+[Link to Live Website](https://pride-park.herokuapp.com/)
 
-[GitHub Repo]()
+[GitHub Repo](https://github.com/mika-sims/pride-park)
 Happy blogging!
 
 
@@ -81,7 +81,7 @@ Pride Park enables people to blog about anything and everything and also provide
 ### User Stories 
 
 ### A typical user of this site would:
- - Have a interest in writting blogs
+ - Have an interest in writing blogs
  - Reading blogs from other bloggers
  - Have an interest in being part of a blogging community.
  - Have an interest in gaining knowledge far beyond his/ her neighbourhood or circle.
