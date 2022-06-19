@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h3 class="light-blue-text text-darken-4 center-align header">Edit category</h3>
+<div class="row card-panel grey lighten-4">
+    <form class="col s12" method="POST" action="{{url_for('edit_category', category_id=category._id)}}">
+        <!-- category_name-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-archive prefix light-blue-text text-darken-4"></i>
+                <input id="category_name" type="text" name="category_name" minlength="3" maxlength="30" value="{{category.category_name}}" class="validate" required>
+                <label for="category_name">Category Name</label>
+            </div>
+        </div>
+        <!--  cancel and submit buttons-->
+        <div class="row">
+            <div class="col s12">
+                <!-- cancel cat-edit btn-->
+                <a href="" class="btn-large red text-shadow">
+                   Cancel <i class="fas fa-times-circle right"></i>
+                </a>
+                <!-- submit  cat-edit btn-->
+                <button class="btn-large waves-effect waves-light text-shadow" type="submit" name="">update
+                    <i class="fas fa-edit right"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

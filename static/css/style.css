@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1,
 h2,
 h3,
@@ -40,6 +41,61 @@ a:active {
 body {
     font-family: 'Work Sans', sans-serif;
 }
+=======
+/*===== Fonts =====*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,900&family=Quattrocento:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;1,300&display=swap');
+
+/*===== CSS Reset =====*/
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+a, li {
+    text-decoration: none;
+}
+/*===== Navbar Start=====*/
+
+.nav-link {
+    text-transform: uppercase;
+    margin: 0 1.5em;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff0000, #caca00d3, #ff00f3, #0033ff, #ff00c4);
+    background-size: 400%;
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 20s linear infinite;
+}
+
+/*===== Animate logo =====*/
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+/*===== Navbar End=====*/
+
+/*===== About Section Start=====*/
+.lead a {
+    color: #4b14ca;
+    font-weight: 600;
+}
+/*===== About Section End=====*/
+>>>>>>> c5bcb3942802d962f08edbbe6233422606e8f82c
 
 .bg-pride {
     background: linear-gradient(90deg, #f00000, #f00000 16.67%, #ff8000 16.67%, #ff8000 33.33%, #ffff00 33.33%, #ffff00 50%, #007940 50%, #007940 66.67%, #4040ff 66.67%, #4040ff 83.33%, #a000c0 83.33%, #a000c0) fixed;
@@ -90,6 +146,7 @@ input {
     margin-top: 10px;
 }
 
+<<<<<<< HEAD
 
 /* Custom CSS */
 .card-img-top {
@@ -330,3 +387,225 @@ textarea:valid~label {
 .social-icons i {
     /* margin-left: 10px; */
 }
+=======
+/* blog & podcast styling */
+
+.blog-heading,
+.blog-intro,
+.blog-submission-heading,
+.blog-submission-intro {
+    text-align: center;
+    margin: 1em auto;
+}
+
+.blog-heading,
+.blog-submission-heading {
+    position: static;
+}
+
+.blog-intro,
+.blog-submission-intro,
+.trigger-warnings {
+    max-width: 800px;
+    padding: 0 2em;
+}
+
+.blog-intro {
+    margin-bottom: 5em;
+}
+
+.blog-container {
+    display: flex;
+    width: 80vw;
+    max-width: 1100px;
+    margin: 3rem auto;
+    gap: 1rem;
+}
+
+.filter-panel {
+    width: 30%;
+}
+
+.filter-btn,
+.upload-btn {
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.filter-btn:hover,
+.upload-btn:hover {
+    font-size: 1.3rem;
+}
+
+.filter-btn:active,
+.upload-btn:active {
+    box-shadow: 0px 0px 10px 3px #DAABFF;
+}
+
+.entries {
+    width: 100%;
+    border-left: solid 2px #DAABFF;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"]:hover {
+    box-shadow: 0px 0px 10px 3px #DAABFF;
+
+}
+
+.blog-label {
+    float: none;
+    text-align: left;
+    height: auto;
+    width: fit-content;
+    margin: 0 0 10px 5px;
+}
+
+.entry-list {
+    list-style: none;
+}
+
+.blog-entry {
+    padding: 2em;
+    margin-bottom: 2em;
+    -webkit-box-shadow: 0 0 5px 2px rgb(179, 179, 179);
+    -moz-box-shadow: 0 0 5px 2px rgb(179, 179, 179);
+    box-shadow: 0 0 5px 2px rgb(179, 179, 179);
+}
+
+.blog-entry:hover {
+    transform: scale(1.02);
+    transition: ease-in-out;
+}
+
+.entry-link {
+    text-decoration: none;
+}
+
+
+.author,
+.title {
+    color: #000;
+    font-size: 1.3rem;
+    line-height: 1;
+}
+
+.summary {
+    color: #000;
+}
+
+.trigger-warnings {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Podcast */
+
+#record {
+    background-color: red;
+    /* Green */
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+    border-radius: 50%;
+    left: 100px;
+    right: 100px;
+    position: relative;
+}
+
+#stopRecord {
+    background-color: green;
+    /* Green */
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+    border-radius: 50%;
+    left: 100px;
+    right: 100px;
+    position: relative;
+}
+
+h2 {
+    left: 100px;
+    position: relative;
+}
+
+#recordedAudio {
+    left: 100px;
+    right: 100px;
+    position: relative;
+}
+
+
+/* blog pages */
+/* blog page */
+.blog-buttons .btn {
+    margin: 5px;
+    position: relative;
+    float: left;
+}
+
+.post-title:hover {
+    font-size: 110%;
+}
+
+.search-blog-container {
+    float: right;
+    margin: 15px;
+}
+
+#search-blog-btn {
+    width: 32px;
+    height: 30px;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.search-blog-container form {
+    position: relative;
+}
+
+.search-blog-container i {
+    position: absolute;
+    top: 7px;
+    left: 8px;
+    font-size: 1.1rem;
+}
+
+/* datepicker */
+/* label{margin-left: 20px;} */
+#datepicker{width:180px; margin: 0 20px 20px 20px;}
+#datepicker > span:hover{cursor: pointer;}
+
+@media screen and (min-width: 300px){
+    .about-images {
+        margin-bottom: 4em;
+    }
+}
+
+>>>>>>> c5bcb3942802d962f08edbbe6233422606e8f82c
