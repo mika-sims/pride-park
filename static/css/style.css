@@ -105,13 +105,14 @@ input {
     text-align: center;
 }
 
+
 .home-sec-1 {
     height: 70vh;
     /* padding: 100px; */
     background-image: url("/static/images/prime-colors.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    animation: fadeIn 5s;
+    animation: fadeIn 1s;
     margin-bottom: 50px;
 }
 
@@ -119,14 +120,14 @@ input {
     position: relative;
     text-transform: uppercase;
     font-size: 2em;
-    letter-spacing: 4px;
+    letter-spacing: 5px;
     overflow: hidden;
-    background: linear-gradient(90deg, #000, #fff, #FFF);
+    background: linear-gradient(1300deg, rgb(84, 79, 79), #fff, #FFF);
     background-repeat: no-repeat;
-    background-size: 80%;
+    background-size: 90%;
     animation: animate 10s linear infinite;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0);
+    color: black;
+    font-weight: 900;
 }
 
 @keyframes animate {
@@ -143,20 +144,14 @@ input {
 @keyframes fadeIn {
     0% {
         opacity: 0;
+        transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
+        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
     }
 
-    25% {
-        opacity: 0.25;
-
-    }
-
-    50% {
-        opacity: 0.50;
-
-    }
-
-    100% {
+    60% {
         opacity: 1;
+        transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
+        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
     }
 }
 
@@ -212,7 +207,7 @@ input {
 
 
 .formContainer {
-    /* width: 100%; */
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -221,7 +216,13 @@ input {
     background-image: linear-gradient(white, #d2fcc7), url("image goes here");
     background-position: center;
     background-size: cover;
+    font-size: 20px;
     /* background-color: rgb(175, 33, 33); */
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: bolder;
 }
 
 .formHeading {
@@ -234,7 +235,7 @@ input {
 
 .form-text-content {
     color: black;
-    /* font-size: 18px; */
+    font-size: 18px;
     /* padding: 0 150px; */
     margin-bottom: 20px;
 }
@@ -319,16 +320,16 @@ textarea:valid~label {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: bisque;
     text-align: center;
+}
+
+.footer-section {
+    font-weight: bolder;
 }
 
 .big-text {
     font-size: 24px;
-}
-
-.social-icons i {
-    /* margin-left: 10px; */
+    font-weight: bolder;
 }
 
 /* blog & podcast styling */
@@ -339,22 +340,20 @@ textarea:valid~label {
 .blog-submission-intro {
     text-align: center;
     margin: 1em auto;
+    margin-left: 10px;
+    margin-bottom: -20px;
 }
 
-.blog-heading,
-.blog-submission-heading {
-    position: static;
+.social-icons {
+    margin-bottom: -15px;
 }
 
-.blog-intro,
-.blog-submission-intro,
-.trigger-warnings {
-    max-width: 800px;
-    padding: 0 2em;
+.bi-instagram:hover {
+    color: red;
 }
 
-.blog-intro {
-    margin-bottom: 5em;
+.bi-twitter:hover {
+    color: #1DA1F2;
 }
 
 .blog-container {
@@ -556,5 +555,9 @@ h2 {
 @media screen and (min-width: 300px) {
     .about-images {
         margin-bottom: 4em;
+    }
+
+    .bi-facebook:hover {
+        color: #4267B2;
     }
 }
