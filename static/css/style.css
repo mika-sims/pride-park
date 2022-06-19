@@ -9,8 +9,8 @@
     list-style-type: none;
 }
 
-a,
-li {
+
+a, li {
     text-decoration: none;
 }
 
@@ -54,6 +54,8 @@ li {
 }
 
 /*===== About Section End=====*/
+
+
 h1,
 h2,
 h3,
@@ -109,15 +111,13 @@ body {
 }
 
 .hero-pride {
-    background-image: url('/static/images/meet-pride.jpg');
-    background-size: cover;
+    background: linear-gradient(90deg, rgba(255,0,0,.8) 0%, rgba(255,59,0,.8) 3%, rgba(255,171,0,.8) 6%, rgba(0,217,32,.8) 9%, rgba(255,239,0,.8) 12%, rgba(17,29,236,.8) 15%, rgba(104,0,223,.8) 18%, rgba(255,255,255,.8) 21%);
     height: 600px;
     width: 100%;
 }
 
 .bg-signup {
-    background-image: url('/static/images/meet-pride.jpg');
-    background-size: cover;
+    background: linear-gradient(90deg, rgba(255,0,0,.8) 0%, rgba(255,59,0,.8) 3%, rgba(255,171,0,.8) 6%, rgba(0,217,32,.8) 9%, rgba(255,239,0,.8) 12%, rgba(17,29,236,.8) 15%, rgba(104,0,223,.8) 18%, rgba(255,255,255,.8) 21%);
     height: 600px;
     width: 100%;
 }
@@ -139,6 +139,7 @@ label {
     text-align: right;
     margin-right: 15px;
     float: left;
+
 }
 
 input {
@@ -321,17 +322,6 @@ textarea {
     font-size: 15px;
 }
 
-label {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    color: black;
-    cursor: text;
-    transition: 0.2s;
-}
-
 button {
     padding: 10px 0;
     color: black;
@@ -416,7 +406,8 @@ textarea:valid~label {
     color: #1DA1F2;
 }
 
-<<<<<<< HEAD .blog-container {
+.blog-container {
+
     display: flex;
     width: 80vw;
     max-width: 1100px;
@@ -434,6 +425,9 @@ textarea:valid~label {
     border-radius: 4px;
     font-weight: 600;
     font-size: 1.2rem;
+
+    background-color: rgb(232, 232, 232);
+
 }
 
 .filter-btn:hover,
@@ -463,6 +457,7 @@ input[type="checkbox"]:hover {
 }
 
 .blog-label {
+    position: static;
     float: none;
     text-align: left;
     height: auto;
@@ -510,6 +505,7 @@ input[type="checkbox"]:hover {
 
 /* Podcast */
 
+
 #recordButton,
 #pauseButton,
 #stopButton {
@@ -517,6 +513,29 @@ input[type="checkbox"]:hover {
     height: 70px;
     border-radius: 50%;
 }
+
+
+#record {
+    background-color: red;
+    /* Green */
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+    border-radius: 50%;
+    left: 100px;
+    right: 100px;
+    position: relative;
+}
+
 
 
 h2 {

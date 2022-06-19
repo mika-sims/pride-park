@@ -26,18 +26,18 @@ UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
 
 cloudinary.config(
-    cloud_name="cloudaman",
-    api_key="719962222545743",
-    api_secret="GWAtdobW-3CD0Dtnx2gdgMEnL4w"
+    cloud_name="mika-sims",
+    api_key="642186314378266",
+    api_secret="FQqhP-jY4l9pgw9fV_1p-G_jR7U"
 )
 
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 # app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
+# app.secret_key = os.environ.get("SECRET_KEY")
 os.environ.setdefault("IP", "0.0.0.0")
 os.environ.setdefault("PORT", "5000")
-# app.secret_key = 'secretlyproud'
+app.secret_key = 'secretlyproud'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.debug = True
 mongo = PyMongo(app)
@@ -124,6 +124,7 @@ def login():
          return render_template("login.html", user=user_collection.find_one({"username": session["user"]}))
    return render_template("login.html")
 
+
 # Record audio
 @app.route('/record', methods=['GET', 'POST'])
 def record():
@@ -169,7 +170,8 @@ def profile(username):
             "profile.html", username=username,
             posts=posts,
             last_seen=last_seen,
-            current_time=datetime.utcnow())
+            current_time=datetime.utcnow(),
+            podcast=mongo.db.podcasts.find())
 
     return redirect(url_for("login"))
 
