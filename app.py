@@ -123,13 +123,6 @@ def login():
    return render_template("login.html")
 
 
-@app.route('/profile/<username>', methods=['GET', 'POST'])
-def profile(username):
-   if profile == 'guest':
-      return redirect(url_for('login'))
-   else:
-      return render_template('profile.html', podcast=mongo.db.podcasts.find())
-
 
 # Record audio
 @app.route('/record', methods=['GET', 'POST'])
@@ -177,7 +170,8 @@ def profile(username):
             "profile.html", username=username,
             posts=posts,
             last_seen=last_seen,
-            current_time=datetime.utcnow())
+            current_time=datetime.utcnow(), 
+            podcast=mongo.db.podcasts.find())
 
     return redirect(url_for("login"))
 # search route function
@@ -198,10 +192,6 @@ def posts():
     posts = list(mongo.db.posts.find())
     return render_template("blogs.html", posts=posts)
 
-# Podcast page
-@app.route("/podcast", methods=['GET'])
-def podcast():
-   return render_template("podcast.html")
 
 
 # Create a post
