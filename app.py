@@ -31,10 +31,10 @@ ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
 app.config["MONGO_URI"] = 'mongodb+srv://amare:pridecoding@cluster0.0i04c.mongodb.net/prideDB'
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 # app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
+# app.secret_key = os.environ.get("SECRET_KEY")
 os.environ.setdefault("IP", "0.0.0.0")
 os.environ.setdefault("PORT", "5000")
-# app.secret_key = 'secretlyproud'
+app.secret_key = 'secretlyproud'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.debug = True
 mongo = PyMongo(app)
@@ -59,7 +59,7 @@ def blog():
    return render_template("blog.html")
 
 # Podcast page
-@app.route("/podcast", methods=['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def podcast():
    return render_template("podcast.html", podcast=mongo.db.podcasts.find())
 
