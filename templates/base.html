@@ -45,7 +45,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-light myNav">
+    <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand text-danger" href="#">Pride Park</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -53,33 +53,43 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active myNavBtns" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link myNavBtns" href="{{ url_for('about') }}">About us</a>
+                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link myNavBtns" href="{{ url_for('contact') }}">Contact us</a>
+                        <a class="nav-link" href="{{ url_for('contact') }}">Contact us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('posts') }}">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('podcast') }}">Podcast</a>
                     </li>
                     {% if session.user == 'guest' %}
                     <li class="nav-item">
-                        <a class="nav-link myNavBtns" href="{{ url_for('signup') }}">Sign up</a>
+                        <a class="nav-link" href="{{ url_for('signup') }}">Sign up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link myNavBtns" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link myNavBtns" href="{{ url_for('profile', username='{{session.user}}') }}">
-                            {{session.user|title}} </a>
+                        <a class="nav-link" href="{{ url_for('profile', username='{{session.user}}') }}">
+                            Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link myNavBtns" href="{{ url_for('chat') }}">Chat</a>
+                        <a class="nav-link" href="{{ url_for('add_post') }}">Write a post</a>
                     </li>
+                    {% if session.user|lower == "admin" %}
+                    <li><a href="{{ url_for('get_categories') }}"> Post Categories</a></li>
+                    {% endif %}
+
                     <li class="nav-item">
-                        <a class="nav-link myNavBtns" href="{{ url_for('logout') }}">Logout</a>
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
                     </li>
                     {% endif %}
                 </ul>

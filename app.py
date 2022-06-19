@@ -59,7 +59,7 @@ def blog():
    return render_template("blog.html")
 
 # Podcast page
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/podcast", methods=['GET', 'POST'])
 def podcast():
    return render_template("podcast.html", podcast=mongo.db.podcasts.find())
 
