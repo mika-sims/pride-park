@@ -4,20 +4,21 @@
 {% block content %}
 <div class="container">
     <div class="row">
-        <div class="col-md-2 bg-pride"></div>
-        <div class="col-md-8 bg-pride">
-            <h1 class="text-danger text-center"><span class="text-success pe-2">Pride</span> <span class="text-warning">Park</span></h1>
+        <div class="col-md-2"></div>
+        <div class="col-md-8 mt-4">
+            <div class="text-center shadow py-5">
+                <h1 class="text-center">Create your own podcast</h1>
+                <strong class="text-center">Start recording</strong>
+                <div id="controls" class="mt-3">
+                    <button id="recordButton" class="btn btn-danger"><i class="fas fa-microphone"></i>Record</button>
+                    <button id="pauseButton" class="btn btn-info" disabled>Pause</button>
+                    <button id="stopButton" class="btn btn-secondary" disabled>Stop</button>
+                </div>
+                <div id="formats"></div>
+                <p class="py-3"><strong>Recordings:</strong></p>
+                <ol id="recordingsList"></ol>
+            </div>
         </div>
-        <h1>Simple Recorder.js demo</h1>
-
-        <div id="controls">
-            <button id="recordButton">Record</button>
-            <button id="pauseButton" disabled>Pause</button>
-            <button id="stopButton" disabled>Stop</button>
-        </div>
-        <div id="formats">Format: start recording to see sample rate</div>
-        <p><strong>Recordings:</strong></p>
-        <ol id="recordingsList"></ol>
     </div>
 </div>
 <!-- inserting these scripts at the end to be able to use all the elements in the DOM -->

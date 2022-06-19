@@ -8,6 +8,10 @@
 <p class="blog-intro">Hear the voices of fellow LGBTQ+ members as they share small parts of their lives in these short
     recordings. Sometimes it's
     good to hear you are not the only one. </p>
+<div class="text-center">
+    <a class="btn btn-danger" href="{{ url_for('record') }}">Create podcast</a>
+</div>
+
 <div class="blog-container">
     <!-- Search side panel with filter options -->
     <form class="filter-panel">
@@ -46,14 +50,17 @@
     <!-- list of blog entries with links -->
     <section class="entries">
         <ul class="entry-list">
+            {% for pod in podcast %}
             <li class="blog-entry">
                 <a href="#" class="entry-link">
                     <p class="author" id="author">Example Person</p>
                     <p class="title" id="title">My example anecdote</p>
+                    <audio controls="audiocontrols" src="{{pod.url}}"></audio>
                     <p class="summary" id="summary">This is a summary of the recording ... Lorem ipsum dolor sit amet
                         consectetur adipisicing elit. Quod suscipit architecto.</p>
                 </a>
             </li>
+            {% endfor %}
             <li class="blog-entry">
                 <a href="#" class="entry-link">
                     <p class="author" id="author">Example Person</p>
