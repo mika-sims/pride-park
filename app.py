@@ -18,12 +18,14 @@ from liveserver import LiveServer
 from mimetypes import guess_extension
 from werkzeug.utils import secure_filename
 if os.path.exists("env.py"):
-   import env
+ import env
+
 
 app = Flask(__name__)
 ls = LiveServer(app)
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif', 'wav'])
+
 
 cloudinary.config(
     cloud_name="mika-sims",
@@ -50,10 +52,10 @@ user_collection = mongo.db.users
 def index():
    if(session.get('user')):
       user = user_collection.find_one({"username": session["user"]})
-      return ls.render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
+      return ls.render_template("index.html", user=user_collection.find_one({"username": session["user"]}))
    else:
       session["user"] = "guest"
-      return ls.render_template("index.html", user = user_collection.find_one({"username": session["user"]}))
+      return ls.render_template("index.html", user=user_collection.find_one({"username": session["user"]}))
 
 # About page
 @app.route("/about", methods=['GET'])
@@ -193,7 +195,14 @@ def posts():
     posts = list(mongo.db.posts.find())
     return render_template("blogs.html", posts=posts)
 
-# Create a post
+
+# Podcast page
+@app.route("/podcast", methods=['GET'])
+def podcast():
+   return render_template("podcast.html")
+
+
+
 # add / create blogs
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
@@ -239,8 +248,8 @@ def edit_post(post_id):
 @app.route("/delete_post/<post_id>")
 def delete_post(post_id):
     mongo.db.posts.remove({"_id": ObjectId(post_id)})
-    flash('Post has been Successfully deleted!')
-    return redirect(url_for("post"))
+    flash('Post  has been Successfully deleted!')
+    return redirect(url_for("posts"))
 
 
 # create blog categories
@@ -286,9 +295,9 @@ def delete_category(category_id):
     return redirect(url_for("get_categories"))
 
 
-
 if __name__ == "__main__":
       app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=False)
+
 
