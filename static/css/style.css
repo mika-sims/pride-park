@@ -263,17 +263,6 @@ textarea {
     font-size: 15px;
 }
 
-label {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    color: black;
-    cursor: text;
-    transition: 0.2s;
-}
-
 button {
     padding: 10px 0;
     color: black;
