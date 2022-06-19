@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- banner image still to be included at the top -->
+<h2 class="blog-heading">Spoken Word</h2>
+<p class="blog-intro">Hear the voices of fellow LGBTQ+ members as they share small parts of their lives in these short
+    recordings. Sometimes it's
+    good to hear you are not the only one. </p>
+<div class="blog-container">
+    <!-- Search side panel with filter options -->
+    <form class="filter-panel">
+        <input type="checkbox" id="gay" name="gay" value="Gay" />
+        <label for="gay" class="blog-label">Gay</label><br />
+
+        <input type="checkbox" id="lesbian" name="lesbian" value="Lesbian" />
+        <label for="lesbian" class="blog-label">Lesbian</label><br />
+
+        <input type="checkbox" id="trans" name="trans" value="Trans" />
+        <label for="trans" class="blog-label">Trans-gender</label><br />
+
+        <input type="checkbox" id="bi" name="bi" value="Bi" />
+        <label for="bi" class="blog-label">Bi</label><br />
+
+        <input type="checkbox" id="asex" name="asex" value="asex" />
+        <label for="asex" class="blog-label">Asexual</label><br />
+
+        <input type="checkbox" id="nb" name="nb" value="NB" />
+        <label for="nb" class="blog-label">Non-binary</label><br />
+
+        <input type="checkbox" id="safe" name="safe" value="safe" />
+        <label for="safe" class="blog-label">Safe Country</label><br />
+
+        <input type="checkbox" id="unsafe" name="unsafe" value="Unsafe" />
+        <label for="unsafe" class="blog-label">Unsafe Country</label><br />
+
+        <input type="checkbox" id="other" name="other" value="Other" />
+        <label for="other" class="blog-label">Other</label><br />
+
+        <input type="checkbox" id="trigger" name="trigger" value="Trigger" />
+        <label for="trigger" class="blog-label">Trigger Warning</label><br />
+
+        <input type="submit" value="Filter results" class="filter-btn">
+    </form>
+    <!-- list of blog entries with links -->
+    <!-- {% if posts|length > 0 %} -->
+
+    <section class="entries">
+      {% for post in posts %}
+
+         <div class="collapsible-header white-text blue-grey darken-2">
+      <div class="col s3">
+        <i class="fas fa-caret-down"></i>
+        {% if session.user|lower == post.created_by|lower %}
+        <a class="waves-effect red btn-small modal-trigger" href="#modal1">Delete</a>
+        <!-- delete by creater verification modal-->
+        <!-- Modal Trigger -->
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content grey lighten-4">
+            <h4 class="cyan-text">Delete blog</h4>
+            <p> Are you sure you want to delete this blog?</p>
+          </div>
+          <div class="modal-footer">
+            <a href="{{ url_for('posts')}}" class="modal-close waves-effect waves-green btn-small">Cancel</a>
+            <a href="{{ url_for('delete_post', post_id=post._id)}}"
+              class="modal-close waves-effect red btn-small">Delete</a>
+          </div>
+        </div>
+        <a class="waves-effect teal accent-4 btn-small" href="{{ url_for('edit_post', post_id=post._id)}}">Edit</a>
+        {% endif %}
+        {% if session.user|lower == "admin"|lower %}
+        <!-- delete  by admin verification modal-->
+        <!-- Modal Trigger -->
+        <a class="waves-effect orange btn-small modal-trigger" href="#modal1">Delete</a>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content grey lighten-4">
+            <h4 class="cyan-text">Delete blog</h4>
+            <p> Are you sure you want to delete this blog?</p>
+          </div>
+          <div class="modal-footer">
+            <a href="{{ url_for('posts')}}" class="modal-close waves-effect waves-green btn-small">Cancel</a>
+            <a href="{{ url_for('delete_post', post_id=post._id)}}"
+              class="modal-close waves-effect red btn-small">Delete</a>
+          </div>
+        </div>
+        {% endif %}
+        
+      </div>
+        <ul class="entry-list">
+            <li class="blog-entry text-dark">
+                <a href="#" class="entry-link">
+                  <h6><i class="fas fa-tag"></i> {{ post.category_name }}</h6>
+                  <h4><strong>{{ post.title }}</strong></h4>
+                    <p class="card p-3" id="summary"> {{ post.content }}</p>
+                    <p class="summary" id="summary"> {{ post.comment }}</p>
+                     <p id="author"><small>posted by: {{ post.created_by }}</small></p>  
+                    <p><i class="fas fa-clock"></i>{{post.read_time}} read</p>
+                    <p><small> <i>published date</i>: {{ post.published_date }}</small></p>
+                     <p class="author small" id="hashtag"> <i class="fas fa-hashtag"></i>{{ post.tags }}</p>
+                </a>
+            </li>
+        </ul>
+        {% endfor %}
+    </section>
+    <!-- {% endif %} -->
+</div>
+{% endblock content %}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}
+| Blog, Add New Post
+{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/date.css') }}">
+{% block content %}
+<section class="blog-submission">
+    <h3 class="blog-submission-heading">Share your Story!</h3>
+    <p class="blog-submission-intro">Get out the recording device of your choice and hit the mic. Your story is worth
+        sharing. <br>
+        Keep it short and snappy with 10 minutes. However, nothing is stopping you from submitting more than one story.
+        You can simply upload your file below. <br>
+        Make sure you tag your story with the appropriate labels to make it easy for others to find the story that's
+        right for them. <br>
+    </p>
+
+
+
+<!-- add_post Section -->
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-10 col-sm-12 px-sm-3 mx-auto">
+            <div class="blog-card card mx-sm-1 mt-3">
+                <h4 class="card-header">Add a Post</h4>
+                <div class="card-body p-5">
+                    <form method="POST" action="{{ url_for('add_post') }}">
+                        <div class="col-md-10 mx-auto">
+                           
+                           
+               <div class="form-group">
+                <div class="input-group my-3 py-3">
+                <select id="category_name" name="category_name" class="validate p-2" required>
+                    <option value="" disabled selected>Choose category</option>
+                    <option>Lesbian</option>
+                    <option>Gay</option>
+                   <option>Trans-gender</option>
+                    <option>Bi</option>
+                    <option>A sexual</option>
+                    <option>Non binary</option>
+                    <option>Other</option>
+                    <option>Unsafe country</option>
+                    <option>Safe country</option>
+                    <option>Trigger Warning</option>
+
+
+                    {% for category in categories %}
+                        <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                    {% endfor %}
+                </select>
+            
+            </div>
+                            <div class="input-group mb-3 hide" id="title">
+                                <span class="input-group-text" id="title">Post Title</span>
+                                <input type="text" class="form-control" placeholder="" aria-label="Title"
+                                    aria-describedby="title" name="title">
+                            </div>
+                            <div class="input-group mb-3" id="username">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">Author</span>
+                                    <input type="text" aria-label="username" name="username" class="form-control"
+                                        value="{{session.user|title}}">
+                                </div>
+                            
+                            <div class="input-group my-3">
+                                <textarea class="form-control text-field-height" aria-label="With textarea"
+                                    name="post_content" placeholder="Share your story" required></textarea>
+                            </div>
+                            </div>
+                           
+                           <div class="input-group mb-3">
+                                <span class="input-group-text" id="title">Select date</span>
+                            	<input type="text" class="form-control date" placeholder="Pick date">
+                                 
+                            </div>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="title">Hashtag</span>
+                                <input type="text" class="form-control" aria-label="hastag" aria-describedby="title"
+                                    name="Hashtags" required>
+                            </div>
+                            </div>
+                            <button type="submit" class="btn btn-success float-end">Submit</button>
+                            <button class="btn" onclick="goBack()">Back</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+$('.date').datepicker({
+  multidate: True,
+	format: 'dd-mm-yyyy'
+});
+</script>
+
+{% endblock %}
+
+
+
+
+
