@@ -172,26 +172,26 @@ function createDownloadLink(blob) {
 
     //add the li element to the ol
     recordingsList.appendChild(li);
-$(document).ready(function () {
-            $('.modal').modal();
-            $('#textarea1').val('');
-            $('input#input_text, textarea#content').characterCounter();
-            M.textareaAutoResize($('#content'));
-            $('select').formSelect();
-            $('.datepicker').datepicker({
-                format: "dd mmmm,yyyy",
-                yearRange: 3,
-                showClearBtn: true,
-                i18n: {
-                    done: "Select"
-                }
-            });
+    $(document).ready(function () {
+                $('.modal').modal();
+                $('#textarea1').val('');
+                $('input#input_text, textarea#content').characterCounter();
+                M.textareaAutoResize($('#content'));
+                $('select').formSelect();
+                $('.datepicker').datepicker({
+                    format: "dd mmmm,yyyy",
+                    yearRange: 3,
+                    showClearBtn: true,
+                    i18n: {
+                        done: "Select"
+                    }
+                });
 
 
-            // help modal js
-            var myModal = document.getElementById('myModal')
-            var myInput = document.getElementById('myInput')
+                // help modal js
+                var myModal = document.getElementById('myModal')
+                var myInput = document.getElementById('myInput')
 
-            myModal.addEventListener('shown.bs.modal', function () {
-                myInput.focus()
-            })
+                myModal.addEventListener('shown.bs.modal', function () {
+                    myInput.focus()
+                })

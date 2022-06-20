@@ -69,7 +69,8 @@ h6 {
     background-color: cadetblue;
 }
 
-.myNav, .footer-sectiom {
+.myNav,
+.footer-sectiom {
     font-family: 'Quattrocento', sans-serif;
     background-color: cadetblue;
 
@@ -107,9 +108,9 @@ body {
 .hr-pride {
     height: 20px;
     width: 100%;
-} */
+}
 
-.hero-pride {
+*/ .hero-pride {
     background: linear-gradient(90deg, rgba(255, 0, 0, .8) 0%, rgba(255, 59, 0, .8) 3%, rgba(255, 171, 0, .8) 6%, rgba(0, 217, 32, .8) 9%, rgba(255, 239, 0, .8) 12%, rgba(17, 29, 236, .8) 15%, rgba(104, 0, 223, .8) 18%, rgba(255, 255, 255, .8) 21%);
     height: 600px;
     width: 100%;
@@ -120,8 +121,9 @@ body {
     height: 600px;
     width: 100%;
 }
+
 .bg-login {
-    background: linear-gradient(to left, rgba(255,0,0,.8) 0%, rgba(255,59,0,.8) 3%, rgba(255,171,0,.8) 6%, rgba(0,217,32,.8) 9%, rgba(255,239,0,.8) 12%, rgba(17,29,236,.8) 15%, rgba(104,0,223,.8) 18%, rgba(255,255,255,.8) 21%);
+    background: linear-gradient(to left, rgba(255, 0, 0, .8) 0%, rgba(255, 59, 0, .8) 3%, rgba(255, 171, 0, .8) 6%, rgba(0, 217, 32, .8) 9%, rgba(255, 239, 0, .8) 12%, rgba(17, 29, 236, .8) 15%, rgba(104, 0, 223, .8) 18%, rgba(255, 255, 255, .8) 21%);
     height: 600px;
     width: 100%;
 }
@@ -164,12 +166,12 @@ input {
     left: 0;
     bottom: 0;
     width: 100%;
-    
+
     text-align: center;
     font-weight: bolder;
 }
 
-.footer-brand{
+.footer-brand {
     font-size: 20px;
     font-weight: bolder;
     text-decoration: none;
@@ -191,7 +193,7 @@ input {
     font-weight: 900;
 }
 
-.banner-text span:before{
+.banner-text span:before {
     content: '';
     animation: animate 5s infinite;
 }
@@ -201,14 +203,17 @@ input {
         content: 'YOU';
         color: #dd0000;
     }
+
     10% {
         content: 'YOU';
         color: #ff3b3b;
     }
+
     40% {
         content: 'ME';
         color: #dd0000;
     }
+
     70% {
         content: 'US';
         color: #ff3b3b;
@@ -244,16 +249,17 @@ input {
 }
 
 .contact {
-   background-color: green; 
-   background-image: url('/static/images/contact.jpg');
-   background-repeat: no-repeat;
-   background-position: center;
+    background-color: green;
+    background-image: url('/static/images/contact.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
     position: relative;
     width: 100%;
     padding-bottom: 100px;
     /* margin-top: 6rem!important; */
-   
+
 }
+
 .formContainer {
     width: 70%;
     height: 100%;
@@ -276,7 +282,7 @@ input {
     border-bottom: 3px solid black;
 }
 
-.teamRow h3{
+.teamRow h3 {
     font-weight: bolder !important;
 }
 
@@ -352,7 +358,8 @@ textarea:valid~label {
     width: 100%;
     text-align: center;
 }
-.footer-section{
+
+.footer-section {
     font-weight: bolder;
 }
 
@@ -367,6 +374,7 @@ textarea:valid~label {
     margin-bottom: -20px;
 
 }
+
 /* blog & podcast styling */
 
 .blog-banner {
@@ -395,60 +403,64 @@ textarea:valid~label {
 
 
 }
-.social-icons  {
+
+.social-icons {
     margin-bottom: -15px;
 }
-.bi-instagram:hover{
+
+.bi-instagram:hover {
     color: red;
 }
-.bi-twitter:hover{
+
+.bi-twitter:hover {
     color: #1DA1F2;
 }
-.bi-facebook:hover{
+
+.bi-facebook:hover {
     color: #4267B2;
 }
 
 /* --------------------------------team page ------------------------ */
 
-    .team-header {
-            font-size: 36px;
-            color: #333;
-            font-weight: bold;
-        }
+.team-header {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+}
 
-        h3 {
-            font-size: 24px;
-            color: #555;
-            font-weight: bold;
-        }
+h3 {
+    font-size: 24px;
+    color: #555;
+    font-weight: bold;
+}
 
-        
-        #team i {
-            font-size: 26px;
-            color: #555;
-        }
 
-        #team p {
-            font-weight: 500;
-        }
+#team i {
+    font-size: 26px;
+    color: #555;
+}
 
-        #team .card {
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgb(16, 15, 26);
-            transition: all 0.3s ease-in;
-            -webkit-transition: all 0.3s ease-in;
-            -moz-transition: all 0.3s ease-in;
-         
-        }
+#team p {
+    font-weight: 500;
+}
 
-    
- #team .card:hover{
+#team .card {
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(16, 15, 26);
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+
+}
+
+
+#team .card:hover {
     /* background: conic-gradient(from 90deg, #390202, #53534dd3, #5e6cd8, #4e5e9e, #c16f62 ); */
 
     background-image: linear-gradient(180deg, #000 0 0%, #72501e 14.28571% 14.28571%, #ff0018 28.57143% 28.57143%, #ffa52c 42.85714% 42.85714%, #ffff41 57.14286% 57.14286%, #008018 71.42857% 71.42857%, #0000f9 85.71429% 85.71429%, #86007d 100% 100%);
- }
+}
 
- 
+
 
 .blog-container {
 
@@ -566,6 +578,7 @@ input[type="checkbox"]:hover {
     max-height: 15%;
 
 }
+
 #recordButton,
 #pauseButton,
 #stopButton {
