@@ -254,17 +254,17 @@ input {
 }
 
 .contact {
-    background-color: #555; 
-   background-image: url('/static/images/prime-banner.jpg');
-   background-repeat: no-repeat;
-   background-position: center;
+    background-color: #555;
+    background-image: url('/static/images/prime-banner.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
 
     position: relative;
     width: 100%;
     height: 100%;
     padding-bottom: 100px;
-    opacity: 0.6; 
-  
+    opacity: 0.6;
+
 }
 
 .formContainer {
@@ -457,40 +457,41 @@ h3 {
 }
 
 
-    .team-header {
-            font-size: 36px;
-            color: #333;
-            font-weight: bold;
-        }
+.team-header {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+}
 
-        h3 {
-            font-size: 24px;
-            color: #555;
-            font-weight: bold;
-        }
+h3 {
+    font-size: 24px;
+    color: #555;
+    font-weight: bold;
+}
 
-        
-        #team i {
-            font-size: 26px;
-            color: #555;
-        }
 
-        #team p {
-            font-weight: 500;
-        }
+#team i {
+    font-size: 26px;
+    color: #555;
+}
 
-        #team .card {
-            border-radius: 10px;
-            box-shadow: 5px 5px 15px rgb(16, 15, 26);
-            transition: all 0.3s ease-in;
-            -webkit-transition: all 0.3s ease-in;
-            -moz-transition: all 0.3s ease-in;
-         
-        }
+#team p {
+    font-weight: 500;
+}
 
-    
- #team .card:hover{
-    background: conic-gradient(from 80deg, #fafafa,rgb(137, 135, 135) );
+#team .card {
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(16, 15, 26);
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+
+}
+
+
+#team .card:hover {
+    background: conic-gradient(from 80deg, #fafafa, rgb(137, 135, 135));
+}
 
 
 #team i {
@@ -526,7 +527,7 @@ h3 {
     width: 30%;
 }
 
-.filter-btn,
+.filter-submit,
 .upload-btn {
     border: none;
     border-radius: 4px;
@@ -537,12 +538,12 @@ h3 {
 
 }
 
-.filter-btn:hover,
+.filter-submit:hover,
 .upload-btn:hover {
     font-size: 1.3rem;
 }
 
-.filter-btn:active,
+.filter-submit:active,
 .upload-btn:active {
     box-shadow: 0px 0px 10px 3px #DAABFF;
 }
@@ -552,13 +553,13 @@ h3 {
     border-left: solid 2px #DAABFF;
 }
 
-input[type="checkbox"] {
+.filter-btn {
     width: 20px;
     height: 20px;
     margin-bottom: 10px;
 }
 
-input[type="checkbox"]:hover {
+.filter-btn:hover {
     box-shadow: 0px 0px 10px 3px #DAABFF;
 
 }
@@ -726,8 +727,10 @@ h2 {
     }
 }
 
-@media screen and (max-width: 768px){
-    .fa-podcast, .fa-rss {
+@media screen and (max-width: 768px) {
+
+    .fa-podcast,
+    .fa-rss {
         font-size: 2em;
     }
 }
