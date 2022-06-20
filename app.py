@@ -222,7 +222,6 @@ def posts():
     posts = list(mongo.db.posts.find())
     return render_template("blogs.html", posts=posts)
 
-
 # add / create blogs
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():

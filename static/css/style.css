@@ -9,7 +9,6 @@
     list-style-type: none;
 }
 
-
 a,
 li {
     text-decoration: none;
@@ -172,7 +171,7 @@ input {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: bisque;
+
     text-align: center;
     font-weight: bolder;
 }
@@ -183,69 +182,60 @@ input {
     text-decoration: none;
 }
 
-.home-sec-1 {
-    height: 70vh;
-    /* padding: 100px; */
-    background-image: url("/static/images/prime-colors.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    animation: fadeIn 1s;
-    margin-bottom: 50px;
+.hero-banner {
+    height: 400px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/prime-banner.jpg") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 2em;
 }
 
 .banner-text {
-    position: relative;
+    font-family: 'Work Sans', sans-serif;
     text-transform: uppercase;
-    font-size: 2em;
-    letter-spacing: 5px;
-    overflow: hidden;
-    background: linear-gradient(1300deg, rgb(84, 79, 79), #fff, #FFF);
-    background-repeat: no-repeat;
-    background-size: 80%;
-    animation: animate 10s linear infinite;
-    color: black;
-    font-weight: bolder;
+    font-size: 5vw;
+    letter-spacing: 4px;
+    color: rgb(41, 41, 41);
+    font-weight: 900;
+}
+
+.banner-text span:before {
+    content: '';
+    animation: animate 5s infinite;
 }
 
 @keyframes animate {
     0% {
-        background-position: -500%;
+        content: 'YOU';
+        color: #dd0000;
+    }
+
+    10% {
+        content: 'YOU';
+        color: #ff3b3b;
+    }
+
+    40% {
+        content: 'ME';
+        color: #dd0000;
+    }
+
+    70% {
+        content: 'US';
+        color: #ff3b3b;
     }
 
     100% {
-        background-position: 500%;
+        content: 'ALL';
+        color: #dd0000;
     }
 }
 
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: scale3d(.1, .1, .1) translate3d(1000px, 0, 0);
-        animation-timing-function: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-    }
-
-    60% {
-        opacity: 1;
-        transform: scale3d(.475, .475, .475) translate3d(-10px, 0, 0);
-        animation-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1);
-    }
-}
 
 /* .home-sec-1 {
     height: 60vh;
     background: linear-gradient(#f70000, #f89200, #f8f501, #038f00, #0168f8, #a200f7);
 } */
-
-
-
-
-
-
-
-
-
-
 
 .zoomIn {
     animation-name: zoomIn;
@@ -255,25 +245,6 @@ input {
     font-weight: bolder;
 }
 
-
-/* 
-@keyframes zoomIn {
-    0% {
-        opacity: 0;
-        transform: scale3d(.3, .3, .3);
-    }
-
-    50% {
-        opacity: 1;
-    }
-} */
-
-
-
-
-/* Custom CSS */
-
-
 /* Styling for contact.html */
 
 * {
@@ -282,9 +253,22 @@ input {
     box-sizing: border-box;
 }
 
+.contact {
+    background-color: #555; 
+   background-image: url('/static/images/prime-banner.jpg');
+   background-repeat: no-repeat;
+   background-position: center;
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100px;
+    opacity: 0.6; 
+  
+}
 
 .formContainer {
-    width: 100%;
+    width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -305,10 +289,13 @@ input {
     border-bottom: 3px solid black;
 }
 
+
 .teamRow p,
+
 .teamRow h3 {
     font-weight: bolder !important;
 }
+
 
 .form-text-content {
     color: black;
@@ -316,6 +303,7 @@ input {
     padding: 0 150px;
     margin-bottom: 20px;
 }
+
 
 .Customform {
     width: 90%;
@@ -402,15 +390,19 @@ textarea:valid~label {
 .social-icons i {
     margin-left: 10px;
     margin-bottom: -20px;
+
+
+
+
 }
 
 /* blog & podcast styling */
 
 .blog-banner {
-    width: 100vw;
+    width: 100%;
     height: 300px;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../images/banner-img-blogs.png") no-repeat top center;
-    background-size: 100%;
+    background-size: cover;
     text-align: center;
     margin-bottom: 2em;
 }
@@ -449,6 +441,8 @@ textarea:valid~label {
     color: #4267B2;
 }
 
+/* --------------------------------team page ------------------------ */
+
 
 .team-header {
     font-size: 36px;
@@ -463,6 +457,42 @@ h3 {
 }
 
 
+    .team-header {
+            font-size: 36px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        
+        #team i {
+            font-size: 26px;
+            color: #555;
+        }
+
+        #team p {
+            font-weight: 500;
+        }
+
+        #team .card {
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgb(16, 15, 26);
+            transition: all 0.3s ease-in;
+            -webkit-transition: all 0.3s ease-in;
+            -moz-transition: all 0.3s ease-in;
+         
+        }
+
+    
+ #team .card:hover{
+    background: conic-gradient(from 80deg, #fafafa,rgb(137, 135, 135) );
+
+
 #team i {
     font-size: 26px;
     color: #555;
@@ -472,6 +502,7 @@ h3 {
     font-weight: 500;
 }
 
+
 #team .card {
     border-radius: 10px;
     box-shadow: 5px 5px 15px rgb(16, 15, 26);
@@ -480,6 +511,7 @@ h3 {
     -moz-transition: all 0.3s ease-in;
 
 }
+
 
 .blog-container {
 
@@ -595,6 +627,7 @@ input[type="checkbox"]:hover {
     cursor: pointer;
     max-width: 50%;
     max-height: 15%;
+
 }
 
 #recordButton,
@@ -630,7 +663,6 @@ input[type="checkbox"]:hover {
 
 h2 {
     left: 100px;
-    position: relative;
 }
 
 #recordedAudio {
@@ -691,5 +723,11 @@ h2 {
 
     .bi-facebook:hover {
         color: #4267B2;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .fa-podcast, .fa-rss {
+        font-size: 2em;
     }
 }
