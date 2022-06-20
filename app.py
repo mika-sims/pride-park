@@ -70,7 +70,8 @@ def blog():
 # Podcast page
 @app.route("/podcast", methods=['GET', 'POST'])
 def podcast():
-   return render_template("podcast.html", podcast=mongo.db.podcasts.find())
+    user = mongo.db.users.find_one({"username": session["user"]})
+    return render_template("podcast.html", user=user, podcast=mongo.db.podcasts.find())
 
 
 # Signup page
@@ -180,7 +181,6 @@ def profile(username):
             last_seen=last_seen,
             current_time=datetime.utcnow(),
             podcast=mongo.db.podcasts.find())
-
     return redirect(url_for("login"))
 
 

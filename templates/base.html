@@ -89,12 +89,6 @@
                         <a class="nav-link hvr-ripple-in" href="{{ url_for('profile', username='{{session.user}}') }}">
                             Profile</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link hvr-ripple-in" href="{{ url_for('add_post') }}">Write a post</a>
-
-                        <a class="nav-link" href="{{ url_for('profile', username='{{session.user}}') }}">
-                            {{session.user|title}}</a>
-                    </li>
 
                     </li>
                     {% if session.user|lower == "admin" %}
