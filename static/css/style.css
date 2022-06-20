@@ -69,17 +69,16 @@ h6 {
     background-color: cadetblue;
 }
 
-.myNav {
+.myNav, .footer-sectiom {
     font-family: 'Quattrocento', sans-serif;
+    background-color: cadetblue;
+
 }
 
 .myNavBtns:hover {
-    background-color: black;
-    color: white !important;
-    padding: 12px 32px;
     transition-duration: 2s !important;
     transition-delay: 0.2s !important;
-    border-radius: 12px;
+    text-decoration: underline;
 }
 
 .myNavBtns:active {
@@ -167,8 +166,14 @@ input {
     width: 100%;
     background-color: bisque;
     text-align: center;
+    font-weight: bolder;
 }
 
+.footer-brand{
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+}
 
 .home-sec-1 {
     height: 70vh;
@@ -188,10 +193,10 @@ input {
     overflow: hidden;
     background: linear-gradient(1300deg, rgb(84, 79, 79), #fff, #FFF);
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 80%;
     animation: animate 10s linear infinite;
     color: black;
-    font-weight: 900;
+    font-weight: bolder;
 }
 
 @keyframes animate {
@@ -277,16 +282,11 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(white, #d2fcc7), url("image goes here");
+    /* background-image: linear-gradient(white, #fafff8), url("image goes here"); */
     background-position: center;
     background-size: cover;
-    font-size: 20px;
-    /* background-color: rgb(175, 33, 33); */
-}
-
-.footer-logo {
-    font-size: 24px;
     font-weight: bolder;
+    /* background-color: rgb(175, 33, 33); */
 }
 
 .formHeading {
@@ -297,10 +297,13 @@ input {
     border-bottom: 3px solid black;
 }
 
+.teamRow p, .teamRow h3{
+    font-weight: bolder !important;
+}
 .form-text-content {
     color: black;
     font-size: 18px;
-    /* padding: 0 150px; */
+    padding: 0 150px;
     margin-bottom: 20px;
 }
 
@@ -375,8 +378,7 @@ textarea:valid~label {
     width: 100%;
     text-align: center;
 }
-
-.footer-section {
+.footer-section{
     font-weight: bolder;
 }
 
@@ -384,6 +386,11 @@ textarea:valid~label {
     font-size: 24px;
     font-weight: bolder;
 }
+
+
+.social-icons i {
+    margin-left: 10px;
+    margin-bottom: -20px;
 
 
 /* blog & podcast styling */
@@ -412,19 +419,57 @@ textarea:valid~label {
 .blog-submission-intro {
     text-align: center;
 
-}
 
-.social-icons {
+}
+.social-icons  {
     margin-bottom: -15px;
 }
-
-.bi-instagram:hover {
+.bi-instagram:hover{
     color: red;
 }
-
-.bi-twitter:hover {
+.bi-twitter:hover{
     color: #1DA1F2;
 }
+.bi-facebook:hover{
+    color: #4267B2;
+}
+
+
+ .team-header {
+     font-size: 36px;
+     color: #333;
+     font-weight: bold;
+ }
+
+ h3 {
+     font-size: 24px;
+     color: #555;
+     font-weight: bold;
+ }
+
+
+
+ #team i {
+     font-size: 26px;
+     color: #555;
+ }
+
+ #team p {
+     font-weight: 500;
+ }
+
+ #team .card {
+     border-radius: 10px;
+     box-shadow: 5px 5px 15px rgb(16, 15, 26);
+     transition: all 0.3s ease-in;
+     -webkit-transition: all 0.3s ease-in;
+     -moz-transition: all 0.3s ease-in;
+
+ }
+
+
+
+ .blog-container {
 
 .blog-container {
 
@@ -526,11 +571,27 @@ input[type="checkbox"]:hover {
 /* Podcast */
 
 
+#record {
+    background-color: red;
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+
+
 #recordButton,
 #pauseButton,
 #stopButton {
     width: 70px;
-    height: 70px;
+
     border-radius: 50%;
 }
 
@@ -570,7 +631,6 @@ h2 {
 }
 
 
-/* blog pages */
 /* blog page */
 .blog-buttons .btn {
     margin: 5px;
@@ -605,8 +665,7 @@ h2 {
     font-size: 1.1rem;
 }
 
-/* datepicker */
-/* label{margin-left: 20px;} */
+
 #datepicker {
     width: 180px;
     margin: 0 20px 20px 20px;
