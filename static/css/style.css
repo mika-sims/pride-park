@@ -176,37 +176,48 @@ input {
     text-decoration: none;
 }
 
-.home-sec-1 {
-    height: 70vh;
-    /* padding: 100px; */
-    background-image: url("/static/images/prime-colors.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    animation: fadeIn 1s;
-    margin-bottom: 50px;
+.hero-banner {
+    height: 400px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/prime-banner.jpg") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 2em;
 }
 
 .banner-text {
-    position: relative;
+    font-family: 'Work Sans', sans-serif;
     text-transform: uppercase;
-    font-size: 2em;
-    letter-spacing: 5px;
-    overflow: hidden;
-    background: linear-gradient(1300deg, rgb(84, 79, 79), #fff, #FFF);
-    background-repeat: no-repeat;
-    background-size: 80%;
-    animation: animate 10s linear infinite;
-    color: black;
-    font-weight: bolder;
+    font-size: 5vw;
+    letter-spacing: 4px;
+    color: rgb(41, 41, 41);
+    font-weight: 900;
+}
+
+.banner-text span:before{
+    content: '';
+    animation: animate 5s infinite;
 }
 
 @keyframes animate {
     0% {
-        background-position: -500%;
+        content: 'YOU';
+        color: #dd0000;
+    }
+    10% {
+        content: 'YOU';
+        color: #ff3b3b;
+    }
+    40% {
+        content: 'ME';
+        color: #dd0000;
+    }
+    70% {
+        content: 'US';
+        color: #ff3b3b;
     }
 
     100% {
-        background-position: 500%;
+        content: 'ALL';
+        color: #dd0000;
     }
 }
 
