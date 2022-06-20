@@ -1,6 +1,6 @@
 PRIDE PARK
 
-![Main Mockup](static/images/mockupB.png)
+![Main Mockup](static/images/readme/prideparkmockup.png)
 
 [Link to Live Website](https://pride-park.herokuapp.com/)
 
@@ -388,59 +388,58 @@ When a user is logged in and and adds, edits or deletes a blog, a message is fla
 #### Admin
 
 1. As an admin, I want to be able to edit or delete any blogs to remove any inappropriate content.
-When an admin is logged in, the edit and delete buttons are available to them on all blogs allowing then to edit or delete any inappropriate blogs- an orange delete button is present to show its a blog not written by admin.
+When an admin is logged in, the edit and delete buttons are available to them on all blogs allowing them to edit or delete any inappropriate blogs. An orange delete button is present to show it's a blog not written by admin.
 2. As an admin, I want to be able to easily add, edit or delete categories within in the site rather than having to access MongoDB.
 3. When an admin is logged in a new nav item is added called Categories. Clicking on this page allows an admin to view exisiting catgories, as well as edit or delete them. Additionally there is an add category button allowing then to add a new category on the front end.
 
 #### Functionality Test Cases
 #### Navigation:
-1. While logged out, make sure you can see all the nav links for logged out and unregistered users:
-   - home
-   - explore 
-   - sign in
-   - register
+While logged out, make sure you can see all the nav links for logged out and unregistered users:
+   - Home
+   - About
+   - Contact Us
+   - Blogs
+   - Podcast
+   - Sign Up
+   - Login
 
 #### Home:
-2. While se logged out make sure that you can see welcome page that are on the home page, and that it includes the following:
-- nav-links
-- 2 background parallax images
-- 3 column information/how to get started
-- 1 CTA get started button
-- contact us btn
-- footer with quick links info , logo and copyright.
+While logged out make sure that you can see welcome page that are on the home page, and that it includes the following:
+- Navigation bar with logo
+- Banner image with text
+- 2 icons redirecting to blog and podcast page respectively
+- footer with quick links info and copyright.
 
 
 #### Blogs:  
-3. While logged out make sure that you can see all recommendations that are on the home page, and that each recommendations included the follow:
-- Category name_
-- title
-- content
-- tags
-- Created by
-- published date
+While logged out make sure that you can see all recommendations that are on the home page, and that each recommendations included the follow:
+- Category tags
+- Title
+- Author
+- Content summary
+- Publishing date
 
- #### login
-4. While logged in, make sure  you can see all blogs and that any blogs that was created by you, now has the edit and delete button on them.
-- while logged in , make sure you can see blogs written by you on your profile page.
+#### Login
+- While logged in, make sure you can see all blogs and that any blogs created by you, now has the edit and delete button.
+- While logged in, make sure you can see blogs written by you on your profile page.
 
-5. While logged in as an admin, make sure you can view all blogs  and blog categories and that all categories blogs now have the edit and delete button. so the admin may delete inappropriate blogs created by users  but may not  edit blogs  created by other users.
-- admin can delete and edit blogs created by him /her
-- admin can also create edit and delete  blog categories
+- While logged in as an **admin**, make sure you can view all blogs  and blog categories and that all categories blogs now have the edit and delete button. so the admin may delete inappropriate blogs created by users  but may not  edit blogs  created by other users.
+  - admin can delete and edit blogs created by him /her
+  - admin can also create edit and delete  blog categories
 
 ### Home: Search funtionality
 
-Type a word into the search box that you know there isn't match for in the DB, ensure that the flash messaging saying that "Sorry ,No results were found ".
+Type a word into the search box that you know there isn't a match for in the DB, ensure that a flash message pops up, saying"Sorry, no results were found".
 Click the reset button and ensure all blogs are visble again.
-blogs that match that criteria are visible.
-Home: Filter functionality
+Blogs that match that criteria are visible.
 
 Click on the word filter above the blogs and ensure the filter option buttons are visible.
 Click on each button in turn and ensure that only recommendations that match that filter are visble.
-Ensure there is one filter option that has no corresponding entries in the DB and then click on the option, ensure the flash messagin saying "Sorry ,No results were found".
+Ensure there is one filter option that has no corresponding entries in the DB and then click on the option, ensure the flash messagin saying "Sorry, no results were found".
 
 ### Registration:
 
-1. Firstly complete the fields, click submit and ensure that the data is saved to the DB.
+1. First complete the fields, click submit and ensure that the data is saved to the DB.
 2. Attempt to submit the form with empty fields and ensure that valitation errors are displayed.
 3. Attempt to submit the form without a correctly formatted email address and ensure validation error is displayed.
 4. Log in with valid data and ensure flash message is show to confirm that the data has been submitted.
