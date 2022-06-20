@@ -196,13 +196,6 @@ def posts():
     return render_template("blogs.html", posts=posts)
 
 
-# Podcast page
-@app.route("/podcast", methods=['GET'])
-def podcast():
-   return render_template("podcast.html")
-
-
-
 # add / create blogs
 @app.route("/add_post", methods=["GET", "POST"])
 def add_post():
