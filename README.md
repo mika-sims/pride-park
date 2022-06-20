@@ -75,6 +75,20 @@ Please look at the [features](#features) section for a more detailed description
 Everyone has got something interesting to say or even full depth of knowledge about a particular subject.
 Pride Park enables people to blog about anything and everything and also provides users with a way to communicate with others and attain information about a particular subject.
 
+### Wireframes
+<details>
+  <summary>
+    View images of wireframes
+  </summary>
+  <img src="wireframes/about.png">
+  <img src="wireframes/blog.png">
+  <img src="wireframes/contact-us.png">
+  <img src="wireframes/home-page.png">
+  <img src="wireframes/login.png">
+  <img src="wireframes/podcast.png">
+  <img src="wireframes/signup.png">
+</details>
+
 
 ### User Stories 
 - As a user, I can sign up to Pride Park and create a profile
