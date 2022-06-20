@@ -155,6 +155,11 @@ input {
     margin-top: 10px;
 }
 
+#profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
 
 /* Custom CSS */
 .card-img-top {
@@ -284,8 +289,19 @@ input {
     border-bottom: 3px solid black;
 }
 
+
+.teamRow p,
+
 .teamRow h3 {
     font-weight: bolder !important;
+}
+
+
+.form-text-content {
+    color: black;
+    font-size: 18px;
+    padding: 0 150px;
+    margin-bottom: 20px;
 }
 
 
@@ -375,6 +391,9 @@ textarea:valid~label {
     margin-left: 10px;
     margin-bottom: -20px;
 
+
+
+
 }
 
 /* blog & podcast styling */
@@ -424,6 +443,20 @@ textarea:valid~label {
 
 /* --------------------------------team page ------------------------ */
 
+
+.team-header {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 24px;
+    color: #555;
+    font-weight: bold;
+}
+
+
     .team-header {
             font-size: 36px;
             color: #333;
@@ -459,7 +492,25 @@ textarea:valid~label {
  #team .card:hover{
     background: conic-gradient(from 80deg, #fafafa,rgb(137, 135, 135) );
 
- }
+
+#team i {
+    font-size: 26px;
+    color: #555;
+}
+
+#team p {
+    font-weight: 500;
+}
+
+
+#team .card {
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(16, 15, 26);
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+
+}
 
 
 .blog-container {
@@ -583,7 +634,6 @@ input[type="checkbox"]:hover {
 #pauseButton,
 #stopButton {
     width: 70px;
-
     border-radius: 50%;
 }
 

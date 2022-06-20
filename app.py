@@ -82,6 +82,8 @@ def signup():
     if request.method == 'POST':
        user_exists = user_collection.find_one({'username': request.form.get('username').lower()})
        email_exists = user_collection.find_one({'email': request.form.get('email')})
+       image = request.files["image"]
+       upload = cloudinary.uploader.upload(image)
        if user_exists:
           flash('Username already taken')
           return redirect(url_for('signup'))
@@ -93,6 +95,7 @@ def signup():
                 'username': request.form.get('username'),
                 'email': request.form.get('email'),
                 'password': request.form.get('password'),
+                'image': upload["secure_url"],
           }
           user_collection.insert_one(new_user)
           # Add user to session cookies
@@ -164,18 +167,42 @@ def profile(username):
     # grab the session user's username from db , display user's blogs on thier profile
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})
     posts = list(mongo.db.posts.find(
         {"created_by": session["user"]}).sort("_id", -1))
     last_seen = datetime.utcnow()
     if session["user"]:
         return render_template(
             "profile.html", username=username,
+            user=user,
             posts=posts,
             last_seen=last_seen,
             current_time=datetime.utcnow(),
             podcast=mongo.db.podcasts.find())
 
     return redirect(url_for("login"))
+
+
+# Update profile
+@app.route("/update_profile/<username>", methods=["GET", "POST"])
+def update_profile(username):
+    if request.method == "POST":
+        bio = request.form.get("bio")
+        print(bio)
+        image = request.files["image"]
+        print('So far so good')
+        upload = cloudinary.uploader.upload(image)
+        username = mongo.db.users.find_one({"username": session["user"]})["username"]
+        submit = {
+            "bio": bio,
+            'image': upload["secure_url"]
+        }
+        mongo.db.users.find_one_and_update({"username": username},{'$set': submit} )
+        flash("Profile SuccessfullY Updated")
+    username = mongo.db.users.find_one({'username': session["user"]})["username"]
+    return render_template("update_profile.html", username=username)
+
 
 # search route function
 @app.route("/search", methods=["GET", "POST"])
