@@ -4,15 +4,12 @@
 {% block content %}
 
 <!-- banner image still to be included at the top -->
-<section class="container-fluid d-flex flex-column justify-content-center align-items-center podcast-banner text-center">
+<section class="container d-flex flex-column justify-content-center align-items-center podcast-banner text-center">
     <h2 class="">Spoken Word</h2>
     <div class="text-center">
         <a class="btn btn-success shadow" href="{{ url_for('record') }}"><i class="fa fa-podcast fa-3x" aria-hidden="true"></i><br> Create podcast</a>
     </div>
   </section>
-<div class="text-center">
-    <a class="btn btn-danger" href="{{ url_for('record') }}">Create podcast</a>
-</div>
 
 <div class="blog-container">
     <!-- Search side panel with filter options -->
