@@ -644,7 +644,8 @@ This project is hosted on [Heroku](heroku.com). It's been deployed using the fol
 - We borrowed code for audio recording from [codepen](https://codepen.io/jeremyagottfried/pen/bMqyNZ)
 
 ### Media
-   
+- Image for the [favicon](https://stock.adobe.com/ca/images/hands-in-heart-shape-on-white-transparent-background-painted-rainbow-color-symbol-of-lgbt-glbt-lgbtq-pride-flag-or-lesbian-gay-bisexual-transgender-queer-questioning-vector-illustration/197908448).
+
 
 ### Acknowledgements
 
