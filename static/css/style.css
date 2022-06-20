@@ -31,7 +31,7 @@ li {
     font-weight: 900;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
-    animation: animate 20s linear infinite;
+    animation: animate 10s linear infinite;
 }
 
 /*===== Animate logo =====*/
