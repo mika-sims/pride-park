@@ -17,18 +17,26 @@
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
 
 
     </script>
+
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="{{url_for('static', filename='images/favicon.ico')}}">
+
     <!-- datetime picker cdn -->
 
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet"
-        type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
     <link rel="stylesheet" href="https://cdn.tutorialjinni.com/hover.css/2.3.1/css/hover-min.css">
     <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="stylesheet" type="image/x-icon" href="{{ url_for('static', filename='css/style.css') }}">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -41,11 +49,11 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
     <title>Pride Park</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg bg-light sticky-top">
+<body>   <nav class="navbar navbar-expand-lg bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand text-danger" href="#">Pride Park</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -55,41 +63,49 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
+                        <a class="nav-link active hvr-ripple-in" aria-current="page"
+                            href="{{ url_for('index') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                        <a class="nav-link hvr-ripple-in" href="{{ url_for('about') }}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('contact') }}">Contact us</a>
+                        <a class="nav-link hvr-ripple-in" href="{{ url_for('contact') }}">Contact us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('posts') }}">Blogs</a>
+
+                        <a class="nav-link hvr-ripple-in" href="{{ url_for('posts') }}">Blogs</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('podcast') }}">Podcast</a>
+                        <a class="nav-link hvr-ripple-in" href="{{ url_for('podcast') }}">Podcast</a>
                     </li>
+
                     {% if session.user == 'guest' %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('signup') }}">Sign up</a>
+                        <a class="nav-link hvr-ripple-in" href="{{ url_for('signup') }}">Sign up</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                        <a class="nav-link hvr-ripple-in" href="{{ url_for('login') }}">Login</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('profile', username='{{session.user}}') }}">
+
+                        <a class="nav-link hvr-ripple-in" href="{{ url_for('profile', username='{{session.user}}') }}">
                             Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('add_post') }}">Write a post</a>
+                        <a class="nav-link hvr-ripple-in" href="{{ url_for('add_post') }}">Write a post</a>
+
+                        <a class="nav-link" href="{{ url_for('profile', username='{{session.user}}') }}">
+                            {{session.user|title}}</a>
+                    </li>
+
                     </li>
                     {% if session.user|lower == "admin" %}
                     <li><a href="{{ url_for('get_categories') }}"> Post Categories</a></li>
                     {% endif %}
-
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                        <a class="nav-link hvr-ripple-in" href="{{ url_for('logout') }}">Logout</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -100,26 +116,45 @@
     {% block content %}
 
     {% endblock content %}
-    <!--Footer starts here-->
 
-    <!-- <footer class="footer mt-auto py-3 bg-light">
-        Content for the footer goes here...
-    </footer> -->
-    <div class="container-fluid">
+    <!-- Footer Start -->
+    <section class="footer">
+        <div class="container-fluid my-5">
+            <footer class="text-center text-dark">
+                <div class="container">
+                    <hr class="my-5" />
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-8">
+                            <p>Everyone has a story to tell. Some of us want to share theirs, some want to witness
+                                other's. Whether you feel the need to make your voice heard, get something of your chest
+                                or find out that there are other people like you, this site wants to help you feel more
+                                connected with other members of the LGBTQ+ community anywhere.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="py-3 my-4">
+                            <ul class="nav justify-content-center border-bottom pb-3 mb-3 text-light">
+                                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i
+                                            class="fab fa-instagram fa-xl"></i></a></li>
+                                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i
+                                            class="fab fa-twitter fa-xl"></i></a></li>
+                                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i
+                                            class="fab fa-linkedin fa-xl"></i></a></li>
+                                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted"><i
+                                            class="fab fa-facebook fa-xl"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container-fluid text-center p-3 bg-success fixed-bottom">
+                        <p class="text-muted"></p>&copy; 2022,
+                        <a class="text-white" href="https://github.com/mika-sims/pride-park">Pride Park </a><small>All
+                            Rights Reserved</small>
+                    </div>
 
-
-
-        <div class="row footer-section">
-            <div class="col-md-4 text-danger footer-logo text-center">Pride Park</div>
-            <div class="col-md-4 text-center">@ pride park</div>
-            <div class="col-md-4 col-xs-12 social-icons text-center" style="justify-content:space-between ;">
-                <i class="bi bi-instagram" style="font-size:30px; "></i>
-                <i class="bi bi-facebook" style="font-size:30px; "></i>
-                <i class="bi bi-twitter" style="font-size:30px; "></i>
-            </div>
+            </footer>
         </div>
-    </div>
-    <!--Footer starts here-->
+    </section>
 </body>
 
-</html>
+</html
