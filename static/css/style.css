@@ -675,3 +675,9 @@ h2 {
         color: #4267B2;
     }
 }
+
+@media screen and (max-width: 768px){
+    .fa-podcast, .fa-rss {
+        font-size: 2em;
+    }
+}
