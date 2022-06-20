@@ -69,17 +69,17 @@ h6 {
     background-color: cadetblue;
 }
 
-.myNav {
+.myNav,
+.footer-sectiom {
     font-family: 'Quattrocento', sans-serif;
+    background-color: cadetblue;
+
 }
 
 .myNavBtns:hover {
-    background-color: black;
-    color: white !important;
-    padding: 12px 32px;
     transition-duration: 2s !important;
     transition-delay: 0.2s !important;
-    border-radius: 12px;
+    text-decoration: underline;
 }
 
 .myNavBtns:active {
@@ -99,6 +99,8 @@ body {
     font-family: 'Work Sans', sans-serif;
 }
 
+/*===== About Section End=====*/
+
 .bg-pride {
     background: linear-gradient(90deg, #f00000, #f00000 16.67%, #ff8000 16.67%, #ff8000 33.33%, #ffff00 33.33%, #ffff00 50%, #007940 50%, #007940 66.67%, #4040ff 66.67%, #4040ff 83.33%, #a000c0 83.33%, #a000c0) fixed;
 }
@@ -108,16 +110,20 @@ body {
     width: 100%;
 }
 
-.hero-pride {
-    background-image: url('/static/images/meet-pride.jpg');
-    background-size: cover;
+*/ .hero-pride {
+    background: linear-gradient(90deg, rgba(255, 0, 0, .8) 0%, rgba(255, 59, 0, .8) 3%, rgba(255, 171, 0, .8) 6%, rgba(0, 217, 32, .8) 9%, rgba(255, 239, 0, .8) 12%, rgba(17, 29, 236, .8) 15%, rgba(104, 0, 223, .8) 18%, rgba(255, 255, 255, .8) 21%);
     height: 600px;
     width: 100%;
 }
 
 .bg-signup {
-    background-image: url('/static/images/meet-pride.jpg');
-    background-size: cover;
+    background: linear-gradient(90deg, rgba(255, 0, 0, .8) 0%, rgba(255, 59, 0, .8) 3%, rgba(255, 171, 0, .8) 6%, rgba(0, 217, 32, .8) 9%, rgba(255, 239, 0, .8) 12%, rgba(17, 29, 236, .8) 15%, rgba(104, 0, 223, .8) 18%, rgba(255, 255, 255, .8) 21%);
+    height: 600px;
+    width: 100%;
+}
+
+.bg-login {
+    background: linear-gradient(to left, rgba(255, 0, 0, .8) 0%, rgba(255, 59, 0, .8) 3%, rgba(255, 171, 0, .8) 6%, rgba(0, 217, 32, .8) 9%, rgba(255, 239, 0, .8) 12%, rgba(17, 29, 236, .8) 15%, rgba(104, 0, 223, .8) 18%, rgba(255, 255, 255, .8) 21%);
     height: 600px;
     width: 100%;
 }
@@ -139,6 +145,7 @@ label {
     text-align: right;
     margin-right: 15px;
     float: left;
+
 }
 
 input {
@@ -159,42 +166,62 @@ input {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: bisque;
+
     text-align: center;
+    font-weight: bolder;
 }
 
+.footer-brand {
+    font-size: 20px;
+    font-weight: bolder;
+    text-decoration: none;
+}
 
-.home-sec-1 {
-    height: 70vh;
-    /* padding: 100px; */
-    background-image: url("/static/images/prime-colors.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    animation: fadeIn 1s;
-    margin-bottom: 50px;
+.hero-banner {
+    height: 400px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url("../images/prime-banner.jpg") no-repeat center center;
+    background-size: cover;
+    margin-bottom: 2em;
 }
 
 .banner-text {
-    position: relative;
+    font-family: 'Work Sans', sans-serif;
     text-transform: uppercase;
-    font-size: 2em;
-    letter-spacing: 5px;
-    overflow: hidden;
-    background: linear-gradient(1300deg, rgb(84, 79, 79), #fff, #FFF);
-    background-repeat: no-repeat;
-    background-size: 90%;
-    animation: animate 10s linear infinite;
-    color: black;
+    font-size: 5vw;
+    letter-spacing: 4px;
+    color: rgb(41, 41, 41);
     font-weight: 900;
+}
+
+.banner-text span:before {
+    content: '';
+    animation: animate 5s infinite;
 }
 
 @keyframes animate {
     0% {
-        background-position: -500%;
+        content: 'YOU';
+        color: #dd0000;
+    }
+
+    10% {
+        content: 'YOU';
+        color: #ff3b3b;
+    }
+
+    40% {
+        content: 'ME';
+        color: #dd0000;
+    }
+
+    70% {
+        content: 'US';
+        color: #ff3b3b;
     }
 
     100% {
-        background-position: 500%;
+        content: 'ALL';
+        color: #dd0000;
     }
 }
 
@@ -263,24 +290,30 @@ input {
     box-sizing: border-box;
 }
 
+.contact {
+    background-color: green;
+    background-image: url('/static/images/contact.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100px;
+    /* margin-top: 6rem!important; */
+
+}
 
 .formContainer {
-    width: 100%;
+    width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(white, #d2fcc7), url("image goes here");
+    /* background-image: linear-gradient(white, #fafff8), url("image goes here"); */
     background-position: center;
     background-size: cover;
-    font-size: 20px;
-    /* background-color: rgb(175, 33, 33); */
-}
-
-.footer-logo {
-    font-size: 24px;
     font-weight: bolder;
+    /* background-color: rgb(175, 33, 33); */
 }
 
 .formHeading {
@@ -291,12 +324,10 @@ input {
     border-bottom: 3px solid black;
 }
 
-.form-text-content {
-    color: black;
-    font-size: 18px;
-    /* padding: 0 150px; */
-    margin-bottom: 20px;
+.teamRow h3 {
+    font-weight: bolder !important;
 }
+
 
 .Customform {
     width: 90%;
@@ -319,17 +350,6 @@ textarea {
     color: #000;
     background: transparent;
     font-size: 15px;
-}
-
-label {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    color: black;
-    cursor: text;
-    transition: 0.2s;
 }
 
 button {
@@ -390,16 +410,40 @@ textarea:valid~label {
     font-weight: bolder;
 }
 
+
+.social-icons i {
+    margin-left: 10px;
+    margin-bottom: -20px;
+
+}
+
 /* blog & podcast styling */
+
+.blog-banner {
+    width: 100vw;
+    height: 300px;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../images/banner-img-blogs.png") no-repeat top center;
+    background-size: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.podcast-banner {
+    width: 100vw;
+    height: 300px;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../images/banner-bg-podcast.png") no-repeat center center;
+    background-size: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+}
 
 .blog-heading,
 .blog-intro,
 .blog-submission-heading,
 .blog-submission-intro {
     text-align: center;
-    margin: 1em auto;
-    margin-left: 10px;
-    margin-bottom: -20px;
+
+
 }
 
 .social-icons {
@@ -414,7 +458,54 @@ textarea:valid~label {
     color: #1DA1F2;
 }
 
+.bi-facebook:hover {
+    color: #4267B2;
+}
+
+/* --------------------------------team page ------------------------ */
+
+.team-header {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 24px;
+    color: #555;
+    font-weight: bold;
+}
+
+
+#team i {
+    font-size: 26px;
+    color: #555;
+}
+
+#team p {
+    font-weight: 500;
+}
+
+#team .card {
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(16, 15, 26);
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+
+}
+
+
+#team .card:hover {
+    /* background: conic-gradient(from 90deg, #390202, #53534dd3, #5e6cd8, #4e5e9e, #c16f62 ); */
+
+    background-image: linear-gradient(180deg, #000 0 0%, #72501e 14.28571% 14.28571%, #ff0018 28.57143% 28.57143%, #ffa52c 42.85714% 42.85714%, #ffff41 57.14286% 57.14286%, #008018 71.42857% 71.42857%, #0000f9 85.71429% 85.71429%, #86007d 100% 100%);
+}
+
+
+
 .blog-container {
+
     display: flex;
     width: 80vw;
     max-width: 1100px;
@@ -432,7 +523,9 @@ textarea:valid~label {
     border-radius: 4px;
     font-weight: 600;
     font-size: 1.2rem;
+
     background-color: rgb(232, 232, 232);
+
 }
 
 .filter-btn:hover,
@@ -510,6 +603,33 @@ input[type="checkbox"]:hover {
 
 /* Podcast */
 
+
+#record {
+    background-color: red;
+    border-width: medium;
+    border-color: black;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    max-width: 50%;
+    max-height: 15%;
+
+}
+
+#recordButton,
+#pauseButton,
+#stopButton {
+    width: 70px;
+
+    border-radius: 50%;
+}
+
+
 #record {
     background-color: red;
     /* Green */
@@ -531,26 +651,7 @@ input[type="checkbox"]:hover {
     position: relative;
 }
 
-#stopRecord {
-    background-color: green;
-    /* Green */
-    border-width: medium;
-    border-color: black;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    max-width: 50%;
-    max-height: 15%;
-    border-radius: 50%;
-    left: 100px;
-    right: 100px;
-    position: relative;
-}
+
 
 h2 {
     left: 100px;
@@ -564,7 +665,6 @@ h2 {
 }
 
 
-/* blog pages */
 /* blog page */
 .blog-buttons .btn {
     margin: 5px;
@@ -599,8 +699,7 @@ h2 {
     font-size: 1.1rem;
 }
 
-/* datepicker */
-/* label{margin-left: 20px;} */
+
 #datepicker {
     width: 180px;
     margin: 0 20px 20px 20px;

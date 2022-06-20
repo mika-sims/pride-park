@@ -1,99 +1,112 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h3 class="light-blue-text text-darken-4 center-align header">Edit blog</h3>
-<div class="row ">
-    <form class="col s12" method="POST" action="{{url_for('edit_post',post_id=post._id)}}">
-        <!-- blog category selection-->
-        <div class="row">
-            <div class="form-group col">
-                <select id="category_name" name="category_name" class="validate py-2" required>
-                    <option value="" disabled>Choose category</option>
-                    <option>Lesbian</option>
-                    <option>Gay</option>
-                   <option>Trans-gender</option>
-                    <option>Bi</option>
-                    <option>A sexual</option>
-                    <option>Non binary</option>
-                    <option>Other</option>
-                    <option>Unsafe country</option>
-                    <option>Safe country</option>
-                    <option>Trigger Warning</option>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-10 col-sm-12 px-sm-3 mx-auto center-align">
+            <div class="blog-card card mx-sm-1 mt-3">
 
-                    {% for category in categories %}
-                        {% if category.category_name == post.category_name %}
-                            <option value="{{ category.category_name}}" selected>{{ category.category_name}}</option>
-                        {% else %}
-                        <option value="{{ category.category_name}}">{{ category.category_name}}</option>
-                        {% endif %}
-                    {% endfor %}
-                </select>
-                <label for="category_name">Post Catergory</label>
-            </div>
-        </div>
+                <h3 class="card-header">Edit blog</h3>
+                <div class="card-body p-5">
+                    <div class="form-group">
+                        <div class="input-field col-sm-12">
+                            <form class="col-sm-12 center-align" method="POST"
+                                action="{{url_for('edit_post',post_id=post._id)}}">
+                                <!-- blog category selection-->
+                                <div class="form-group">
+                                    <div class="form-group col">
+                                        <select id="category_name" name="category_name" class="validate py-2" required>
+                                            <option value="" disabled>Choose category</option>
+                                            <option>Lesbian</option>
+                                            <option>Gay</option>
+                                            <option>Trans-gender</option>
+                                            <option>Bi</option>
+                                            <option>A sexual</option>
+                                            <option>Non binary</option>
+                                            <option>Other</option>
+                                            <option>Unsafe country</option>
+                                            <option>Safe country</option>
+                                            <option>Trigger Warning</option>
+
+                                        {% for category in categories %}
+                                        {% if category.category_name == post.category_name %}
+                                        <option value="{{ category.category_name}}" selected>{{ category.category_name}}
+                                        </option>
+                                        {% else %}
+                                        <option value="{{ category.category_name}}">{{ category.category_name}}</option>
+                                        {% endif %}
+                                        {% endfor %}
+                                        </select>
+                                        <label for="category_name">Catergory</label>
+                                        </div>
+                                        </div>
         
         <!-- post title-->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-pen-fancy"></i>
-                <input id="title" type="text" name="title" value="{{ post.title }}" minlength="5" maxlength="100" class="validate" required>
-                <label for="title">Post Title</label>
+        <div class="form-group">
+            <div class="input-field col-md-8">
+
+                <input id="title" type="text" name="title" value="{{ post.title }}" minlength="5" maxlength="100"
+                    class="validate" required>
+                <label for="title">Title</label>
             </div>
         </div>
         <!-- post content -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                <textarea id="content" name="content" minlength="5" maxlength="2000"
-                    class="materialize-textarea ckeditor" data-length="2000" required>{{ post.content }}</textarea>
-                <label for="content">Post Content</label>
+        <div class="form-group">
+            <div class="input-field col-md-8">
+
+                <input id="title" type="text" name="title" value="{{ post.content }}" minlength="5" maxlength="100"
+                    class="validate" required>
+
+                <label for="content">Content</label>
             </div>
         </div>
-       <!-- add image upload <div>
+        <!-- add image upload <div>
          <form action="/" method="post" enctype="multipart/form-data">
            <input type="file" name="photos">
         </div> -->
         <!-- date created picker -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-clock prefix light-blue-text text-darken-4"></i>
-                <input id="read_time" type="text" name="read_time" value="{{ post.read_time }}" minlength="5" maxlength="50"
-                    class="timepicker validate" required>
+        <div class="form-group">
+            <div class="input-field col-md-8">
+
+                <input id="read_time" type="text" name="read_time" value="{{ post.read_time }}" minlength="5"
+                    maxlength="50" class="timepicker validate" required>
                 <label for="read_time">Read Time</label>
             </div>
         </div>
         <!-- date created picker -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-calendar-alt"></i>
-                <input id="published_date" type="text" name="published_date" value="{{ post.published_date }}" minlength="5" maxlength="60"
-                    class="datepicker validate" required>
+        <div class="form-group">
+            <div class="input-field col-md-8">
+                <input id="published_date" type="text" name="published_date" value="{{ post.published_date }}"
+                    minlength="5" maxlength="60" class="datepicker validate" required />
                 <label for="published_date"> Publish Date</label>
             </div>
         </div>
-        <!-- date created picker -->
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="fas fa-hashtag"></i>
+        <!-- tags -->
+        <div class="form-group">
+            <div class="input-field col-md-8">
+
                 <input id="tags" type="text" name="tags" minlength="5" maxlength="50" value="{{ post.hashtag }}"
                     class="validate" required>
                 <label for="tags"> Hashtags</label>
             </div>
         </div>
         <!--  cta buttons-->
-        <div class="row">
-            <div class="col s12 center-align">
+        <div class="form-group">
+            <div class="col-md-12 center-align">
                 <!-- cancel edit_blog button -->
-                <a href="{{ url_for('posts') }}" class="btn-large red text-shadow">
+                <a href="{{ url_for('posts') }}" class="btn-large btn btn-info text-shadow">
                     Cancel <i class="fas fa-times-circle right"></i>
                 </a>
                 <!-- submit edit_blog button-->
-                <button class="btn-large waves-effect waves-light text-shadow" type="submit" name="">Edit Post
+                <button class="btn-large btn btn-success text-shadow" type="submit" name="">Edit Post
                     <i class="fas fa-edit right"></i>
                 </button>
             </div>
         </div>
-    </form>
-</div>
+        </form>
+        </div>
+        </div>
+        </div>
+        </div>
 
-{% endblock %}
+        {% endblock %}

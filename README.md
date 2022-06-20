@@ -257,7 +257,7 @@ This is an admin only area and allows an admin to create, edit and delete catego
 * [Beautifier](https://beautifier.io/) - for helping to keep code tidy 
 * [Random Key Gen](https://randomkeygen.com/) - to generate a random secret key
 * [Power Mapper](https://www.powermapper.com/) to check for browser compatibility
-* [Temp Mail](https://temp-mail.org/en/)
+
 
 #### Planning
 [wireframes](https://lucidchart/app/dashboard/) - for planning of site flow and layout, creating wire frames and general mind mapping
@@ -336,7 +336,7 @@ When an admin is logged in, the edit and delete buttons are available to them on
 - footer with quick links info , logo and copyright.
 
 
-#### Explore:  
+#### Blogs:  
 3. While logged out make sure that you can see all recommendations that are on the home page, and that each recommendations included the follow:
 - Category name_
 - title
@@ -344,7 +344,7 @@ When an admin is logged in, the edit and delete buttons are available to them on
 - tags
 - Created by
 - published date
- 
+
  #### login
 4. While logged in, make sure  you can see all blogs and that any blogs that was created by you, now has the edit and delete button on them.
 - while logged in , make sure you can see blogs written by you on your profile page.
@@ -677,7 +677,8 @@ This project is hosted on [Heroku](heroku.com). It's been deployed using the fol
 - We borrowed code for audio recording from [codepen](https://codepen.io/jeremyagottfried/pen/bMqyNZ)
 
 ### Media
-   
+- Image for the [favicon](https://stock.adobe.com/ca/images/hands-in-heart-shape-on-white-transparent-background-painted-rainbow-color-symbol-of-lgbt-glbt-lgbtq-pride-flag-or-lesbian-gay-bisexual-transgender-queer-questioning-vector-illustration/197908448).
+
 
 ### Acknowledgements
 

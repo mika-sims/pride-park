@@ -9,7 +9,7 @@
         </div>
     </div>
     <div class="row pt-lg-2">
-        <div class="col-12 col-lg-8 mx-auto py-3 card mb-5 bg-signup">
+        <div class="col-12 col-lg-8 mx-auto py-3 card mb-5 bg-login">
             <div class="col-12 text-center py-2">
                 <p>
                     If you have not created an account yet, please
@@ -18,7 +18,7 @@
                 </p>
             </div>
             <!-- End flash messages -->
-            <form action="{{ url_for('login') }}" method="POST" class="bg-success px-3">
+            <form action="{{ url_for('login') }}" method="POST" class=" px-3">
                 <div class="my-3 text-center">
                     <label class="form-label">Username</label>
                     <input class="form-control" type="text" name="username" placeholder="Username" />
