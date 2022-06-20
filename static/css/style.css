@@ -1,3 +1,61 @@
+/*===== Fonts =====*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,900&family=Quattrocento:wght@400;700&family=Work+Sans:ital,wght@0,400;0,500;1,300&display=swap');
+
+/*===== CSS Reset =====*/
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+
+a, li {
+    text-decoration: none;
+}
+
+/*===== Navbar Start=====*/
+
+.nav-link {
+    text-transform: uppercase;
+    margin: 0 1.5em;
+    font-weight: 600;
+}
+
+.navbar-brand {
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ff0000, #caca00d3, #ff00f3, #0033ff, #ff00c4);
+    background-size: 400%;
+    font-size: 1.4em;
+    letter-spacing: 4px;
+    font-weight: 900;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    animation: animate 20s linear infinite;
+}
+
+/*===== Animate logo =====*/
+@keyframes animate {
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 400%;
+    }
+}
+
+/*===== Navbar End=====*/
+
+/*===== About Section Start=====*/
+.lead a {
+    color: #4b14ca;
+    font-weight: 600;
+}
+
+/*===== About Section End=====*/
+
+
 h1,
 h2,
 h3,
@@ -40,25 +98,30 @@ body {
     font-family: 'Work Sans', sans-serif;
 }
 
-.bg-pride {
+/*===== About Section End=====*/
+
+/* .bg-pride {
     background: linear-gradient(90deg, #f00000, #f00000 16.67%, #ff8000 16.67%, #ff8000 33.33%, #ffff00 33.33%, #ffff00 50%, #007940 50%, #007940 66.67%, #4040ff 66.67%, #4040ff 83.33%, #a000c0 83.33%, #a000c0) fixed;
 }
 
 .hr-pride {
     height: 20px;
     width: 100%;
-}
+} */
 
 .hero-pride {
-    background-image: url('/static/images/meet-pride.jpg');
-    background-size: cover;
+    background: linear-gradient(90deg, rgba(255,0,0,.8) 0%, rgba(255,59,0,.8) 3%, rgba(255,171,0,.8) 6%, rgba(0,217,32,.8) 9%, rgba(255,239,0,.8) 12%, rgba(17,29,236,.8) 15%, rgba(104,0,223,.8) 18%, rgba(255,255,255,.8) 21%);
     height: 600px;
     width: 100%;
 }
 
 .bg-signup {
-    background-image: url('/static/images/meet-pride.jpg');
-    background-size: cover;
+    background: linear-gradient(90deg, rgba(255,0,0,.8) 0%, rgba(255,59,0,.8) 3%, rgba(255,171,0,.8) 6%, rgba(0,217,32,.8) 9%, rgba(255,239,0,.8) 12%, rgba(17,29,236,.8) 15%, rgba(104,0,223,.8) 18%, rgba(255,255,255,.8) 21%);
+    height: 600px;
+    width: 100%;
+}
+.bg-login {
+    background: linear-gradient(to left, rgba(255,0,0,.8) 0%, rgba(255,59,0,.8) 3%, rgba(255,171,0,.8) 6%, rgba(0,217,32,.8) 9%, rgba(255,239,0,.8) 12%, rgba(17,29,236,.8) 15%, rgba(104,0,223,.8) 18%, rgba(255,255,255,.8) 21%);
     height: 600px;
     width: 100%;
 }
@@ -80,6 +143,7 @@ label {
     text-align: right;
     margin-right: 15px;
     float: left;
+
 }
 
 input {
@@ -266,17 +330,6 @@ textarea {
     font-size: 15px;
 }
 
-label {
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    color: black;
-    cursor: text;
-    transition: 0.2s;
-}
-
 button {
     padding: 10px 0;
     color: black;
@@ -334,9 +387,39 @@ textarea:valid~label {
     font-weight: bolder;
 }
 
+
 .social-icons i {
     margin-left: 10px;
     margin-bottom: -20px;
+
+
+/* blog & podcast styling */
+
+.blog-banner {
+    width: 100vw;
+    height: 300px;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../images/banner-img-blogs.png") no-repeat top center;
+    background-size: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.podcast-banner {
+    width: 100vw;
+    height: 300px;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url("../images/banner-bg-podcast.png") no-repeat center center;
+    background-size: 100%;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.blog-heading,
+.blog-intro,
+.blog-submission-heading,
+.blog-submission-intro {
+    text-align: center;
+
+
 }
 .social-icons  {
     margin-bottom: -15px;
@@ -365,6 +448,7 @@ textarea:valid~label {
  }
 
 
+
  #team i {
      font-size: 26px;
      color: #555;
@@ -386,6 +470,9 @@ textarea:valid~label {
 
 
  .blog-container {
+
+.blog-container {
+
     display: flex;
     width: 80vw;
     max-width: 1100px;
@@ -403,7 +490,9 @@ textarea:valid~label {
     border-radius: 4px;
     font-weight: 600;
     font-size: 1.2rem;
+
     background-color: rgb(232, 232, 232);
+
 }
 
 .filter-btn:hover,
@@ -481,6 +570,7 @@ input[type="checkbox"]:hover {
 
 /* Podcast */
 
+
 #record {
     background-color: red;
     border-width: medium;
@@ -495,14 +585,19 @@ input[type="checkbox"]:hover {
     cursor: pointer;
     max-width: 50%;
     max-height: 15%;
+
+
+#recordButton,
+#pauseButton,
+#stopButton {
+    width: 70px;
+
     border-radius: 50%;
-    left: 100px;
-    right: 100px;
-    position: relative;
 }
 
-#stopRecord {
-    background-color: green;
+
+#record {
+    background-color: red;
     /* Green */
     border-width: medium;
     border-color: black;
@@ -521,6 +616,8 @@ input[type="checkbox"]:hover {
     right: 100px;
     position: relative;
 }
+
+
 
 h2 {
     left: 100px;
