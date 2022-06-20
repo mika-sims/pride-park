@@ -5,24 +5,23 @@ PRIDE PARK
 [Link to Live Website](https://pride-park.herokuapp.com/)
 
 [GitHub Repo](https://github.com/mika-sims/pride-park)
-Happy blogging!
+
 
 
 *** 
 
 ## About  
-Welcome to Pride park, a webapp to helps bloggers with similar interest interact with each other! 
-This is a Python Flask app using MongoDB to produce a social blogging  application.
+Welcome to Pride park, a webapp to helps LGBTQ+ community members interact with each other! 
+This is a Python Flask app using MongoDB to produce a social blogging/podcast  application.
 
-Pride Park brings bloggers together and allows them to interact and share their interests in similar subjects! 
-Anyone can write on Pride Park . Thought-leaders, journalists, experts, and individuals with unique perspectives can share their thinking here.
-The application lets users create a profile that allows them to add their  details, add photos, let other users know when they last posted,how many followers they have add comments both  and private message each other.
-The site offers the additional functionality; reset passwords, change passwords contact us, editing and deleting comments, backend validation. Please look at the [features](#features) section for a more detailed description. 
+Pride Park brings people together and allows them to interact and share their experiences in similar subjects! 
+Anyone can write on Pride Park. Thought-leaders, journalists, experts, and individuals with unique perspectives can share their thinking here. Or simply folks who want to share parts of their proud lives or learn about others'.
+
+Please look at the [features](#features) section for a more detailed description. 
 
  
 ## Index – Table of Contents
 
-- [User Experience (UX)](#user-experience--ux-)
 - [Strategy](#strategy)
   * [User Stories](#user-stories)
 - [Scope](#scope)
@@ -72,128 +71,161 @@ The site offers the additional functionality; reset passwords, change passwords 
 
 *** 
 
-## User Experience (UX)
 ## Strategy
 Everyone has got something interesting to say or even full depth of knowledge about a particular subject.
 Pride Park enables people to blog about anything and everything and also provides users with a way to communicate with others and attain information about a particular subject.
 
 
 ### User Stories 
+- As a user, I can sign up to Pride Park and create a profile
+- As a user, I can browse through the list of blogs and podcasts with or without an account
+- As a user, I can search for specific subjects in blogs and podcasts via the filter option
+- As a user, I can write and submit my own blog post
+- As a user, I can record and submit my own podcast
+- As a user, I can add relevant hashtags to my submits
+- As a user, I can see a list of trigger warnings I need to be aware of when tagging my entry
+
 
 ### A typical user of this site would:
- - Have an interest in writing blogs
- - Reading blogs from other bloggers
- - Have an interest in being part of a blogging community.
- - Have an interest in gaining knowledge far beyond his/ her neighbourhood or circle.
- - connect with fellow bloggers from around the world.
+ - Have an interest in writing and reading blogs
+ - Be interested in listening to and recording podcasts
+ - Be part of the LGBTQ+ plus community or a straight ally who is interested in learning about it
+ - Want to share their experience and potential information/struggles they've encountered
+ - Want to learn about people in similar situations and foster a feeling of solidarity
+ - Potentially want to make contact with like minded people that they have things in common with
+ 
 
 
 #### New User
 1. As a new user to the website, I want to understand the purpose of the site and how to interact with it.
-2. As a new user,i want to explore blogposts written by other bloggers easily without registering
-3.  As a new user ,I would like to easily register 
+2. As a new user, I want to explore blog posts written by other bloggers easily without registering
+3. As a new user, I want to be able to navigate and listen to podcasts without registering
+4. As a new user, I would like to easily register 
 
 
 
 #### Existing User
-1.As an existing user to the website, I want to be able to easily sign in.
-2.As an existing user to the website, I would like to be able to delete my account
-3.As an existing user to the website, i would like to be able to reset my password incase i forgot my previous password
-4.As an existing user to the website, I would like to be able to add/read/edit and delete my blogposts.
-5.As an existing user to the website,I would like to see the blogs by other people to decide which blog I would like to read.
-6.As an existing user to the website, I would like to easily add new blogs.
-7.As an existing user to the website, I would like to be able to upload a profile photo or change my profile photo. 
-i.  If I don’t have a profile photo, I'd like to have a choice of placeholder (default avatar). 
+1. As an existing user, I want to be able to easily sign in.
+2. As an existing user, I would like to be able to delete my account
+3. As an existing user, i would like to be able to reset my password in case I forgot my previous one
+4. As an existing user, I would like to be able to add/read/edit and delete my blog posts/podcasts.
+5. As an existing user, I would like to see blogs/podcasts by other users and choose the ones that are of interest to me.
+6. As an existing user, I would like to be able to upload a profile photo or change my profile photo. 
+7. If I don’t have a profile photo, I'd like to have a choice of placeholders (default avatar). 
 
 
 ## Scope 
 Create a simple, intuitive, and responsive website that acts as a respository of blogs that users can browse and contribute to. 
 
-The structure should adhere to convention and be simple and intuitive, ensuring the user always knows where they are, how they got there and how to get back to 
+The structure should adhere to convention and be simple and easy to navigate, ensuring the user always knows where they are, how they got there and how to get back to 
 where they started.
 
 The design should be simple, utilising the same colour palette, 
 
-Any addition features or functionally are out of scope at this stage.
 
 ### User Goals:
-- To find blogs from different authors and various categories.
-- To be able to write , read, edit and delete blogs.
-- To be part of a social blogging platform.
+- To find blogs or podcasts from other users of various categories.
+- To be able to write, read, edit and delete blogs or podcasts.
+- To be part of a social platform that focuses on LGBTQ+ people.
 
 ### Website Owner's goals:
- - To build on and expand the community for bloggers and readers around the world.
- - To create a safe and welcoming platform for users to share their passion for blogging.
- - To encourage bloggers to create their own blogs for other readers.
- - The ability for admin to edit and delete any inappropriate blogs to keep the platform safe and welcome for bloggers.
+ - To build on and expand the community for LGBTQ+ bloggers and readers around the world.
+ - To create a safe and welcoming environment for users to share their life experiences.
+ - To encourage users to create their own blogs or podcasts for other users.
+ - The ability for admin to edit and delete any inappropriate entries to keep the platform safe and welcoming.
 
 
 ## Features
  
 ### Existing Features
-- User Registration: allows new users to create an account so they can log in.
-- User Log-in: allows existing users to log in using their username or email and password. Passwords are hashed for security reasons. Log-in is required to read , post your own blogs and give feedback. 
-- User Profiles: allow users to tell others about themselves, provide a username, and users can see blogs created by themselves of their profiles 
+- **User Registration**: allows new users to create an account so they can log in.
+- **User Log-in**: allows existing users to log in using their username or email and password. Passwords are hashed for security reasons. Log-in is required to post and edit your own blogs and give feedback. 
+- **User Profiles**: allows users to tell others about themselves, provide a username and list their entries.
 - A user must be logged in to edit their own profile. A user cannot edit someone else's profile. 
 - A user must be logged in to view messages and interact with other members.
-- Password reset page- allows users to reset their password incase they had forgotten it.
-- Expore: This allows both non registered and registered users to explore blogposts in the system that all the users have written.
-- Search: allows a registed bloggers  to search for blogposts by simple words and more complex phrases
-- Logout : allows a user to securely logout of the page.
+- **Password reset page**: allows users to reset their password in case they forgot it.
+- **Expore**: This allows both non-registered and registered users to explore entries in the system that all the users have submitted.
+- **Search**: allows a users to search for blog posts or podcasts by categories which refer to hashtags that all entries are labelled with
+- **Logout** : allows a user to securely logout of the page.
 
 
-### admin
-- Admin role - The admin can Create ,Read ,Update and Delete blog categories.
-- Admin may also delete blogs written by users that is considered inappropriate. 
+### Admin
+- **Admin role**: The admin can create, read, update and delete blog categories.
+- Admin may also delete blogs written by users that is considered offensive or abusive. 
 
 ### Features Left to Implement
-- Allow users to upload their own cover image for a blog.
-- Allow bloggers to rate other people's blogposts.
-- Allow bloggers to search for blogposts based on other users' ratings.
-- Allow admins to block/suspend users when necessary.
-- follower feature
-- comments feature
-- upload profile pic
-- incoporate a blog editor in the write new blog page.
-- implement a better editor in the write a blog page to ensure proper paragraghing/ design and possibly add symbols and image
+- Allow users to upload their own cover image for entries
+- Allow users to rate other people's entries
+- Allow users to search for entries based on other users' ratings
+- Allow admins to block/suspend users when necessary
+- Comments feature
+- Upload profile pic
+- Incoporate a blog editor in the write new blog page
+- Implement a better editor in the write a blog page to ensure proper paragraghing/design and possibly add symbols and images
 ***
 
 ## Site implemented Features
 ##### Every page on this site also incorporates the following features:
-- A logo in the top left hand corner, that not only forms part of the branding and design of the site but also as is consistent with a user's expectations, clicking the logo will return the user to the home page of the site.
+- A logo in the top left hand corner, that not only forms part of the branding and design of the site but also is consistent with a user expectations. Clicking the logo will return the user to the home page of the site.
 
 - A responsive, collapsible navigation bar, allowing users to easily navigate the site on any device.
 ## Pages
- ### All users
+### All users
 
 #### Home
-The home page introduced users to the site and with a call to action button to direct thm to register. users may also contact the site owner incase of any unforeseen issues.
+The home page presents a welcoming header image and invites the user to browse or register. 
 
-#### Explore
-  Here the both unregisstered and registered users may view and read blogs created by registered logged in users.
-  The user can also search for a blog based on  single words or text phrases.
+#### About
 
-#### Register
-The registration page allows a user to register an account. To register a user is required provide a username, email and password. Validation has been added to form. The Registration page also provides a link to the Log In page if a user has already registered and simply needs to log in, once a user is registered , he or she is redirected to the log in page.
+The About page informs the user of the purose and ethos behind the site and what experience to expect from it. An introduction to the site is written to foster a feeling of welcome and inclusiveness.
+
+#### Contact Us
+Users may contact the site owner in case of any unforeseen issues or to report abuse.
+
+#### Blogs
+Here both unregistered and registered users may view and read blog posts created by registered users.
+The user can also search for posts based on keywords.
+
+#### Podcasts
+Here both unregistered and registered users may listen to recordings created by registered users.
+The user can also search for posts based on keywords.
+
+#### Sign Up
+The registration page allows a user to register an account. To register a user is required to provide a username, email and password. Validation has been added to the form. The Sign Up page also provides a link to the Log In page if a user has already registered and simply needs to log in. Once a user is registered they are redirected to the log in page.
 
 #### Log In
-  The Log in page allows registered user to log in to their account in order to view their own blogss, add a new blog, edit or delete one of their own blogs. The Log In page also provides a link to the Registration page if a user hasn't yet registered.
+The Log In page allows registered users to log in to their account in order to view their own entries, add new ones, edit or delete existing ones. The Log In page also provides a link to the Sign Up page if a user hasn't yet registered.
 
-#### Write a new blog
-  This page displays a form to the user to enable them to create a new blog. The user first selects a category from a dropdown list, then enter the title of their blog, content,publish_date ,read_time, created_by and hashtags
-  the content/text area allows up to 2000 words and is expandable. The user then clicks submit and their blog is saved in MongoDB and visible on the site.
-  This page is not accessible to users that are not logged in.
+### Registered Users
+
+#### User Profile Page
+Once logged in, the registered user will see their user name appear as a link in the navbar which give access to their profile page. Their they can edit their profile.
+
+#### Logout
+
+For the logged in user the navbar displays a Logout button to securely log out of their account.
+
+#### Submit a new blog post
+This page displays a form to the user to enable them to create a new blog. The user selects a category from a dropdown list, enters the title of their blog, content, publishing date and relevant hashtags
+the content/text area allows up to 2000 words and is expandable. The user then clicks submit and their blog is saved in MongoDB and visible on the site.
+This page is not accessible to users that are not logged in.
 
 #### Edit Blog
-    This page displays a form to the user to enable them to edit their blogs. The same form that is used to add blogs is shown again and is prefilled with the original information. The user can then edit their blog and click the edit button to update their blog, there is also is the option to click cancel if they have changed their mind and no longer want to make any edits.
-    This page is specific to the blog that has been seleted to edit and is only available to the creater of the blog when they are logged in.
+This page displays a form to the user to enable them to edit their blogs. The same form that is used to add blogs is shown again and is prefilled with the original information. The user can then edit their blog and click the edit button to update their blog. 
+There is also the option to click cancel if they have changed their mind and no longer want to make any edits.
+This page is specific to the blog that has been seleted to edit and is only available to the creater of the blog when they are logged in.
+
+#### Submit a new podcast
+The Create Podcast button can be found on the Podcasts page.
+There the user sees three buttons for recording, pausing and stopping the recording. Once the recording is finished it can be submitted.
+
 #### Admin Only
-  ##### Categories
-  This is an admin only area and allows an admin to create, edit and delete categories on the front end. This page displays a list of categories available to users, the categories have an edit and delete icons to allow an admin to either make edits to a category or to delete one. The page also has an 'Add Category' button to allow an admin to create a new category.
+##### Categories
+This is an admin only area and allows an admin to create, edit and delete categories on the front end. This page displays a list of categories available to users, the categories have an edit and delete icons to allow an admin to either make edits to a category or to delete one. The page also has an 'Add Category' button to allow an admin to create a new category.
 
 
 ## Database Design
-  All user generated content is stored in mongo db. There are three collections for blogit db.
+  All user generated content is stored in MongoDB. There are three collections for blogit db.
   1. users
   2. categories 
   3. blogs
@@ -205,20 +237,21 @@ The registration page allows a user to register an account. To register a user i
 * JavaScript - Programming language.  
 * Python - Programming language
 * [Flask](#flask) - Framework + Extensions
-* [Bootstrap](https://bootstrap.com/) - CSS Framework for structure, buttons, and some styling
+* [Materialize](https://materializecss.com/) - CSS Framework for structure, buttons, and some styling
+* [Bootstrap](https://getbootstrap.com/) - Open-source CSS Framework
 * [jQuery](https://jquery.com/) - Materialize initialising
 * [Favicon](https://favicon.io/) - was used for creating the favicon
-* Gitpod.io - for writing the code. Using the command line for committing and pushing to Git Hub
-* GitHub - hosting repositories
+* GitPod.io - Code editing workspace. Using the command line for committing and pushing to GitHub
+* GitHub - hosting repositories and version control
 * GIT - Pushing code to repositories
 
 #### Front End
-* [Google fonts](https://fonts.google.com/)  - for the font
-* [Font Awesome](https://fontawesome.com/) - for icons used
+* [Google fonts](https://fonts.google.com/)  - sourcing fonts used on site
+* [Font Awesome](https://fontawesome.com/) - sourcing icons used on site
 
 #### Backend 
-* [MongoDB](https://www.mongodb.com/)
-* [Heroku](https://dashboard.heroku.com/)
+* [MongoDB](https://www.mongodb.com/) - database for storing user submitted documents
+* [Heroku](https://dashboard.heroku.com/) - deployment and hosting of live site
 
 #### Helpers
 * [Beautifier](https://beautifier.io/) - for helping to keep code tidy 
@@ -227,34 +260,34 @@ The registration page allows a user to register an account. To register a user i
 
 
 #### Planning
-[wireframes](https://lucidchart/app/dashboard/) - for planning of site flow, creating wire frames and general mind mapping
+[wireframes](https://lucidchart/app/dashboard/) - for planning of site flow and layout, creating wire frames and general mind mapping
 
 
 ### Flask
 The application was built using the [Flask](https://flask.palletsprojects.com/en/1.1.x/) Framework which is reliant on the [Jinja](https://www.palletsprojects.com/p/jinja/) templating language. The application was written in python. 
 
-I used the following Extensions:
+The following extensions were used:
 * [Flask Mail](https://pythonhosted.org/Flask-Mail/) - For emailing users
 * [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/) - For interacting with the MongoDB database
 * [Werkzeug](https://werkzeug.palletsprojects.com/en/1.0.x/utils/) - For providing security’s, password_hash, check_password_hash
 
 # Testing 
-I tested the site in the following ways:
-- I used the inspector tool to test the site in all the screen sizes and devices available in the Chrome developer tool. In addition to this I also tested it on live devices, including but not limited to iPhone, iPad, MacBook Pro, MotoG7.
-
-- I also viewed my site in multiple browsers including, Chrome, Firefox and Safari in terms of design, responsiveness and functionality
+The following testing methods were used:
+- Chrome developer tools to test the site for responsiveness. 
+- Tested it on live devices, including but not limited to iPhone, iPad, MacBook Pro, MotoG7.
+- Viewed site in multiple browsers including, Chrome, Firefox and Safari in terms of design, responsiveness and functionality
 
 #### Testing Tools
 * [HTML Validator](https://validator.w3.org/) - checking the validity of code
 * [CSS Validator](https://validator.w3.org/) - checking the validity of code
-* [JSHint](https://jshint.com/)- Testing and checking JS.  - checking for errors in code
+* [JSHint](https://jshint.com/)- Testing and checking JS and code errors
 * [Pep8 Online](http://pep8online.com/) - Testing and checking PEP8 compliance 
 * [Am I Responsive](http://ami.responsivedesign.is/#) - checking whether the site is responsive. 
 * DEV Tools - Lighthouse
 
 #### Validation reports
-  - All links were tested to ensure there were no broken links and that all links to external sites open in a new tab.
-  - In addition to testing with the inspector tool, real devices and validation tools, I also work through a series of test cases, to ensure that the site met the users stories and that any functionality that was added worked as intended.
+- All links were tested to ensure their functionality and that all links to external sites open in a new tab.
+
 
 ### User Story Test Cases
 

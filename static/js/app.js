@@ -44,7 +44,7 @@ function startRecording() {
         https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia
     */
 
-    navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
+    navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
         console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
 
         /*
@@ -77,7 +77,7 @@ function startRecording() {
 
         console.log("Recording started");
 
-    }).catch(function(err) {
+    }).catch(function (err) {
         //enable the record button if getUserMedia() fails
         recordButton.disabled = false;
         stopButton.disabled = true;
@@ -153,9 +153,9 @@ function createDownloadLink(blob) {
     var upload = document.createElement('a');
     upload.href = "#";
     upload.innerHTML = "Upload";
-    upload.addEventListener("click", function(event) {
+    upload.addEventListener("click", function (event) {
         var xhr = new XMLHttpRequest();
-        xhr.onload = function(e) {
+        xhr.onload = function (e) {
             if (this.readyState === 4) {
                 console.log("Server returned: ");
             }
@@ -172,31 +172,26 @@ function createDownloadLink(blob) {
 
     //add the li element to the ol
     recordingsList.appendChild(li);
-}
+$(document).ready(function () {
+            $('.modal').modal();
+            $('#textarea1').val('');
+            $('input#input_text, textarea#content').characterCounter();
+            M.textareaAutoResize($('#content'));
+            $('select').formSelect();
+            $('.datepicker').datepicker({
+                format: "dd mmmm,yyyy",
+                yearRange: 3,
+                showClearBtn: true,
+                i18n: {
+                    done: "Select"
+                }
+            });
 
 
-  $(document).ready(function(){
-    $('.modal').modal();
-    $('#textarea1').val('');
-    $('input#input_text, textarea#content').characterCounter();
-  M.textareaAutoResize($('#content'));
-   $('select').formSelect();
-  $('.datepicker').datepicker({
-      format:"dd mmmm,yyyy",
-      yearRange:3,
-      showClearBtn:true,
-      i18n:{
-        done:"Select"
-      }
-  });
+            // help modal js
+            var myModal = document.getElementById('myModal')
+            var myInput = document.getElementById('myInput')
 
-
-// help modal js
-var myModal = document.getElementById('myModal')
-var myInput = document.getElementById('myInput')
-
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
-})
-
-
+            myModal.addEventListener('shown.bs.modal', function () {
+                myInput.focus()
+            })
