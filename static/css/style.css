@@ -165,7 +165,7 @@ input {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: bisque;
+    
     text-align: center;
     font-weight: bolder;
 }
@@ -244,8 +244,19 @@ input {
     box-sizing: border-box;
 }
 
-.formContainer {
+.contact {
+   background-color: green; 
+   background-image: url('/static/images/contact.jpg');
+   background-repeat: no-repeat;
+   background-position: center;
+    position: relative;
     width: 100%;
+    padding-bottom: 100px;
+    /* margin-top: 6rem!important; */
+   
+}
+.formContainer {
+    width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -266,15 +277,10 @@ input {
     border-bottom: 3px solid black;
 }
 
-.teamRow p, .teamRow h3{
+.teamRow h3{
     font-weight: bolder !important;
 }
-.form-text-content {
-    color: black;
-    font-size: 18px;
-    padding: 0 150px;
-    margin-bottom: 20px;
-}
+
 
 .Customform {
     width: 90%;
@@ -361,7 +367,7 @@ textarea:valid~label {
     margin-left: 10px;
     margin-bottom: -20px;
 
-
+}
 /* blog & podcast styling */
 
 .blog-banner {
@@ -403,42 +409,47 @@ textarea:valid~label {
     color: #4267B2;
 }
 
+/* --------------------------------team page ------------------------ */
 
- .team-header {
-     font-size: 36px;
-     color: #333;
-     font-weight: bold;
+    .team-header {
+            font-size: 36px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        
+        #team i {
+            font-size: 26px;
+            color: #555;
+        }
+
+        #team p {
+            font-weight: 500;
+        }
+
+        #team .card {
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgb(16, 15, 26);
+            transition: all 0.3s ease-in;
+            -webkit-transition: all 0.3s ease-in;
+            -moz-transition: all 0.3s ease-in;
+         
+        }
+
+    
+ #team .card:hover{
+    /* background: conic-gradient(from 90deg, #390202, #53534dd3, #5e6cd8, #4e5e9e, #c16f62 ); */
+
+    background-image: linear-gradient(180deg, #000 0 0%, #72501e 14.28571% 14.28571%, #ff0018 28.57143% 28.57143%, #ffa52c 42.85714% 42.85714%, #ffff41 57.14286% 57.14286%, #008018 71.42857% 71.42857%, #0000f9 85.71429% 85.71429%, #86007d 100% 100%);
  }
 
- h3 {
-     font-size: 24px;
-     color: #555;
-     font-weight: bold;
- }
-
-
-
- #team i {
-     font-size: 26px;
-     color: #555;
- }
-
- #team p {
-     font-weight: 500;
- }
-
- #team .card {
-     border-radius: 10px;
-     box-shadow: 5px 5px 15px rgb(16, 15, 26);
-     transition: all 0.3s ease-in;
-     -webkit-transition: all 0.3s ease-in;
-     -moz-transition: all 0.3s ease-in;
-
- }
-
-
-
- .blog-container {
+ 
 
 .blog-container {
 
@@ -555,7 +566,7 @@ input[type="checkbox"]:hover {
     max-width: 50%;
     max-height: 15%;
 
-
+}
 #recordButton,
 #pauseButton,
 #stopButton {
