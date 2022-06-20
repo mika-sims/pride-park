@@ -152,13 +152,17 @@ The design should be simple, utilising the same colour palette,
 ## Features
  
 ### Existing Features
+- **Navbar**: allows users to easily navigate between the pages of the site.
+
 - **User Registration**: allows new users to create an account so they can log in.
+
 - **User Log-in**: allows existing users to log in using their username or email and password. Passwords are hashed for security reasons. Log-in is required to post and edit your own blogs and give feedback. 
+
 - **User Profiles**: allows users to tell others about themselves, provide a username and list their entries.
 - A user must be logged in to edit their own profile. A user cannot edit someone else's profile. 
 - A user must be logged in to view messages and interact with other members.
 - **Password reset page**: allows users to reset their password in case they forgot it.
-- **Expore**: This allows both non-registered and registered users to explore entries in the system that all the users have submitted.
+- **Explore**: This allows both non-registered and registered users to explore entries in the system that all the users have submitted.
 - **Search**: allows a users to search for blog posts or podcasts by categories which refer to hashtags that all entries are labelled with
 - **Logout** : allows a user to securely logout of the page.
 
@@ -188,27 +192,71 @@ The design should be simple, utilising the same colour palette,
 
 #### Home
 The home page presents a welcoming header image and invites the user to browse or register. 
+  <details>
+    <summary>
+      Home Page
+    </summary>
+    <img src="static/images/readme/landing.JPG" alt="home page">
+  </details>
 
 #### About
 
 The About page informs the user of the purose and ethos behind the site and what experience to expect from it. An introduction to the site is written to foster a feeling of welcome and inclusiveness.
+  <details>
+    <summary>
+      About Page
+    </summary>
+    <img src="static/images/readme/about.JPG" alt="about page">
+  </details>
 
 #### Contact Us
 Users may contact the site owner in case of any unforeseen issues or to report abuse.
+  <details>
+    <summary>
+      Contact Page
+    </summary>
+    <img src="static/images/readme/contact.JPG" alt="contact page">
+  </details>
 
 #### Blogs
 Here both unregistered and registered users may view and read blog posts created by registered users.
 The user can also search for posts based on keywords.
+  <details>
+    <summary>
+      Blog Page
+    </summary>
+    <img src="static/images/readme/blogs.JPG" alt="blog page">
+  </details>
 
 #### Podcasts
 Here both unregistered and registered users may listen to recordings created by registered users.
 The user can also search for posts based on keywords.
+  <details>
+    <summary>
+      Podcast Page
+    </summary>
+    <img src="static/images/readme/podcasts.JPG" alt="podcast page">
+  </details>
 
 #### Sign Up
 The registration page allows a user to register an account. To register a user is required to provide a username, email and password. Validation has been added to the form. The Sign Up page also provides a link to the Log In page if a user has already registered and simply needs to log in. Once a user is registered they are redirected to the log in page.
 
-#### Log In
+  <details>
+    <summary>
+      Sign Up Page
+    </summary>
+    <img src="static/images/readme/signup.JPG" alt="sign up page">
+  </details>
+
+#### Login
 The Log In page allows registered users to log in to their account in order to view their own entries, add new ones, edit or delete existing ones. The Log In page also provides a link to the Sign Up page if a user hasn't yet registered.
+
+  <details>
+    <summary>
+      Login Page
+    </summary>
+    <img src="static/images/readme/login.JPG" alt="login page">
+  </details>
 
 ### Registered Users
 
@@ -223,6 +271,12 @@ For the logged in user the navbar displays a Logout button to securely log out o
 This page displays a form to the user to enable them to create a new blog. The user selects a category from a dropdown list, enters the title of their blog, content, publishing date and relevant hashtags
 the content/text area allows up to 2000 words and is expandable. The user then clicks submit and their blog is saved in MongoDB and visible on the site.
 This page is not accessible to users that are not logged in.
+  <details>
+    <summary>
+      Write Blog
+    </summary>
+    <img src="static/images/readme/write-blog.JPG" alt="write blog page">
+  </details>
 
 #### Edit Blog
 This page displays a form to the user to enable them to edit their blogs. The same form that is used to add blogs is shown again and is prefilled with the original information. The user can then edit their blog and click the edit button to update their blog. 
@@ -232,6 +286,12 @@ This page is specific to the blog that has been seleted to edit and is only avai
 #### Submit a new podcast
 The Create Podcast button can be found on the Podcasts page.
 There the user sees three buttons for recording, pausing and stopping the recording. Once the recording is finished it can be submitted.
+  <details>
+    <summary>
+      Record podcast
+    </summary>
+    <img src="static/images/readme/record.JPG" alt="record podcast page">
+  </details>
 
 #### Admin Only
 ##### Categories
