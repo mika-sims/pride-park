@@ -2,55 +2,11 @@
 
 
 {% block content %}
-<section class="contact-section">
-<div class="contact mb-5 py-3">
-<div class="formContainer container bg-light mt-5 rounded">
-    <div class="formHeading col-md-8 col-xs-8">
-        <h1 class="text-center mb-3">Contact Us</h1>
-        <hr>
-
-    <div class="col-md-12 col-xs-12">
-        <p class="form-text-content">
-            You want to reach out to us with ideas? Any feedback or you would like to contribute making
-            Pride Park happen?
-
-            <br>
-            <br>
-            Let us <span style="font-weight: bold">hear it!</span>
-        </p>
-    </div>
-    <form class="customForm row" action="" style="width:100%">
-
-        <div class="input-groupCustom col-md-6 col-xs-12">
-            <input type="text" id="name" required>
-            <label for="name"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Name</label>
-        </div>
-        <div class="input-groupCustom col-md-6 col-xs-12">
-            <input type="number" id="number" required minlength="10" maxlength="12">
-            <label for="number"><i class="fa-solid fa-phone-square-alt"></i>&nbsp;&nbsp;Phone No</label>
-        </div>
-
-
-        <div class="input-groupCustom col-md-12 col-xs-12">
-            <input type="email" id="email" required>
-            <label for="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Email ID</label>
-        </div>
-        <div class="input-groupCustom col-md-12 col-xs-12">
-            <textarea id="message" rows="8" required></textarea>
-            <label for="message" style="padding:0px"><i class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Message</label>
-        </div>
-
-        <button type="submit" style="font-weight: bold;">SUBMIT&nbsp;&nbsp;<i
-                class="fa-solid fa-paper-plane"></i></button>
-
-    </form>
-    </div>
-</section>
+<!-- team section -->
 
 <section class="team">
-    <div class="row teamRow">
+    <div class="row" id="team">
         <div class="col-md-12 col-xs-12">
-            <section id="team">
                 <div class="container-fluid my-5 py-5 text-center">
                     <div class="row mb-5">
                         <div class="col">
@@ -191,7 +147,52 @@
                     </div>
                 </div>
             </section>
-   
+   <hr>
+   <!--  contact section-->
+<section class="contact-section">
+<div class="contact mb-5 py-3">
+<div class="formContainer container bg-white mt-5 rounded">
+    <div class="formHeading col-md-8 col-xs-8">
+        <h1 class="text-center mb-3">Contact Us</h1>
+        <hr>
+
+    <div class="col-md-12 col-xs-12">
+        <p class="form-text-content">
+            You want to reach out to us with ideas? Any feedback or you would like to contribute making
+            Pride Park happen?
+
+            <br>
+            <br>
+            Let us <span style="font-weight: bold">hear it!</span>
+        </p>
+    </div>
+    <form class="customForm row" action="" style="width:100%">
+
+        <div class="input-groupCustom col-md-6 col-xs-12">
+            <input type="text" id="name" required>
+            <label for="name"><i class="fa-solid fa-user"></i>&nbsp;&nbsp;Name</label>
+        </div>
+        <div class="input-groupCustom col-md-6 col-xs-12">
+            <input type="number" id="number" required minlength="10" maxlength="12">
+            <label for="number"><i class="fa-solid fa-phone-square-alt"></i>&nbsp;&nbsp;Phone No</label>
+        </div>
+
+
+        <div class="input-groupCustom col-md-12 col-xs-12">
+            <input type="email" id="email" required>
+            <label for="email"><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;Email ID</label>
+        </div>
+        <div class="input-groupCustom col-md-12 col-xs-12">
+            <textarea id="message" rows="8" required></textarea>
+            <label for="message" style="padding:0px"><i class="fa-solid fa-paper-plane"></i>&nbsp;&nbsp;Message</label>
+        </div>
+
+        <button type="submit" style="font-weight: bold;">SUBMIT&nbsp;&nbsp;<i
+                class="fa-solid fa-paper-plane"></i></button>
+
+    </form>
+    </div>
+</section>
 
 
 {% endblock content %}
