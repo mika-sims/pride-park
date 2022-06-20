@@ -205,7 +205,7 @@ The registration page allows a user to register an account. To register a user i
 * JavaScript - Programming language.  
 * Python - Programming language
 * [Flask](#flask) - Framework + Extensions
-* [Materialize](https://materializecss.com/) - CSS Framework for structure, buttons, and some styling
+* [Bootstrap](https://bootstrap.com/) - CSS Framework for structure, buttons, and some styling
 * [jQuery](https://jquery.com/) - Materialize initialising
 * [Favicon](https://favicon.io/) - was used for creating the favicon
 * Gitpod.io - for writing the code. Using the command line for committing and pushing to Git Hub
@@ -224,7 +224,7 @@ The registration page allows a user to register an account. To register a user i
 * [Beautifier](https://beautifier.io/) - for helping to keep code tidy 
 * [Random Key Gen](https://randomkeygen.com/) - to generate a random secret key
 * [Power Mapper](https://www.powermapper.com/) to check for browser compatibility
-* [Temp Mail](https://temp-mail.org/en/)
+
 
 #### Planning
 [wireframes](https://lucidchart/app/dashboard/) - for planning of site flow, creating wire frames and general mind mapping
@@ -303,7 +303,7 @@ When an admin is logged in, the edit and delete buttons are available to them on
 - footer with quick links info , logo and copyright.
 
 
-#### Explore:  
+#### Blogs:  
 3. While logged out make sure that you can see all recommendations that are on the home page, and that each recommendations included the follow:
 - Category name_
 - title
@@ -311,7 +311,7 @@ When an admin is logged in, the edit and delete buttons are available to them on
 - tags
 - Created by
 - published date
- 
+
  #### login
 4. While logged in, make sure  you can see all blogs and that any blogs that was created by you, now has the edit and delete button on them.
 - while logged in , make sure you can see blogs written by you on your profile page.
@@ -644,7 +644,8 @@ This project is hosted on [Heroku](heroku.com). It's been deployed using the fol
 - We borrowed code for audio recording from [codepen](https://codepen.io/jeremyagottfried/pen/bMqyNZ)
 
 ### Media
-   
+- Image for the [favicon](https://stock.adobe.com/ca/images/hands-in-heart-shape-on-white-transparent-background-painted-rainbow-color-symbol-of-lgbt-glbt-lgbtq-pride-flag-or-lesbian-gay-bisexual-transgender-queer-questioning-vector-illustration/197908448).
+
 
 ### Acknowledgements
 
