@@ -70,7 +70,8 @@ h6 {
     background-color: cadetblue;
 }
 
-.myNav, .footer-sectiom {
+.myNav,
+.footer-sectiom {
     font-family: 'Quattrocento', sans-serif;
     background-color: cadetblue;
 
@@ -108,9 +109,9 @@ body {
 .hr-pride {
     height: 20px;
     width: 100%;
-} */
+}
 
-.hero-pride {
+*/ .hero-pride {
     background: linear-gradient(90deg, rgba(255, 0, 0, .8) 0%, rgba(255, 59, 0, .8) 3%, rgba(255, 171, 0, .8) 6%, rgba(0, 217, 32, .8) 9%, rgba(255, 239, 0, .8) 12%, rgba(17, 29, 236, .8) 15%, rgba(104, 0, 223, .8) 18%, rgba(255, 255, 255, .8) 21%);
     height: 600px;
     width: 100%;
@@ -121,8 +122,9 @@ body {
     height: 600px;
     width: 100%;
 }
+
 .bg-login {
-    background: linear-gradient(to left, rgba(255,0,0,.8) 0%, rgba(255,59,0,.8) 3%, rgba(255,171,0,.8) 6%, rgba(0,217,32,.8) 9%, rgba(255,239,0,.8) 12%, rgba(17,29,236,.8) 15%, rgba(104,0,223,.8) 18%, rgba(255,255,255,.8) 21%);
+    background: linear-gradient(to left, rgba(255, 0, 0, .8) 0%, rgba(255, 59, 0, .8) 3%, rgba(255, 171, 0, .8) 6%, rgba(0, 217, 32, .8) 9%, rgba(255, 239, 0, .8) 12%, rgba(17, 29, 236, .8) 15%, rgba(104, 0, 223, .8) 18%, rgba(255, 255, 255, .8) 21%);
     height: 600px;
     width: 100%;
 }
@@ -154,6 +156,11 @@ input {
     margin-top: 10px;
 }
 
+#profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
 
 /* Custom CSS */
 .card-img-top {
@@ -170,7 +177,7 @@ input {
     font-weight: bolder;
 }
 
-.footer-brand{
+.footer-brand {
     font-size: 20px;
     font-weight: bolder;
     text-decoration: none;
@@ -298,9 +305,11 @@ input {
     border-bottom: 3px solid black;
 }
 
-.teamRow p, .teamRow h3{
+.teamRow p,
+.teamRow h3 {
     font-weight: bolder !important;
 }
+
 .form-text-content {
     color: black;
     font-size: 18px;
@@ -379,7 +388,8 @@ textarea:valid~label {
     width: 100%;
     text-align: center;
 }
-.footer-section{
+
+.footer-section {
     font-weight: bolder;
 }
 
@@ -392,7 +402,7 @@ textarea:valid~label {
 .social-icons i {
     margin-left: 10px;
     margin-bottom: -20px;
-
+}
 
 /* blog & podcast styling */
 
@@ -422,55 +432,54 @@ textarea:valid~label {
 
 
 }
-.social-icons  {
+
+.social-icons {
     margin-bottom: -15px;
 }
-.bi-instagram:hover{
+
+.bi-instagram:hover {
     color: red;
 }
-.bi-twitter:hover{
+
+.bi-twitter:hover {
     color: #1DA1F2;
 }
-.bi-facebook:hover{
+
+.bi-facebook:hover {
     color: #4267B2;
 }
 
 
- .team-header {
-     font-size: 36px;
-     color: #333;
-     font-weight: bold;
- }
+.team-header {
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+}
 
- h3 {
-     font-size: 24px;
-     color: #555;
-     font-weight: bold;
- }
-
-
-
- #team i {
-     font-size: 26px;
-     color: #555;
- }
-
- #team p {
-     font-weight: 500;
- }
-
- #team .card {
-     border-radius: 10px;
-     box-shadow: 5px 5px 15px rgb(16, 15, 26);
-     transition: all 0.3s ease-in;
-     -webkit-transition: all 0.3s ease-in;
-     -moz-transition: all 0.3s ease-in;
-
- }
+h3 {
+    font-size: 24px;
+    color: #555;
+    font-weight: bold;
+}
 
 
+#team i {
+    font-size: 26px;
+    color: #555;
+}
 
- .blog-container {
+#team p {
+    font-weight: 500;
+}
+
+#team .card {
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgb(16, 15, 26);
+    transition: all 0.3s ease-in;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+
+}
 
 .blog-container {
 
@@ -586,13 +595,12 @@ input[type="checkbox"]:hover {
     cursor: pointer;
     max-width: 50%;
     max-height: 15%;
-
+}
 
 #recordButton,
 #pauseButton,
 #stopButton {
     width: 70px;
-
     border-radius: 50%;
 }
 

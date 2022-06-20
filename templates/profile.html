@@ -1,17 +1,30 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <h1 class="text-center">{{username|title}} </h1>
 
+<div class="container">
+    <div class="col-md-2"></div>
+    <div class="col-md-12">
+        <h1 class="text-center my-3">Your profile</span></h1>
+        <div class="bg-pride">
+            <hr class="hr-pride">
         </div>
     </div>
-
+    <div class="row pt-lg-2 bg-signup">
+        <div class="col-md-3"></div>
+        <div class="col-md-8 text-center mt-5">
+            <img id="profile-image" src="{{user.image}}" alt="profile image">
+            <h3 class="m-3 d-inline-block">{{user.username|title}} </h3>
+            <div class="ms-5 ps-5">
+                <a class="btn btn-outline d-inline-block border" href="{{ url_for('update_profile', username='{{session.user}}') }}">Update Profile</a>
+            </div>
+            <div class="mb-5 mt-3 py-4">
+                <h3>Your Bio</h3>
+                <hr>
+                <p>{{user.bio}}</p>
+            </div>
+        </div>
+    </div>
 </div>
 
-</div>
-{% endblock content %}
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="col-md-2"></div>
+    <div class="col-md-12">
+        <h1 class="text-center my-3">Update your profile</span></h1>
+        <div class="bg-pride">
+            <hr class="hr-pride">
+        </div>
+    </div>
+    <div class="row pt-lg-2">
+        <div class="col-12 col-lg-8 mx-auto py-3 card mb-5 bg-signup">
+            <!-- Displays flash messages to the user -->
+            <div class="messages text-center">
+                {% with messages = get_flashed_messages() %}
+                {% for message in messages %}
+                <div class="fs-4 text-danger">{{ message }}</div>
+                {% endfor %}
+                {% endwith %}
+            </div>
+            <!-- End flash messages -->
+            <form action="{{ url_for('update_profile', username='{{session.user}}') }}" method="POST" id="update-profile-form" class="px-3" enctype="multipart/form-data">
+                <div class="my-3 form-group">
+                    <label for="bio" class="form-label hidden">Your Bio</label>
+                    <textarea type="text" name="bio" id="bio" placeholder="Add your bio here..." class=" form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Choose Profile Image</label>
+                    <input type="file" class="form-control-file" id="image" name="image" />
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-lg my-3" type="submit">Save updates</button>
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
