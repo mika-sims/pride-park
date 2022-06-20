@@ -117,7 +117,7 @@ body {
 }
 
 .bg-signup {
-    background: linear-gradient(90deg, rgba(255, 0, 0, .8) 0%, rgba(255, 59, 0, .8) 3%, rgba(255, 171, 0, .8) 6%, rgba(0, 217, 32, .8) 9%, rgba(255, 239, 0, .8) 12%, rgba(17, 29, 236, .8) 15%, rgba(104, 0, 223, .8) 18%, rgba(255, 255, 255, .8) 21%);
+    background: linear-gradient(to left, rgba(255, 0, 0, .8) 0%, rgba(255, 59, 0, .8) 3%, rgba(255, 171, 0, .8) 6%, rgba(0, 217, 32, .8) 9%, rgba(255, 239, 0, .8) 12%, rgba(17, 29, 236, .8) 15%, rgba(104, 0, 223, .8) 18%, rgba(255, 255, 255, .8) 21%);
     height: 600px;
     width: 100%;
 }
